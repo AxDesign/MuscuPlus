@@ -1,8 +1,26 @@
+/*--- GÉNÉRAL ---*/
 form{
-    margin-top: 25px;
-    margin-left: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 input{
     display: block;
     margin: 10px 0;
+}
+a{
+    color: #fff;
+}
+
+/*--- PAGE D'INSCRIPTION ET DE CONNEXION ---*/
+#inscription, #connexion {
+    background-color: #34495e;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/*--- PAGE INDEX ---*/
+#index input{
+    display: inline;
 }

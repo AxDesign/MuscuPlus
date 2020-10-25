@@ -15,73 +15,61 @@ if(isset($_POST['inscription'])){
     if(empty($uNom)){
         $valid = false;
         $errNomUser = "Le champ de nom ne peux pas être vide";
-        echo '1';
     }
 
     if(strlen($uNom) > 30){
         $valid = false;
         $errNomUser = "Le champ de nom est trop long !";
-        echo '2';
     }
 
     if(empty($uPrenom)){
         $valid = false;
         $errPrenomUser = "Le champ de prénom ne peux pas être vide";
-        echo '3';
     }
 
     if(strlen($uPrenom) > 30){
         $valid = false;
         $errPreomUser = "Le champ de prénom est trop long !";
-        echo '4';
     }
 
     if(empty($uAge)){
         $valid = false;
         $errAgeUser = "Le champ d'age ne peux pas être vide";
-        echo '5';
     }
 
     if(empty($uEmail)){
         $valid = false;
         $errEmailUser = "Le champ d'email ne peux pas être vide";
-        echo '6';
     }
 
     if(strlen($uEmail) > 255){
         $valid = false;
         $errEmailUser = "Le champ d'email est trop long !";
-        echo '7';
     }
 
     if(empty($uPassword)){
         $valid = false;
         $errPasswordUser = "Le champ de mot de passe ne peux pas être vide";
-        echo '8';
     }
 
     if(strlen($uPassword) > 255){
         $valid = false;
         $errPasswordUser = "Le champ de mot de passe est trop long !";
-        echo '9';
     }
 
     if(empty($uVerifPassword)){
         $valid = false;
         $errVerifPasswordUser = "Le champ de vérification du mot de passe ne peux pas être vide";
-        echo '10';
     }
 
     if(strlen($uVerifPassword) > 255){
         $valid = false;
         $errVerifPasswordUser = "Le champ de vérification du mote de passe est trop long !";
-        echo '11';
     }
 
     if($uVerifPassword != $uPassword){
         $valid = false;
         $errVerifPasswordUser = "Le mot de passe et le mot de passe de vérification ne sont pas les même !";
-        echo '12';
     }
 
     if($valid){
@@ -110,7 +98,7 @@ if(isset($_POST['inscription'])){
     </head>
 
     <body>
-        <form method="post">
+        <form id="inscription" method="post">
             <label>Nom :</label>
             <input type="text" name="u_nom" id="u_nom">
             <label>Prenom :</label>
@@ -125,6 +113,9 @@ if(isset($_POST['inscription'])){
             <input type="password" name="u_verifPassword" id="u_verifPassword">
 
             <button type="submit" name="inscription">S'inscrire</button>
+            <a href="connexion.php">
+                <p>Vous êtes déja inscrit ?</p>
+            </a>
         </form>
     </body>
 </html>
