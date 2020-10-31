@@ -11,6 +11,7 @@ input{
 }
 a{
     color: #fff;
+    text-decoration: none;
 }
 
 /*--- PAGE D'INSCRIPTION ET DE CONNEXION ---*/
