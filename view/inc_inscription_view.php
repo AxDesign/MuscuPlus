@@ -3,62 +3,76 @@
     <head>
         <meta charset="UTF-8">
         <title>S'inscrire</title>
-        <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/reset.css">
+        <script src="https://kit.fontawesome.com/cfe9ffe70f.js" crossorigin="anonymous"></script>
     </head>
     
-    <body>
-        <form id="inscription" method="post">
-            <label>Nom :</label>
-            <input type="text" name="u_lastName" id="u_lastName">
+    <body id="inscription">
+        <form class="box-inscription" method="post">
+            <h1>Inscription</h1>
+            <div class="text-box">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Nom" name="u_lastName">
+            </div>
             <?php 
                 if(isset($errLastNameUser)){
                     echo "<div>" . $errLastNameUser . "</div>";
                 }
             ?>
 
-            <label>Prenom :</label>
-            <input type="text" name="u_name" id="u_name">
+            <div class="text-box">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Prénom" name="u_name">
+            </div>
             <?php 
                 if(isset($errNameUser)){
                     echo "<div>" . $errNameUser . "</div>";
                 }
             ?>
 
-            <label>Age :</label>
-            <input type="number" name="u_age" id="u_age">
+            <div class="text-box">
+                <i class="fas fa-sort-numeric-up-alt"></i>
+                <input type="number" placeholder="Age" name="u_age">
+            </div>
             <?php 
                 if(isset($errAgeUser)){
                     echo "<div>" . $errAgeUser . "</div>";
                 }
             ?>
             
-            <label>Email :</label>
-            <input type="email" name="u_email" id="u_email">
+            <div class="text-box">
+                <i class="fas fa-envelope"></i>
+                <input type="email" placeholder="Email" name="u_email">
+            </div>
             <?php 
                 if(isset($errEmailUser)){
                     echo "<div>" . $errEmailUser . "</div>";
                 }
             ?>
 
-            <label>Mot de Passe :</label>
-            <input type="password" name="u_password" id="u_password">
+            <div class="text-box">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Mot de passe" name="u_password">
+            </div>
             <?php 
                 if(isset($errPasswordUser)){
                     echo "<div>" . $errPasswordUser . "</div>";
                 }
             ?>
 
-            <label>Vérification du mot de passe :</label>
-            <input type="password" name="u_verifPassword" id="u_verifPassword">
+            <div class="text-box">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Vérification mot de passe" name="u_verifPassword">
+            </div>
             <?php 
                 if(isset($errVerifPasswordUser)){
                     echo "<div>" . $errVerifPasswordUser . "</div>";
                 }
             ?>
 
-            <button type="submit" name="inscription">S'inscrire</button>
-            <a href="connexion.php">
+            <button class="btn-submit" type="submit" name="inscription">S'inscrire</button>
+            <a href="index.php">
                 <p>Vous êtes déja inscrit ?</p>
             </a>
         </form>

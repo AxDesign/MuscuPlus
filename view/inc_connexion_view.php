@@ -3,32 +3,37 @@
     <head>
         <meta charset="UTF-8">
         <title>Se Connecter</title>
-        <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/style.css">
+        <script src="https://kit.fontawesome.com/cfe9ffe70f.js" crossorigin="anonymous"></script>
     </head>
 
-    <body>
-        <form id="connexion" method="post">
-            <label>Email :</label>
-            <input type="email" name="u_email" id="u_email">
+    <body id="connexion">
+        <form class="box-connexion" method="post">
+            <h1>Connexion</h1>
+            <div class="text-box">
+                <i class="fas fa-user"></i>
+                <input type="email" placeholder="Email" name="u_email">
+            </div>
             <?php 
                 if(isset($errEmailUser)){
-                    echo "<div>" . $errEmailUser . "</div>";
+                    echo "<div class='err'>" . $errEmailUser . "</div>";
                 }
             ?>
 
-            <label>Mot de Passe :</label>
-            <input type="password" name="u_password" id="u_password">
+            <div class="text-box">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Mot de Passe" name="u_password">
+            </div>
             <?php 
                 if(isset($errPasswordUser)){
-                    echo "<div>" . $errPasswordUser . "</div>";
+                    echo "<div class='err'>" . $errPasswordUser . "</div>";
                 }
                 if(isset($errConnexion)){
-                    echo "<div>" . $errConnexion . "</div>";
+                    echo "<div class='err'>" . $errConnexion . "</div>";
                 }
             ?>
 
-            <button type="submit" name="connexion">Se Connecter</button>
+            <button class="btn-submit" type="submit" name="connexion">Se Connecter</button>
 
             <a href="inscription.php">
                 <p>Vous n'êtes pas encore inscrit ?</p>

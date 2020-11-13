@@ -17,5 +17,9 @@
             <button type="submit" name="allTime">Voir tous mes temps</button>
             <button>Créé un programme</button>
         </form>
+
+        <a href="dashboard.php">
+            <p>Dashboard</p>
+        </a>
     </body>
 </html>
