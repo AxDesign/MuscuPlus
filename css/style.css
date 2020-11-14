@@ -8,7 +8,7 @@ body{
 
 /*--- PAGE DE CONNEXION ET D'INSCRIPTION ---*/
 #connexion, #inscription{
-    background: url('/img/scott-webb-U5kQvbQWoG0-unsplash.jpg') no-repeat;
+    background: url('/img/scott-webb-U5kQvbQWoG0-unsplash.jpg') no-repeat center fixed;
     background-size: cover;
 }
 .box-connexion, .box-inscription{
@@ -19,7 +19,7 @@ body{
     transform: translate(-50%,-50%);
     color: #fff;
 }
-.box-connexion h1, .box-inscription h1{
+.box-connexion h1, .box-inscription h1, .settings p{
     float: left;
     font-size: 40px;
     border-bottom: 6px solid #f1c40fe6;
@@ -70,8 +70,8 @@ body{
     font-size: 12px;
 }
 
-/*--- DASHBOARD ---*/
-#dashboard header{
+/*--- profil ---*/
+#profil header{
     position: fixed;
     background-color: #22242a;
     padding: 20px;
@@ -90,7 +90,7 @@ body{
     background: #f1c40fe6;
     text-decoration: none;
     float: right;
-    margin-top: -30px;
+    margin-top: -25px;
     margin-right: 40px;
     border-radius: 2px;
     font-size: 15px;
@@ -115,6 +115,31 @@ body{
     border-radius: 100px;
     margin-bottom: 10px;
 }
+.sidebar .img-profil .btn-upload{
+    display: inline-block;
+    overflow: hidden;
+    position: absolute;
+    top: 30px;
+    left: 75px;
+}
+.sidebar .img-profil .btn-upload input[type='file']{
+    left: 0;
+    top: 0;
+    opacity: 0;
+    position: absolute;
+    font-size: 90px;
+}
+.sidebar .img-profil .btn-upload .btn-upload-photo{
+    background-color: #fff;
+    border: 3px solid #000;
+    color: #000;
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
 .sidebar p{
     color: #ccc;
     margin-top: 0;
@@ -162,10 +187,123 @@ label #sidebar-btn{
 
 /*--- SECTION SETTINGS ---*/
 .settings{
-    position: absolute;
-    left: 50%;
-    top: 100px;
+    padding-top: 50px;
+    margin-left: 250px;
+    background: url(/img/simon-english-dYcypsY4i3I-unsplash.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
 }
-.settings ul{
-    list-style-type: none;
+
+#check:checked ~ .settings{
+    margin-left: 60px;
+}
+
+.settings p{
+    font-size: 25px;
+    font-weight: 700;
+    color: #fff;
+}
+.settings form{
+    position: relative;
+    top: 17%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 280px;
+}
+.settings input{
+    display: block;
+}
+
+/*--- MAIN ---*/
+#main{
+    background-color: #444444;
+}
+#main header{
+    position: fixed;
+    left: 0px;
+    background-color: #22242a;
+    padding: 20px;
+    width: 100%;
+}
+#main header .right-column .fas{
+    color: #fff;
+    text-decoration: none;
+    float: right;
+    margin-top: -25px;
+    margin-right: 160px;
+    font-size: 25px;
+}
+.main-container{
+    padding: 75px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.flex-main{
+    box-sizing: border-box;
+    text-align: center;
+    background-color: rgba(17, 17, 17, 0.75);
+    border-radius: 7px;
+    padding: 20px;
+    width: 30%;
+    min-width: 300px;
+    margin: 15px 0;
+}
+.flex-main h2{
+    padding-bottom: 35px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+.flex-main p{
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 13px;
+}
+.activity i, .last-training i{
+    padding-top: 15px;
+    color: #f1c40fe6;
+    font-size: 25px;
+    cursor: pointer;
+}
+#main footer{
+    display: none;
+}
+
+@media screen and (max-width: 500px){
+    #main header .btn-logout{
+        display: none;
+    }
+    #main header .right-column .fas{
+        display: none;
+    }
+    #main footer{
+        position: absolute;
+        bottom: 0px;
+        display: flex;
+        justify-content: flex-end;
+        background-color: #22242a;
+        padding: 20px 0;
+        width: 100%;
+    }
+    #main footer .btn-logout{
+        padding: 5px;
+        background: #f1c40fe6;
+        text-decoration: none;
+        float: right;
+        margin: 0px 15px;
+        border-radius: 2px;
+        font-size: 15px;
+        font-weight: 600;
+        color: #fff;
+    }
+    #main footer .right-column .fas{
+        color: #fff;
+        text-decoration: none;
+        float: left;
+        margin-top: 0px;
+        margin-right: 0px;
+        font-size: 25px;
+    }
 }

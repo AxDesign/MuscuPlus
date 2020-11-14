@@ -14,6 +14,7 @@ if(isset($_POST['connexion'])){
     $reqUser = $bdd->prepare('SELECT * FROM utilisateurs WHERE email = ?');
     $reqUser->execute(array($_POST["u_email"]));
     $dataUser = $reqUser->fetch();
+    $_SESSION['id'] = $dataUser['id'];
     $_SESSION['admin'] = $dataUser['admin'];
     $_SESSION['lastName'] = $dataUser['lastName'];
     $_SESSION['name'] = $dataUser['name'];
