@@ -7,6 +7,7 @@ if(isset($_POST['inscription'])){
     
     $valid = true;
     
+    $key = "";
     $uLastName = htmlentities(trim($_POST['u_lastName']));
     $uName = htmlentities(trim($_POST['u_name']));
     $uAge = htmlentities(trim($_POST['u_age']));

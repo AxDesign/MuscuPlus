@@ -10,26 +10,27 @@
     <body id="connexion">
         <form class="box-connexion" method="post">
             <h1>Connexion</h1>
+            
             <div class="text-box">
                 <i class="fas fa-user"></i>
-                <input type="email" placeholder="Email" name="u_email">
+                <input type="email" placeholder="Email" name="user_email_connexion">
             </div>
             <?php 
-                if(isset($errEmailUser)){
-                    echo "<div class='err'>" . $errEmailUser . "</div>";
+                if(isset($errorEmailUser)){
+                    echo "<div class='err'>" . $errorEmailUser . "</div>";
                 }
             ?>
 
             <div class="text-box">
                 <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Mot de Passe" name="u_password">
+                <input type="password" placeholder="Mot de Passe" name="user_password_connexion">
             </div>
             <?php 
-                if(isset($errPasswordUser)){
-                    echo "<div class='err'>" . $errPasswordUser . "</div>";
+                if(isset($errorPasswordUser)){
+                    echo "<div class='err'>" . $errorPasswordUser . "</div>";
                 }
-                if(isset($errConnexion)){
-                    echo "<div class='err'>" . $errConnexion . "</div>";
+                if(isset($errorConnexionUser)){
+                    echo "<div class='err'>" . $errorConnexionUser . "</div>";
                 }
             ?>
 

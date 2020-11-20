@@ -64,16 +64,37 @@ if($uVerifPassword != $uPassword){
     $errVerifPasswordUser = "Le mot de passe et le mot de passe de vérification ne sont pas les même !";
 }
 
+if($uVerifPassword == $uPassword){
+    $lengthkey = 12;
+    for($i=1; $i<$lengthkey; $i++){
+        $key .= mt_rand(0,9);
+    }
+}
 if($valid){
-    $req = $bdd->prepare('INSERT INTO utilisateurs(lastName, name, age, email, password) VALUES(:lastName, :name, :age, :email, :password)');
+    $req = $bdd->prepare('INSERT INTO utilisateurs(lastName, name, age, email, password, confirmkey) VALUES(:lastName, :name, :age, :email, :password, :confirmkey)');
     $req->execute(array(
         'lastName' => $uLastName,
         'name' => $uName,
         'age' => $uAge,
         'email' => $uEmail,
-        'password' => $uPassword
+        'password' => $uPassword,
+        'confirmkey' => $key
     ));
-    
+    $header="MIME-Version: 1.0\r\n";
+    $header.="From:'MuscuPlus.com'<support@muscuplus.com>"."\n";
+    $header.="Content-Type:text/html; charset='utf-8'"."\n";
+    $header.="Content-Transfer-Encoding: 8bit";
+    $message='
+    <html>
+        <body>
+            <div align="center">
+                <a href="muscu/confirmation.php?name='. urldecode($uName) .'&key='. $key .'">Confirmez votre compte !</a>
+            </div>
+        </body>
+    </html>
+    ';
+
+    mail($uEmail, "Confirmation du compte", $message, $header);
     header("location:index.php");
 }
 ?>

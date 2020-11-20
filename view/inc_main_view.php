@@ -29,14 +29,18 @@
             
             <section class="flex-main last-training">
                 <h2>Mon dernier entrainement</h2>
-                <p>Aucun entrainement faire pour le moment</p>
-                <i class="fas fa-plus-square"></i>
+                <p class="p2">Aucun entrainement faire pour le moment</p>
+                <i class="fas fa-plus-square create-training"></i>
             </section>
 
             <section class="flex-main activity">
                 <h2>Mes activitées</h2>
-                <p>Aucune activitées crée pour le moment</p>
-                <i class="fas fa-plus-square"></i>
+                <p class="p1">Aucune activitées crée pour le moment</p>
+                <form id="new-activity" method="post">
+                    <input type="text" name="new-activity-name" placeholder="Nom de la nouvelle activée">
+                    <button type="submit" name="btn-new-activity">Créer</button>
+                </form>
+                <i class="fas fa-plus-square btn-create-activity"></i>
             </section>
         </section>
         <footer>
