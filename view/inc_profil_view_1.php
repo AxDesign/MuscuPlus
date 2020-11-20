@@ -24,6 +24,14 @@
             </nav>
         </header>
 
+        <?php
+            if($_SESSION['confirmAccount'] == 0){
+                echo '<section class="no-confirm-account">';
+                echo "<p>Veillez activé votre compte !</p>";
+                echo '</section>';
+            }
+        ?>
+
         <nav class="sidebar">
             <div class="img-profil">
                 <img src="/img/default-user-image.png" alt="default user"/>

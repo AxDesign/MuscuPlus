@@ -7,8 +7,8 @@ if(isset($_POST['connexion'])){
     
     $valid = true;
 
-    $userEmailConnexion = htmlentities((trim($_POST['user_email_connexion'])));
-    $userPasswordConnexion = htmlentities((trim($_POST['user_password_connexion'])));
+    $userEmailConnexion = htmlspecialchars((trim($_POST['user_email_connexion'])));
+    $userPasswordConnexion = htmlspecialchars((trim($_POST['user_password_connexion'])));
 
     $errorEmailUser = '';
     $errorPasswordUser = '';
@@ -31,6 +31,7 @@ if(isset($_POST['connexion'])){
     $_SESSION['age'] = $dataUser['age'];
     $_SESSION['email'] = $dataUser['email'];
     $_SESSION['password'] = $dataUser['password'];
+    $_SESSION['confirmAccount'] = $dataUser['valid'];
 }
 
 require_once("view/inc_connexion_view.php");

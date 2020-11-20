@@ -10,17 +10,14 @@
     </head>
 
     <body id="main">
-        <header>
-            <nav class="left-column">
-                 <h1>Bonjour <?=$_SESSION['name']?></h1>
-            </nav>
-            <nav class="right-column">
-                <a href="index.php" class="btn-logout">Déconnexion</a>
-                <a href="profil.php">
-                    <i class="fas fa-cog"></i>
-                </a>
-            </nav>
-        </header>
+        <?php require_once("view/inc_main_header_view.php"); ?>
+        <?php
+            if($_SESSION['confirmAccount'] == 0){
+                    echo '<section class="no-confirm-account">';
+                    echo "<p>Veillez activé votre compte !</p>";
+                    echo '</section>';
+                }
+            ?>
         <section class="main-container">
             <section class="flex-main statistique">
                 <h2>Mes statistiques</h2>

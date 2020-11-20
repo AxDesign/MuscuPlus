@@ -14,11 +14,13 @@ if(isset($_GET['name'], $_GET['key']) AND !empty($_GET['name'] AND !empty($_GET[
         if($user['valid'] == 0){
            $updateUser = $bdd->prepare("UPDATE utilisateurs SET valid = 1 WHERE name = ? AND confirmkey = ?");
            $updateUser->execute(array($userName, $key));
-           echo "Votre compte a bien étais confirmé";
+           $validAccount = "Votre compte a bien étais confirmé";
         }else{
-            echo "Votre compte a déjà étais confirmé";
+            $reValidAccount = "Votre compte a déjà était confirmé";
         }
     }else{
-        echo "L'utilisateur n'existe pas !";
+        $notValidAccount = "L'utilisateur n'existe pas !";
     }
 }
+
+require_once("view/inc_confirmation_view.php");

@@ -80,21 +80,6 @@ if($valid){
         'password' => $uPassword,
         'confirmkey' => $key
     ));
-    $header="MIME-Version: 1.0\r\n";
-    $header.="From:'MuscuPlus.com'<support@muscuplus.com>"."\n";
-    $header.="Content-Type:text/html; charset='utf-8'"."\n";
-    $header.="Content-Transfer-Encoding: 8bit";
-    $message='
-    <html>
-        <body>
-            <div align="center">
-                <a href="muscu/confirmation.php?name='. urldecode($uName) .'&key='. $key .'">Confirmez votre compte !</a>
-            </div>
-        </body>
-    </html>
-    ';
-
-    mail($uEmail, "Confirmation du compte", $message, $header);
+    require_once("mailConfirmation.php");
     header("location:index.php");
 }
-?>

@@ -20,7 +20,7 @@ if(isset($_SESSION['id'])){
     // $arryToExtract = array("profil_TITLE" => "Paramètres");
     // extract($arryToExtract, EXTR_PREFIX_SAME);
     require_once('view/inc_profil_view_1.php');
-    require_once('view/inc_content_parametres.php');
+    require_once('view/inc_profil_content_parametres_view.php');
     require_once('view/inc_profil_view_2.php');
 }
 
