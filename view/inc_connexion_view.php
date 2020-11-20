@@ -37,7 +37,10 @@
             <button class="btn-submit" type="submit" name="connexion">Se Connecter</button>
 
             <a href="inscription.php">
-                <p>Vous n'êtes pas encore inscrit ?</p>
+                Vous n'êtes pas encore inscrit ?<br />
+            </a>
+            <a href="resetPassword.php">
+                Vous avez perdu votre mot de passe ?
             </a>
         </form>
     </body>

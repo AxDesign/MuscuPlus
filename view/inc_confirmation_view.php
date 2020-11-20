@@ -25,7 +25,7 @@
             }
         ?>
         <div class="back">
-            <a href="/main.php"><i class="fas fa-chevron-left"></i><span>Retour</span></a>
+            <a href="/index.php"><i class="fas fa-chevron-left"></i><span>Retour</span></a>
         </div>
     </body>
 </html>

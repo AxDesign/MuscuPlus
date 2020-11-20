@@ -73,7 +73,7 @@
 
             <button class="btn-submit" type="submit" name="inscription">S'inscrire</button>
             <a href="index.php">
-                <p>Vous êtes déja inscrit ?</p>
+                Vous êtes déja inscrit ?
             </a>
         </form>
     </body>

@@ -10,7 +10,7 @@
         <input type="number" name="newage" placeholder="Age" value="<?= $_SESSION['age'] ?>">
     </div>
     <div class="text-box">
-        <input type="email" name="newemail" placeholder="Email" value="<?= $_SESSION['email'] ?>">
+        <input type="email" name="newemail" placeholder="Email">
     </div>
     <div class="text-box">
         <input type="password" name="newpassword" placeholder="Mot de passe">
@@ -20,7 +20,6 @@
     </div>
     <button class="btn-submit" type="submit" name="modified">Modifier</button>
 </form>
-
 
 
 
