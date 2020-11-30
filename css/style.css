@@ -228,17 +228,17 @@ label #sidebar-btn{
 }
 
 /*--- MAIN ---*/
-#main, #confirmation{
+#main, #confirmation, #activity{
     background-color: #444444;
 }
-#main header{
+#main header, #activity header{
     position: fixed;
     left: 0px;
     background-color: #22242a;
     padding: 20px;
     width: 100%;
 }
-#main header .right-column .fas{
+#main header .right-column .fas, #activity header .right-column .fas{
     color: #fff;
     text-decoration: none;
     float: right;
@@ -257,13 +257,16 @@ label #sidebar-btn{
     color: #fff;
     font-weight: 700;
 }
-.main-container{
-    padding: 75px 0px;
+.main-container, .activity-container{
+    position: relative;
+    top: 75px;
+    height:100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    align-items: flex-start;
+    justify-content: space-between;
 }
-.flex-main{
+.flex-main, .flex-activity{
     box-sizing: border-box;
     text-align: center;
     background-color: rgba(17, 17, 17, 0.75);
@@ -271,25 +274,37 @@ label #sidebar-btn{
     padding: 20px;
     width: 30%;
     min-width: 300px;
-    margin: 15px 0;
 }
-.flex-main h2{
+.flex-main h2, .flex-activity h2{
     padding-bottom: 35px;
     color: #fff;
     font-size: 20px;
     font-weight: 900;
     text-transform: uppercase;
 }
-.flex-main p{
+.flex-main p, .flex-activity p{
     color: rgba(255, 255, 255, 0.75);
     font-size: 13px;
 }
-.activity i, .last-training i{
-    padding-top: 15px;
+.flex-main a{
+    text-decoration: none;
+}
+.statistique, .last-training, .activity, .exercice{
+    height: 100%;
+}
+.btn-create-activity, .btn-create-exercice{
+    padding: 0;
+    margin-top: 15px;
     color: #f1c40fe6;
     font-size: 25px;
+    background: none;
+    overflow: hidden;
+    border: none;
+    outline: none;
     cursor: pointer;
 }
+/*-- MES ACTIVITÉ --*/
+
 #main footer{
     display: none;
 }

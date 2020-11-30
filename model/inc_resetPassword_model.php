@@ -13,7 +13,7 @@ if($valid){
     $req->execute(array($email));
     $req = $req->fetch();
     if($req['email'] == $email){
-        require_once("mailResetPassword.php");
+        require_once("mail/mailResetPassword.php");
         header("location:index.php");
     }
 }

@@ -80,6 +80,6 @@ if($valid){
         'password' => $uPassword,
         'confirmkey' => $key
     ));
-    require_once("mailConfirmation.php");
+    require_once("mail/mailConfirmation.php");
     header("location:index.php");
 }
