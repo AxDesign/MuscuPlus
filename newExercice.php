@@ -1,6 +1,7 @@
 <?php
 require_once('bdd/db.php');
 session_start();
+$activity = $_GET['exercise'];
 
 if(isset($_POST['btn-new-exercice'])){
     $name = $_POST['new-exercice-name'];

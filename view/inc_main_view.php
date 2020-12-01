@@ -39,7 +39,7 @@
 
                     if(isset($activityList)){
                         foreach($activityList as $activity){
-                            echo("<a href='activity.php'><p class='p1'>". $activity['name'] ."</p></a>");
+                            echo("<a href='activity.php?exerciseActivity=" . $activity['name'] . "'><p class='p1'>". $activity['name'] ."</p></a>");
                         }
                     }else{?>
                         <?php echo '<p class="p1">Aucune activitées crée pour le moment</p>'; ?><?php

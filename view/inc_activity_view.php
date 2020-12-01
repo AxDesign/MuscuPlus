@@ -14,8 +14,7 @@
 
         <section class="activity-container">
             <section class="flex-activity exercice">
-                <h2>Mes Exercices</h2>
-
+                <h2>Mes Exercices de <?=$activity?></h2>
                 <?php
                     if(isset($_POST['create-exercice'])){
                         include_once('view/inc_newExercice_view.php');
@@ -29,7 +28,7 @@
                         <p class="p2">Aucun exercice créé pour le moment</p><?php
                     }
                 ?>
-                <form action="newExercice.php" method="post">
+                <form action="newExercice.php?exercise=<?=$activity?>" method="post">
                     <button type="submit" class="btn-create-exercice" name="create-exercice">
                         <i class="fas fa-plus-square create-exercice"></i>
                     </button>
