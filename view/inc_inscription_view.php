@@ -18,8 +18,8 @@
                 <input type="text" placeholder="Nom" name="u_lastName">
             </div>
             <?php 
-                if(isset($errLastNameUser)){
-                    echo "<div>" . $errLastNameUser . "</div>";
+                if(isset($errorUserLastName)){
+                    echo "<div>" . $errorUserLastName . "</div>";
                 }
             ?>
 
@@ -29,8 +29,8 @@
                 <input type="text" placeholder="Prénom" name="u_name">
             </div>
             <?php 
-                if(isset($errNameUser)){
-                    echo "<div>" . $errNameUser . "</div>";
+                if(isset($errorUserName)){
+                    echo "<div>" . $errorUserName . "</div>";
                 }
             ?>
 
@@ -40,8 +40,8 @@
                 <input type="number" placeholder="Age" name="u_age">
             </div>
             <?php 
-                if(isset($errAgeUser)){
-                    echo "<div>" . $errAgeUser . "</div>";
+                if(isset($errorUserAge)){
+                    echo "<div>" . $errorUserAge . "</div>";
                 }
             ?>
             
@@ -51,8 +51,8 @@
                 <input type="email" placeholder="Email" name="u_email">
             </div>
             <?php 
-                if(isset($errEmailUser)){
-                    echo "<div>" . $errEmailUser . "</div>";
+                if(isset($errorUserEmail)){
+                    echo "<div>" . $errorUserEmail . "</div>";
                 }
             ?>
 
@@ -62,8 +62,8 @@
                 <input type="password" placeholder="Mot de passe" name="u_password">
             </div>
             <?php 
-                if(isset($errPasswordUser)){
-                    echo "<div>" . $errPasswordUser . "</div>";
+                if(isset($errorUserPassword)){
+                    echo "<div>" . $errorUserPassword . "</div>";
                 }
             ?>
 
@@ -73,8 +73,8 @@
                 <input type="password" placeholder="Vérification mot de passe" name="u_verifPassword">
             </div>
             <?php 
-                if(isset($errVerifPasswordUser)){
-                    echo "<div>" . $errVerifPasswordUser . "</div>";
+                if(isset($errorUserCheckPassword)){
+                    echo "<div>" . $errorUserCheckPassword . "</div>";
                 }
             ?>
 

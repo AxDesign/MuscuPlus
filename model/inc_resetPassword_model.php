@@ -1,12 +1,12 @@
 <?php
 if(empty($email)){
     $valid = false;
-    $errEmailUser = "Le champ d'email ne peux pas être vide";
+    $errorUserEmail = "Le champ d'email ne peux pas être vide";
 }
 
 if(strlen($email) > 255){
     $valid = false;
-    $errEmailUser = "Le champ d'email est trop long !";
+    $errorUserEmail = "Le champ d'email est trop long !";
 }
 if($valid){
     $req = $bdd->prepare('SELECT * FROM utilisateurs WHERE email = ?');
