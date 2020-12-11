@@ -30,7 +30,7 @@
                             ?>
                             'rgba(<?=$red?>,<?=$green?>,<?=$blue?>, 1)',
                             <?php } ?>
-                        ],
+                        ], //(un  commentaire discret)
                         borderWidth: 1
                     },
                     <?php } ?>
