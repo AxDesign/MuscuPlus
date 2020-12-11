@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/style.css">
         <script src="https://kit.fontawesome.com/cfe9ffe70f.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
     </head>
 
     <body id="main">
@@ -20,8 +21,8 @@
             ?>
         <section class="main-container">
             <section class="flex-main statistique">
-                <h2>Mes statistiques</h2>
-                <p>Aucune données trouvées pour le moment</p>
+                <?php require_once('view/inc_main_statistiques.php'); ?>
+                <!-- <p>Aucune données trouvées pour le moment</p> -->
             </section>
             
             <section class="flex-main last-training">
@@ -38,9 +39,15 @@
                     }
 
                     if(isset($activityList)){
-                        foreach($activityList as $activity){
-                            echo("<a href='activity.php?exerciseActivity=" . $activity['name'] . "'><p class='p1'>". $activity['name'] ."</p></a>");
-                        }
+                        foreach($activityList as $activity){?>
+
+                            <form class="iconeBinActivity" action='deleteActivity.php?nameActivityDelete=<?=$activity['name']?>' method="post">
+                                <a href='activity.php?exerciseActivity=<?=$activity['name']?>'><p><?=$activity['name']?></p></a>
+                                <button type="submit" name="deleteActivity">
+                                    <i class="far fa-trash-alt"></i>
+                                </button>
+                            </form>
+                        <?php }
                     }else{?>
                         <?php echo '<p class="p1">Aucune activitées crée pour le moment</p>'; ?><?php
                     }
@@ -63,5 +70,8 @@
                 </a>
             </nav>
         </footer>
+
+        <?php require_once('view/inc_main_statistiques_script_view.php') ?>
+        <!-- <script type="text/javascript" src="/main_statistiques.js"></script> -->
     </body>
 </html>

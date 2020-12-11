@@ -303,6 +303,22 @@ label #sidebar-btn{
     outline: none;
     cursor: pointer;
 }
+
+.iconeBinActivity button{
+    position: relative;
+    top: -15px;
+    left: 75px;
+    background: none;
+    border: none;
+}
+.iconeBinActivity button i{
+    cursor: pointer;
+    color: #fff;
+    outline: none;
+    
+}
+
+
 /*-- MES ACTIVITÉ --*/
 
 #main footer{

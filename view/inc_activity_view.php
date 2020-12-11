@@ -15,6 +15,7 @@
         <section class="activity-container">
             <section class="flex-activity exercice">
                 <h2>Mes Exercices de <?=$activity?></h2>
+
                 <?php
                     if(isset($_POST['create-exercice'])){
                         include_once('view/inc_newExercice_view.php');
@@ -22,7 +23,7 @@
                     
                     if(isset($exerciceList)){
                         foreach($exerciceList as $exercice){
-                            echo '<p>' . $exercice['name'] . ' ' . $exercice['numberSeries'] . ' ' . $exercice['numberRepetition'] . '</p>';
+                            echo '<p>' . date('D d F H:i:s', $exercice['date']) . " " . $exercice['name'] . ' ' . $exercice['numberSeries'] . ' ' . $exercice['numberRepetition'] . ' ' . $exercice['time'] . '</p>';
                         }
                     }else {?>
                         <p class="p2">Aucun exercice créé pour le moment</p><?php
