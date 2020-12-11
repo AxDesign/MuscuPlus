@@ -31,6 +31,7 @@
                             'rgba(<?=$red?>,<?=$green?>,<?=$blue?>, 1)',
                             <?php } ?>
                         ], //(test de nouvelle branche et ajout d'un texte avant de merge)
+                        //après merge
                         borderWidth: 1
                     },
                     <?php } ?>
