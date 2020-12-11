@@ -7,10 +7,10 @@ $message='
 <html>
     <body>
         <div align="center">
-            <a href="muscu/confirmation.php?name='. urldecode($uName) .'&key='. $key .'">Confirmez votre compte !</a>
+            <a href="muscu/confirmation.php?name='. urldecode($userName) .'&key='. $key .'">Confirmez votre compte !</a>
         </div>
     </body>
 </html>
 ';
 
-mail($uEmail, "Confirmation du compte", $message, $header);
+mail($userEmail, "Confirmation du compte", $message, $header);

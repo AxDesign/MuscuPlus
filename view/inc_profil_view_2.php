@@ -62,15 +62,15 @@
                 </tr>
             <?php
             foreach($allUsers as $dataUser){
-                $uLastName = $dataUser['lastName'];
-                $uName = $dataUser['name'];
-                $uAge = $dataUser['age'];
-                $uEmail = $dataUser['email'];
+                $userLastName = $dataUser['lastName'];
+                $userName = $dataUser['name'];
+                $userAge = $dataUser['age'];
+                $userEmail = $dataUser['email'];
                 ?>  <tr>
-                            <td><?=$uLastName?></td>
-                            <td><?=$uName?></td>
-                            <td><?=$uAge?></td>
-                            <td><?=$uEmail?></td>
+                            <td><?=$userLastName?></td>
+                            <td><?=$userName?></td>
+                            <td><?=$userAge?></td>
+                            <td><?=$userEmail?></td>
                             <td>
                                 <button>test</button>
                             </td>
