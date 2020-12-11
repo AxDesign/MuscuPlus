@@ -8,7 +8,7 @@ if(isset($_POST['inscription'])){
     //Valide si l'utilisateur a remplie toutes les condition d'inscriptions
     $valid = true;
     
-    //Variable utilisateur
+    //Variable utilisateur d'inscription
     $userLastName = htmlspecialchars(trim($_POST['u_lastName']));
     $userName = htmlspecialchars(trim($_POST['u_name']));
     $userAge = htmlspecialchars(trim($_POST['u_age']));
@@ -17,6 +17,7 @@ if(isset($_POST['inscription'])){
     $userCheckPassword = htmlspecialchars(trim($_POST['u_verifPassword']));
     $key = "";
     
+    //Process d'inscription
     CheckUserInscription();
     if($valid){
         CanInscription();

@@ -11,6 +11,7 @@
         <form class="box-connexion" method="post">
             <h1>Connexion</h1>
             
+            <!-- EMAIL -->
             <div class="text-box">
                 <i class="fas fa-user"></i>
                 <input type="email" placeholder="Email" name="user_email_connexion">
@@ -21,6 +22,7 @@
                 }
             ?>
 
+            <!-- PASSWORD -->
             <div class="text-box">
                 <i class="fas fa-lock"></i>
                 <input type="password" placeholder="Mot de Passe" name="user_password_connexion">
@@ -34,6 +36,7 @@
                 }
             ?>
 
+            <!-- SUBMIT BUTTON -->
             <button class="btn-submit" type="submit" name="connexion">Se Connecter</button>
 
             <a href="inscription.php">
