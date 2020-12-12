@@ -33,3 +33,15 @@ function DisplayActivity(){
         $activityList[] = $activity;
     }
 }
+
+function CalculateTimeOfActivity(){
+    global $bdd,
+            $lundi;
+
+    $reqDate = $bdd->prepare('SELECT * FROM `exercices` WHERE date_creation = ?');
+    $reqDate->execute(array('2020-12-07'));
+
+    while($donneeActivity = $reqDate->fetch()){
+        $lundi = $donneeActivity['time'];
+    }
+}

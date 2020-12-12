@@ -13,7 +13,7 @@
                     
                     {
                         label: '<?=$courbe['name']?>',
-                        data: [12, 19, 3, 5, 2, 3],
+                        data: [<?=$lundi?>, <?=$mardi?>, <?=$mercredi?>, <?=$jeudi?>, <?=$vendredi?>, <?=$samedi?>, <?=$dimanche?>],
                         backgroundColor: [
                             <?php
                             for($i=0;$i<=7;$i++){

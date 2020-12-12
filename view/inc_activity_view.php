@@ -23,7 +23,7 @@
                         foreach($exerciceList as $exercice){ ?>
                             <!-- ICONE DE SUPPRESSION DES EXERCICE -->
                             <form class="iconeTrashExercice" action='deleteExercice.php?nameActivity=<?=$activity?>&nameExerciceDelete=<?=$exercice['name']?>' method="post">
-                                <p><?=date('D d F H:i:s', $exercice['date'])?> <?=$exercice['name']?> <?=$exercice['numberSeries']?> <?=$exercice['numberRepetition']?> <?=$exercice['time']?></p>
+                                <p><?=$exercice['name']?> <?=$exercice['numberSeries']?> <?=$exercice['numberRepetition']?> <?=$exercice['time']?></p>
                                 
                                 <button type="submit" name="deleteExercice">
                                     <i class="far fa-trash-alt"></i>

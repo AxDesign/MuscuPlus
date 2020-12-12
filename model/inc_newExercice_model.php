@@ -8,10 +8,9 @@ function SendExercice(){
             $time;
 
     if(isset($_POST['btn-new-exercice'])){
-        $req = $bdd->prepare('INSERT INTO exercices(id_user, date_creation, activity, name, numberSeries, numberRepetition, time) VALUES(:idUser, :date, :activity, :name, :numberSeries, :numberRepetition, :time)');
+        $req = $bdd->prepare('INSERT INTO exercices(id_user, activity, name, numberSeries, numberRepetition, time) VALUES(:idUser, :activity, :name, :numberSeries, :numberRepetition, :time)');
         $req->execute(array(
             'idUser' => $_SESSION['id'],
-            'date' => time(),
             'activity' => $activity,
             'name' => $name,
             'numberSeries' => $numberSeries,
@@ -22,7 +21,6 @@ function SendExercice(){
 }
 
 function DisplayExercices(){
-
     global $bdd,
             $activity,
             $exerciceList;
