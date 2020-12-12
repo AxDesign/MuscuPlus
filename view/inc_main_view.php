@@ -27,15 +27,22 @@
 
             <!-- STATISTIQUES -->
             <section class="flex-main statistique">
-                <?php require_once('view/inc_main_statistiques.php'); ?>
-                <!-- <p>Aucune données trouvées pour le moment</p> -->
+                <h2>Mes statistiques</h2>
+            <?php
+                if(isset($activityList)){
+                     require_once('view/inc_main_statistiques.php');
+                } else { ?>
+                <p>Aucune données trouvées pour le moment</p>
+                <?php } ?>
             </section>
             
+            <!-- LAST TRAINING -->
             <section class="flex-main last-training">
                 <h2>Mon dernier entrainement</h2>
                 <p class="p2">Aucun entrainement faire pour le moment</p>
             </section>
 
+            <!-- ACTIVITY -->
             <section class="flex-main activity">
                 <h2>Mes activitées</h2>
 
