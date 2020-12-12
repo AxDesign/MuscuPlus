@@ -21,7 +21,14 @@
                     //Afficher les exercice depuis la base de données
                     if(isset($exerciceList)){
                         foreach($exerciceList as $exercice){ ?>
-                            <p><?=date('D d F H:i:s', $exercice['date'])?> <?=$exercice['name']?> <?=$exercice['numberSeries']?> <?=$exercice['numberRepetition']?> <?=$exercice['time']?></p>
+                            <!-- ICONE DE SUPPRESSION DES EXERCICE -->
+                            <form class="iconeTrashExercice" action='deleteExercice.php?nameActivity=<?=$activity?>&nameExerciceDelete=<?=$exercice['name']?>' method="post">
+                                <p><?=date('D d F H:i:s', $exercice['date'])?> <?=$exercice['name']?> <?=$exercice['numberSeries']?> <?=$exercice['numberRepetition']?> <?=$exercice['time']?></p>
+                                
+                                <button type="submit" name="deleteExercice">
+                                    <i class="far fa-trash-alt"></i>
+                                </button>
+                            </form>
                             <?php }
                     }else {?>
                         <p class="p2">Aucun exercice créé pour le moment</p>

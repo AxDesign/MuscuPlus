@@ -318,6 +318,20 @@ label #sidebar-btn{
     
 }
 
+.iconeTrashExercice button{
+    position: relative;
+    top: -15px;
+    left: 150px;
+    background: none;
+    border: none;
+}
+.iconeTrashExercice button i{
+    cursor: pointer;
+    color: #fff;
+    outline: none;
+    
+}
+
 
 /*-- MES ACTIVITÉ --*/
 

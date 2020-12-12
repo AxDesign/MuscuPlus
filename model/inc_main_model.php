@@ -7,3 +7,4 @@ while($donneeActivity = $reqStatActivity->fetch()){
     $activity['name'] = $donneeActivity['activityname'];
     $statActivityList[] = $activity;
 }
+//comm
