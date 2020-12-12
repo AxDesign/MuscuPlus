@@ -30,9 +30,12 @@
                                 </button>
                             </form>
                             <?php }
-                    }else {?>
+                    }
+                    if(isset($exerciceList) || isset($_POST['create-exercice'])) {
+                        //Si un exercice existe ou que le bouton de création d'exercice à étais appuyé, ne rien afficher
+                    } else{ ?>
                         <p class="p2">Aucun exercice créé pour le moment</p>
-                        <?php }
+                    <?php }
                         
                     //Créer un nouvel exercice
                     if(isset($_POST['create-exercice'])){

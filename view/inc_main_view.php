@@ -64,9 +64,9 @@
                             </form>
                         <?php }
                     }
-                    if(isset($activityList) || isset($_POST['create-activity-name'])){?>
-                        <!-- si une activité existe ou que le bouton de création d'activité à étais appuyé, ne rien afficher -->
-                        <?php } else {?>
+                    if(isset($activityList) || isset($_POST['create-activity-name'])){
+                        //Si une activité existe ou que le bouton de création d'activité à étais appuyé, ne rien afficher
+                        } else {?>
                             <p class="p1">Aucune activitées crée pour le moment</p>
                     <?php } ?>
 
