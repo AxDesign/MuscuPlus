@@ -7,7 +7,7 @@
         datasets: [
 
                     <?php
-                    foreach($statActivityList as $courbe){
+                    foreach($activityList as $courbe){
                         
                     ?>
                     
@@ -18,7 +18,7 @@
                             <?php
                             for($i=0;$i<=7;$i++){
                             ?>
-                            'rgba(215,3,148, 0.2)',
+                            'rgba(<?=$courbe['colorRed']?>,<?=$courbe['colorGreen']?>,<?=$courbe['colorBlue']?>, 0.2)',
                             <?php } ?>
                         ],
                         borderColor: [
@@ -26,7 +26,7 @@
                             global $red;
                             for($i=0;$i<=7;$i++){
                             ?>
-                            'rgba(215,3,148, 1)',
+                            'rgba(<?=$courbe['colorRed']?>,<?=$courbe['colorGreen']?>,<?=$courbe['colorBlue']?>, 1)',
                             <?php } ?>
                         ],
                         borderWidth: 1
