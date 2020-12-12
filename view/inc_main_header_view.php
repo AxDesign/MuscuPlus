@@ -1,3 +1,4 @@
+<!-- HEADER -->
 <header>
     <nav class="left-column">
         <h1>Bonjour <?=$_SESSION['name']?></h1>

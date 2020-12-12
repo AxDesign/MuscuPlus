@@ -11,15 +11,21 @@
     </head>
 
     <body id="main">
+        <!-- HEADER -->
         <?php require_once("view/inc_main_header_view.php"); ?>
+
+        <!-- BANDEAU SI UTILISATEUR NON COMFIRMÉ -->
         <?php
-            if($_SESSION['confirmAccount'] == 0){
-                    echo '<section class="no-confirm-account">';
-                    echo "<p>Veillez activé votre compte !</p>";
-                    echo '</section>';
-                }
-            ?>
+            if($_SESSION['confirmAccount'] == 0){ ?>
+                <section class="no-confirm-account">
+                    <p>Veillez activé votre compte !</p>
+                </section>
+            <?php } ?>
+
+        <!-- MAIN -->
         <section class="main-container">
+
+            <!-- STATISTIQUES -->
             <section class="flex-main statistique">
                 <?php require_once('view/inc_main_statistiques.php'); ?>
                 <!-- <p>Aucune données trouvées pour le moment</p> -->

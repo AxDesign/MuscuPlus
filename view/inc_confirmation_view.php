@@ -11,19 +11,15 @@
 
     <body id="confirmation">
         <?php
-            if(isset($validAccount)){
-                echo "<p class='validAccount'>" . $validAccount . "</p>";
-    
-            }
-            if(isset($reValidAccount)){
-                echo "<p class='validAccount'>" . $reValidAccount . "</p>";
-    
-            }
-            if(isset($notValidAccount)){
-                echo "<p class='notValidAccount'>" . $notValidAccount . "</p>";
-    
-            }
-        ?>
+            if(isset($validAccount)){?>
+                <p class='validAccount'><?=$validAccount?></p>
+            <?php }
+            if(isset($reValidAccount)){ ?>
+                <p class='validAccount'><?=$reValidAccount?></p>
+            <?php }
+            if(isset($notValidAccount)){ ?>
+                <p class='notValidAccount'><?=$notValidAccount?></p>
+            <?php } ?>
         <div class="back">
             <a href="/index.php"><i class="fas fa-chevron-left"></i><span>Retour</span></a>
         </div>
