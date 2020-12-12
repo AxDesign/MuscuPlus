@@ -63,8 +63,11 @@
                                 </button>
                             </form>
                         <?php }
-                    }else{?>
-                        <p class="p1">Aucune activitées crée pour le moment</p>
+                    }
+                    if(isset($activityList) || isset($_POST['create-activity-name'])){?>
+                        <!-- si une activité existe ou que le bouton de création d'activité à étais appuyé, ne rien afficher -->
+                        <?php } else {?>
+                            <p class="p1">Aucune activitées crée pour le moment</p>
                     <?php } ?>
 
                 <form action="newActivityName.php" method="post">
