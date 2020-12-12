@@ -304,14 +304,14 @@ label #sidebar-btn{
     cursor: pointer;
 }
 
-.iconeBinActivity button{
+.iconeTrashActivity button{
     position: relative;
     top: -15px;
     left: 75px;
     background: none;
     border: none;
 }
-.iconeBinActivity button i{
+.iconeTrashActivity button i{
     cursor: pointer;
     color: #fff;
     outline: none;

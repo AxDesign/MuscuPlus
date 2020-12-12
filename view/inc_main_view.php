@@ -53,18 +53,19 @@
 
                     if(isset($activityList)){
                         foreach($activityList as $activity){?>
-
-                            <form class="iconeBinActivity" action='deleteActivity.php?nameActivityDelete=<?=$activity['name']?>' method="post">
-                                <a href='activity.php?exerciseActivity=<?=$activity['name']?>'><p><?=$activity['name']?></p></a>
+                            <!-- ICONE DE SUPPRESSION DES ACTIVITÉES -->
+                            <form class="iconeTrashActivity" action='deleteActivity.php?nameActivityDelete=<?=$activity['name']?>' method="post">
+                                <a href='activity.php?exerciseActivity=<?=$activity['name']?>'>
+                                    <p><?=$activity['name']?></p>
+                                </a>
                                 <button type="submit" name="deleteActivity">
                                     <i class="far fa-trash-alt"></i>
                                 </button>
                             </form>
                         <?php }
                     }else{?>
-                        <?php echo '<p class="p1">Aucune activitées crée pour le moment</p>'; ?><?php
-                    }
-                ?>
+                        <p class="p1">Aucune activitées crée pour le moment</p>
+                    <?php } ?>
 
                 <form action="newActivityName.php" method="post">
                     <button type="submit" class="btn-create-activity" name="create-activity-name">
