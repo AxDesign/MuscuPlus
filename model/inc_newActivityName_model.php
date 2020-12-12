@@ -1,16 +1,32 @@
 <?php
-if(isset($_POST['btn-new-activity'])){
-    $req = $bdd->prepare('INSERT INTO activity(id_user, activityname) VALUES(:idUser, :activityname)');
+function NewActivity(){
+    global $bdd,
+            $newActivityName,
+            $red,
+            $green,
+            $blue;
+
+    $req = $bdd->prepare('INSERT INTO activity(id_user, activityname, red, green, blue) VALUES(:idUser, :activityname, :red, :green, :blue)');
     $req->execute(array(
         'idUser' => $_SESSION['id'],
-        'activityname' => $newActivityName
+        'activityname' => $newActivityName,
+        'red' => $red,
+        'green' => $green,
+        'blue' => $blue
     ));
 }
-$reqActivity = $bdd->prepare('SELECT * FROM activity WHERE id_user = :idUser');
-$reqActivity->execute(array(
-    'idUser' => $_SESSION['id']
-));
-while($donneeActivity = $reqActivity->fetch()){
-    $activity['name'] = $donneeActivity['activityname'];
-    $activityList[] = $activity;
+
+function DisplayActivity(){
+    global $bdd,
+            $activityList;
+
+    $reqActivity = $bdd->prepare('SELECT * FROM activity WHERE id_user = :idUser');
+    $reqActivity->execute(array(
+        'idUser' => $_SESSION['id']
+    ));
+
+    while($donneeActivity = $reqActivity->fetch()){
+        $activity['name'] = $donneeActivity['activityname'];
+        $activityList[] = $activity;
+    }
 }
