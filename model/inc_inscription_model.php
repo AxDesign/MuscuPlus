@@ -99,7 +99,7 @@ function CanInscription(){
             $userCheckPassword,
             $key;
 
-    $req = $bdd->prepare('INSERT INTO utilisateurs(lastName, name, age, email, password, confirmkey) VALUES(:lastName, :name, :age, :email, :password, :confirmkey)');
+    $req = $bdd->prepare('INSERT INTO users(lastName, name, age, email, password, confirmkey) VALUES(:lastName, :name, :age, :email, :password, :confirmkey)');
     $req->execute(array(
         'lastName' => $userLastName,
         'name' => $userName,

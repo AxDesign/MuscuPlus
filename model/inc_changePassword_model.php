@@ -13,7 +13,7 @@ if($verifPassword != $newPassword){
 }
 
 if($valid){
-    $insertNewPassword = $bdd->prepare("UPDATE utilisateurs SET password=? WHERE email=?");
+    $insertNewPassword = $bdd->prepare("UPDATE users SET password=? WHERE email=?");
     $insertNewPassword->execute(array($newPassword, $email));
     header("location:index.php");
 }

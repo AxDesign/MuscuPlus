@@ -7,7 +7,7 @@ $message='
 <html>
     <body>
         <div align="center">
-            <a href="muscu/confirmation.php?name='. urldecode($userName) .'&key='. $key .'">Confirmez votre compte !</a>
+            <a href="muscuplus/confirmation.php?name='. urldecode($userName) .'&key='. $key .'">Confirmez votre compte !</a>
         </div>
     </body>
 </html>

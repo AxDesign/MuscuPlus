@@ -7,7 +7,7 @@ $message='
 <html>
     <body>
         <div align="center">
-            <a href="muscu/changePassword.php?email='. urldecode($email) .'">Réinitialisez votre mot de passe</a>
+            <a href="muscuplus/changePassword.php?email='. urldecode($email) .'">Réinitialisez votre mot de passe</a>
         </div>
     </body>
 </html>

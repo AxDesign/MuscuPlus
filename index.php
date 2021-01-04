@@ -20,7 +20,7 @@ if(isset($_POST['connexion'])){
     }
 
     //On récupère toutes les données utilisateurs nécéssaire pour la session !
-    $requestDataUser = $bdd->prepare('SELECT * FROM utilisateurs WHERE email = ?');
+    $requestDataUser = $bdd->prepare('SELECT * FROM users WHERE email = ?');
     $requestDataUser->execute(array($_POST["user_email_connexion"]));
     $userData = $requestDataUser->fetch();
     $_SESSION['id'] = $userData['id'];

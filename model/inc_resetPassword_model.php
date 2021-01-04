@@ -9,7 +9,7 @@ if(strlen($email) > 255){
     $errorUserEmail = "Le champ d'email est trop long !";
 }
 if($valid){
-    $req = $bdd->prepare('SELECT * FROM utilisateurs WHERE email = ?');
+    $req = $bdd->prepare('SELECT * FROM users WHERE email = ?');
     $req->execute(array($email));
     $req = $req->fetch();
     if($req['email'] == $email){

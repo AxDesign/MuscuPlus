@@ -1,5 +1,5 @@
 <?php
-// $req = $bdd->prepare('SELECT * FROM utilisateurs');
+// $req = $bdd->prepare('SELECT * FROM users');
 // $req->execute();
 
 // $allUsers;
@@ -8,7 +8,7 @@
 // }
 
 if(isset($_POST['modified'])){
-    $requser = $bdd->prepare('SELECT * FROM utilisateurs WHERE id=?');
+    $requser = $bdd->prepare('SELECT * FROM users WHERE id=?');
     $requser->execute(array($_SESSION['id']));
     $user = $requser->fetch();   
     
@@ -17,7 +17,7 @@ if(isset($_POST['modified'])){
         if(strlen($newName) > 30){
             $errorUserName = "Le champ de nom est trop long !";
         }else{
-            $insertname = $bdd->prepare("UPDATE utilisateurs SET name=? WHERE id=?");
+            $insertname = $bdd->prepare("UPDATE users SET name=? WHERE id=?");
             $insertname->execute(array($newName, $_SESSION['id']));
             $_SESSION['name'] = $newName;
         }
@@ -27,7 +27,7 @@ if(isset($_POST['modified'])){
         if(strlen($newLastName) > 30){
             $errorUserLastName = "Le champ de nom est trop long !";
         }else{
-            $insertlastname = $bdd->prepare("UPDATE utilisateurs SET lastName=? WHERE id=?");
+            $insertlastname = $bdd->prepare("UPDATE users SET lastName=? WHERE id=?");
             $insertlastname->execute(array($newLastName, $_SESSION['id']));
             $_SESSION['lastname'] = $newLastName;
         }
@@ -37,7 +37,7 @@ if(isset($_POST['modified'])){
         if($newAge > 100 || $newAge < 5){
             $errorUserAge = "Votre age est incorrect";
         }else{
-            $insertage = $bdd->prepare("UPDATE utilisateurs SET age=? WHERE id=?");
+            $insertage = $bdd->prepare("UPDATE users SET age=? WHERE id=?");
             $insertage->execute(array($newAge, $_SESSION['id']));
             $_SESSION['age'] = $newAge;
         }
@@ -47,7 +47,7 @@ if(isset($_POST['modified'])){
         if(strlen($newEmail) > 255){
             $errorUserEmail = "Le champ d'email est trop long !";
         }else{
-            $insertemail = $bdd->prepare("UPDATE utilisateurs SET email=? WHERE id=?");
+            $insertemail = $bdd->prepare("UPDATE users SET email=? WHERE id=?");
             $insertemail->execute(array($newEmail, $_SESSION['id']));
             $_SESSION['email'] = $newEmail;
         }
@@ -64,7 +64,7 @@ if(isset($_POST['modified'])){
             $errorUserCheckPassword = "Le mot de passe et le mot de passe de vérification ne sont pas les même !";
         }
         else{
-            $insertpassword = $bdd->prepare("UPDATE utilisateurs SET password=? WHERE id=?");
+            $insertpassword = $bdd->prepare("UPDATE users SET password=? WHERE id=?");
             $insertpassword->execute(array($newPassword, $_SESSION['id']));
             $_SESSION['password'] = $newPassword;
         }

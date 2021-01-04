@@ -29,7 +29,7 @@ function VerificationUserConnexion(){
     }
     
     //On test la connexion
-    $requestConnexion =  $bdd->prepare('SELECT * FROM utilisateurs WHERE email = ? AND password = ?');
+    $requestConnexion =  $bdd->prepare('SELECT * FROM users WHERE email = ? AND password = ?');
     $requestConnexion->execute(array($userEmailConnexion, $userPasswordConnexion));
     $requestConnexion = $requestConnexion->fetch();
     if($requestConnexion['id'] == ""){
