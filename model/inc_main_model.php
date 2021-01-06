@@ -30,6 +30,7 @@ function DisplayActivity(){
         $activity['colorRed'] = $donneeActivity['red'];
         $activity['colorGreen'] = $donneeActivity['green'];
         $activity['colorBlue'] = $donneeActivity['blue'];
+        $activity['id'] = $donneeActivity['id'];
         $activityList[] = $activity;
     }
 }
