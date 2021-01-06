@@ -15,7 +15,13 @@
         <section class="activity-container">
             <section class="flex-activity exercice">
                 <h2>Mes Exercices de <?=$activity?></h2>
-
+                    <table>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Nombres de Séries</th>
+                            <th>Nombres de Répétition</th>
+                            <th>Temps</th>
+                        </tr>
                 <?php
                     
                     //Afficher les exercice depuis la base de données
@@ -23,14 +29,22 @@
                         foreach($exerciceList as $exercice){ ?>
                             <!-- ICONE DE SUPPRESSION DES EXERCICE -->
                             <form class="iconeTrashExercice" action='deleteExercice.php?nameActivity=<?=$activity?>&nameExerciceDelete=<?=$exercice['name']?>' method="post">
-                                <p><?=$exercice['name']?> <?=$exercice['numberSeries']?> <?=$exercice['numberRepetition']?> <?=$exercice['time']?></p>
-                                
-                                <button type="submit" name="deleteExercice">
-                                    <i class="far fa-trash-alt"></i>
-                                </button>
-                            </form>
-                            <?php }
-                    }
+                                    <tr>
+                                        <td><?=$exercice['name']?></td>
+                                        <td><?=$exercice['numberSeries']?></td>
+                                        <td><?=$exercice['numberRepetition']?></td>
+                                        <td><?=$exercice['time']?></td>
+                                        <td class='btn-suppr'>
+                                            <button type="submit" name="deleteExercice">
+                                                <i class="far fa-trash-alt"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </form>
+                                <?php }
+                    } ?>
+                    </table>
+                    <?php
                     if(isset($exerciceList) || isset($_POST['create-exercice'])) {
                         //Si un exercice existe ou que le bouton de création d'exercice à étais appuyé, ne rien afficher
                     } else{ ?>

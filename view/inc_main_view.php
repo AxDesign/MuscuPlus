@@ -39,7 +39,23 @@
             <!-- LAST TRAINING -->
             <section class="flex-main last-training">
                 <h2>Mon dernier entrainement</h2>
-                <p class="p2">Aucun entrainement faire pour le moment</p>
+                <table>
+                    <tr>
+                        <th>Activité</th>
+                        <th>Nom</th>
+                        <th>Nombres de Séries</th>
+                        <th>Nombres de Répétitions</th>
+                        <th>Temps</th>
+                    </tr>
+                    <tr>
+                        <td><?=$donneeLastTraining['activity']?></td>
+                        <td><?=$donneeLastTraining['name']?></td>
+                        <td><?=$donneeLastTraining['numberSeries']?></td>
+                        <td><?=$donneeLastTraining['numberRepetition']?></td>
+                        <td><?=$donneeLastTraining['time']?></td>
+                    </tr>
+                </table>
+                <!-- <p class="p2">Aucun entrainement faire pour le moment</p> -->
             </section>
 
             <!-- ACTIVITY -->

@@ -317,15 +317,11 @@ label #sidebar-btn{
     outline: none;
     
 }
-
-.iconeTrashExercice button{
-    position: relative;
-    top: -15px;
-    left: 150px;
+.btn-suppr button{
     background: none;
     border: none;
 }
-.iconeTrashExercice button i{
+.btn-suppr button i{
     cursor: pointer;
     color: #fff;
     outline: none;
@@ -374,6 +370,22 @@ label #sidebar-btn{
         margin-right: 0px;
         font-size: 25px;
     }
+}
+
+/*-- LAST TRAINING --*/
+table{
+    margin: auto;
+    color: #fff;
+}
+table th{
+    background-color: rgba(241, 196, 14, 0.8);
+}
+table td, table th{
+    border: rgba(255, 255, 255, 0.75) solid 1px;
+    padding: 5px;
+}
+table .btn-suppr{
+    border: none;
 }
 
 /*--- CONFIRMATION PAGE ---*/

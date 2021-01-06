@@ -45,3 +45,14 @@ function CalculateTimeOfActivity(){
         $lundi = $donneeActivity['time'];
     }
 }
+
+function LastTraining(){
+    global $bdd,
+            $donneeLastTraining;
+
+    $reqLastTraining = $bdd->prepare('SELECT * FROM exercices WHERE id_user = ? ORDER BY id_exo DESC LIMIT 1');
+    $reqLastTraining->execute(array($_SESSION['id']));
+
+    $donneeLastTraining = $reqLastTraining->fetch();
+
+}

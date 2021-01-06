@@ -22,4 +22,8 @@ $dimanche = 10;
 
 CalculateTimeOfActivity();
 
+/*--- LAST TRAINING ---*/
+$donneeLastTraining;
+LastTraining();
+
 require_once('view/inc_main_view.php');
