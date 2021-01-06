@@ -28,7 +28,7 @@
                     if(isset($exerciceList)){
                         foreach($exerciceList as $exercice){ ?>
                             <!-- ICONE DE SUPPRESSION DES EXERCICE -->
-                            <form class="iconeTrashExercice" action='deleteExercice.php?nameActivity=<?=$activity?>&nameExerciceDelete=<?=$exercice['name']?>' method="post">
+                            <form class="iconeTrashExercice" action='deleteExercice.php?nameActivity=<?=$activity?>&nameExerciceDelete=<?=$exercice['name']?>&idExerciceDelete=<?=$exercice['id_exo']?>' method="post">
                                     <tr>
                                         <td><?=$exercice['name']?></td>
                                         <td><?=$exercice['numberSeries']?></td>

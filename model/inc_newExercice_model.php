@@ -36,6 +36,7 @@ function DisplayExercices(){
         $exercice['numberSeries'] = $donneeExercice['numberSeries'];
         $exercice['numberRepetition'] = $donneeExercice['numberRepetition'];
         $exercice['time'] = $donneeExercice['time'];
+        $exercice['id_exo'] = $donneeExercice['id_exo'];
         $exerciceList[] = $exercice;
     }
 }
