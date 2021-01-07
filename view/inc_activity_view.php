@@ -15,6 +15,8 @@
         <section class="activity-container">
             <section class="flex-activity exercice">
                 <h2>Mes Exercices de <?=$activity?></h2>
+                <?php
+                if(isset($exerciceList)){ ?>
                     <table>
                         <tr>
                             <th>Nom</th>
@@ -22,6 +24,7 @@
                             <th>Nombres de Répétition</th>
                             <th>Temps</th>
                         </tr>
+                <?php } ?>
                 <?php
                     
                     //Afficher les exercice depuis la base de données
