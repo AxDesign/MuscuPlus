@@ -39,6 +39,9 @@
             <!-- LAST TRAINING -->
             <section class="flex-main last-training">
                 <h2>Mon dernier entrainement</h2>
+                <?php
+                if(isset($donneeLastTraining) && $donneeLastTraining != ""){
+                ?>
                 <table>
                     <tr>
                         <th>Activité</th>
@@ -55,7 +58,11 @@
                         <td><?=$donneeLastTraining['time']?></td>
                     </tr>
                 </table>
-                <!-- <p class="p2">Aucun entrainement faire pour le moment</p> -->
+                <?php }
+                else {
+                    ?>
+                <p class="p2">Aucun entrainement faire pour le moment</p>
+                <?php } ?>
             </section>
 
             <!-- ACTIVITY -->
