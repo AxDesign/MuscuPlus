@@ -8,4 +8,10 @@ if(isset($_POST['deleteActivity'])){
         'activity' => $activityDelete,
         'idActivity' => $idActivityDelete
     ));
+
+    $req = $bdd->prepare('DELETE FROM exercices WHERE id_user = :userId AND activity = :idActivity');
+    $req->execute(array(
+        'userId' => $_SESSION['id'],
+        'idActivity' => $idActivityDelete
+    ));
 }
