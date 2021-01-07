@@ -78,7 +78,7 @@
                         foreach($activityList as $activity){?>
                             <!-- ICONE DE SUPPRESSION DES ACTIVITÉES -->
                             <form class="iconeTrashActivity" action='deleteActivity.php?nameActivityDelete=<?=$activity['name']?>&idActivityDelete=<?=$activity['id']?>' method="post">
-                                <a href='activity.php?exerciseActivity=<?=$activity['id']?>'>
+                                <a href='activity.php?exerciseActivity=<?=$activity['name']?>'>
                                     <p><?=$activity['name']?></p>
                                 </a>
                                 <button type="submit" name="deleteActivity">
