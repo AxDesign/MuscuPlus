@@ -42,13 +42,13 @@ function CalculateTimeOfActivity(){
 
             foreach($activityList as $activity){
                 $semaine[$activity['name']] = [];
-                $semaine[$activity['name']]['dimanche'] = 0;
-                $semaine[$activity['name']]['lundi'] = 0;
-                $semaine[$activity['name']]['mardi'] = 0;
-                $semaine[$activity['name']]['mercredi'] = 0;
-                $semaine[$activity['name']]['jeudi'] = 0;
-                $semaine[$activity['name']]['vendredi'] = 0;
-                $semaine[$activity['name']]['samedi'] = 0;
+                $semaine[$activity['name']][0] = 0;
+                $semaine[$activity['name']][1] = 0;
+                $semaine[$activity['name']][2] = 0;
+                $semaine[$activity['name']][3] = 0;
+                $semaine[$activity['name']][4] = 0;
+                $semaine[$activity['name']][5] = 0;
+                $semaine[$activity['name']][6] = 0;
             }
 
     $reqDate = $bdd->prepare('SELECT activity, UNIX_TIMESTAMP(date_creation) as "date_crea", time FROM `exercices` WHERE date_creation > ? ');
@@ -57,29 +57,7 @@ function CalculateTimeOfActivity(){
     while($donneeActivity = $reqDate->fetch()){
         $temp = getdate($donneeActivity['date_crea']);
         
-        switch($temp['wday']){
-            case 0:
-                    $semaine[$donneeActivity['activity']]['dimanche'] += $donneeActivity['time'];
-                break;
-            case 1:
-                    $semaine[$donneeActivity['activity']]['lundi'] += $donneeActivity['time'];
-                break;
-            case 2:
-                    $semaine[$donneeActivity['activity']]['mardi'] += $donneeActivity['time'];
-                break;
-            case 3:
-                    $semaine[$donneeActivity['activity']]['mercredi'] += $donneeActivity['time'];
-                break;
-            case 4:
-                    $semaine[$donneeActivity['activity']]['jeudi'] += $donneeActivity['time'];
-                break;
-            case 5:
-                    $semaine[$donneeActivity['activity']]['vendredi'] += $donneeActivity['time'];
-                break;
-            case 6:
-                    $semaine[$donneeActivity['activity']]['samedi'] += $donneeActivity['time'];
-                break;
-        }
+        $semaine[$donneeActivity['activity']][$temp['wday']] += $donneeActivity['time'];
     }
 }
 
