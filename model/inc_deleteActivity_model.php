@@ -15,3 +15,5 @@ if(isset($_POST['deleteActivity'])){
         'idActivity' => $idActivityDelete
     ));
 }
+
+//message
