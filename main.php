@@ -12,14 +12,7 @@ if(isset($_POST['btn-new-activity'])){
 $activityList;
 DisplayActivity();
 
-$lundi;
-$mardi = 1;
-$mercredi = 2;
-$jeudi = 5;
-$vendredi = 20;
-$samedi = 15;
-$dimanche = 10;
-
+$semaine = [];
 CalculateTimeOfActivity();
 
 /*--- LAST TRAINING ---*/

@@ -13,7 +13,7 @@
                     
                     {
                         label: '<?=$courbe['name']?>',
-                        data: [<?=$lundi?>, <?=$mardi?>, <?=$mercredi?>, <?=$jeudi?>, <?=$vendredi?>, <?=$samedi?>, <?=$dimanche?>],
+                        data: [<?=$semaine[$courbe['name']]['lundi']?>, <?=$semaine[$courbe['name']]['mardi']?>, <?=$semaine[$courbe['name']]['mercredi']?>, <?=$semaine[$courbe['name']]['jeudi']?>, <?=$semaine[$courbe['name']]['vendredi']?>, <?=$semaine[$courbe['name']]['samedi']?>, <?=$semaine[$courbe['name']]['dimanche']?>],
                         backgroundColor: [
                             <?php
                             for($i=0;$i<=7;$i++){
