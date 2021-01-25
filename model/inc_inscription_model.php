@@ -90,7 +90,6 @@ function CheckUserInscription(){
 }
 
 function CanInscription(){
-    echo 'ICI !';
     global $bdd,
             $userLastName,
             $userName,
@@ -109,6 +108,6 @@ function CanInscription(){
         'password' => $userPassword,
         'confirmkey' => $key
     ));
-    // require_once("mail/mailConfirmation.php");
+    require_once("mail/mailConfirmation.php");
     header("location:index.php");
 }

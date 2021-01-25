@@ -20,7 +20,6 @@ if(isset($_POST['inscription'])){
     //Process d'inscription
     CheckUserInscription();
     if($valid){
-        echo 'OUI';
         CanInscription();
     }
 }
