@@ -109,14 +109,6 @@ function CanInscription(){
         'password' => $userPassword,
         'confirmkey' => $key
     ));
-
-    print_r($userLastName .
-    $userName .
-    $userAge .
-    $userEmail .
-    $userPassword .
-    $userCheckPassword .
-    $key);
     // require_once("mail/mailConfirmation.php");
-    // header("location:index.php");
+    header("location:index.php");
 }
