@@ -9,6 +9,7 @@ function DisplayActivity(){
     ));
 
     while($donneeActivity = $reqActivity->fetch()){
+        $activity['id_activity'] = $donneeActivity['id_activity'];
         $activity['name'] = $donneeActivity['name'];
         $activityList[] = $activity;
     }

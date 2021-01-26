@@ -1,11 +1,11 @@
-var activity_popup = document.getElementsByClassName("pop-up_activity"); //Pop-Up de création d'Activitées
+var popup = document.getElementsByClassName("pop-up"); //Pop-Up
 
-/*-- Afficher Pop-Up de création d'Activitées --*/
-function DisplayActivityPopUp() {
-    activity_popup[0].classList.add("display_pop-up_activity");
+/*-- Afficher Pop-Up --*/
+function DisplayPopUp() {
+    popup[0].classList.add("display_pop-up");
 }
 
-/*-- Fermé Pop-Up de création d'Activitées --*/
-function CloseActivityPopUp(){
-    activity_popup[0].classList.remove("display_pop-up_activity");
+/*-- Fermé Pop-Up --*/
+function ClosePopUp(){
+    popup[0].classList.remove("display_pop-up");
 }

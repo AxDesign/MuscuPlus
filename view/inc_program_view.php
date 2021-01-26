@@ -25,48 +25,25 @@
         <!-- MAIN -->
         <section class="main-container">
 
-            <!-- STATISTIQUES -->
+            <!-- PROGRAMMES -->
             <section class="flex-main statistique">
-                <h2>Mes statistiques</h2>
+                <h2>Mes Programmes</h2>
                 <p>Aucune donnée trouvée pour le moment</p>
-            </section>
-
-            <!-- LAST TRAINING -->
-            <section class="flex-main last-training">
-                <h2>Mon dernier entrainement</h2>
-                <p class="p2">Aucun entrainement fait pour le moment</p>
-            </section>
-
-            <!-- ACTIVITY -->
-            <section class="flex-main activity">
-                <h2>Mes activitées</h2>
-                <?php
-                if(isset($activityList)){
-                    foreach($activityList as $activity){?>
-                        <form action="activity.php" method="post">
-                            <input type="hidden" name="activityId" value="<?=$activity['id_activity']?>">
-                            <input type="hidden" name="activityName" value="<?=$activity['name']?>">
-                            <button type="submit"><?=$activity['name']?></button>
-                        </form>
-                <?php } 
-                } else { ?>
-                <p class="p1">Aucune activitée crée pour le moment</p>
-                <?php } ?>
                 <i class="fas fa-plus" onclick="DisplayPopUp()"></i>
             </section>
         
-            <!-- POP-UP NEW ACTIVITY -->
+            <!-- POP-UP NEW PROGRAM -->
             <section class="pop-up">
                 <i class="fas fa-arrow-left" onclick="ClosePopUp()"></i>
-                <h2>Créer une nouvelle activitée</h2>
-                <form action="createActivity.php" method="post">
+                <h2>Créer un nouveau programme</h2>
+                <form action="createProgram.php" method="post">
                     <label>Nom: </label>
-                    <input type="text" name="activity-name" id="activity-name">
+                    <input type="text" name="program-name" id="program-name">
                     <button type="submit">Créer</button>
                 </form>
             </section>
         </section>
-
+        
         <script src="js/main.js"></script>
     </body>
 </html>
