@@ -6,8 +6,10 @@
         <title>Index</title>
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="../css/style.css">
-        <script src="https://kit.fontawesome.com/cfe9ffe70f.js" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
+        <script defer src="https://kit.fontawesome.com/cfe9ffe70f.js" crossorigin="anonymous"></script>
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
+        <script defer src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script defer src="js/main.js"></script>
     </head>
 
     <body id="main">
@@ -48,6 +50,13 @@
                             <input type="hidden" name="activityName" value="<?=$activity['name']?>">
                             <button type="submit"><?=$activity['name']?></button>
                         </form>
+                        <form action="main.php" method="post">
+                            <input type="hidden" name="activityIdDelete" value="<?=$activity['id_activity']?>">
+                            <input type="hidden" name="activityNameDelete" value="<?=$activity['name']?>">
+                            <button type="submit">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </form>
                 <?php } 
                 } else { ?>
                 <p class="p1">Aucune activitée crée pour le moment</p>
@@ -66,7 +75,5 @@
                 </form>
             </section>
         </section>
-
-        <script src="js/main.js"></script>
     </body>
 </html>
