@@ -26,4 +26,10 @@ function DeleteActivity(){
         'idActivity' => $activityId,
         'name' => $activityName
     ));
+
+    $reqProgramDelete = $bdd->prepare('DELETE FROM program WHERE id_user = :idUser AND id_activity = :idActivity');
+    $reqProgramDelete->execute(array(
+        'idUser' => $_SESSION['id'],
+        'idActivity' => $activityId
+    ));
 }
