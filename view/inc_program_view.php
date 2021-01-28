@@ -6,8 +6,10 @@
         <title>Index</title>
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="../css/style.css">
-        <script src="https://kit.fontawesome.com/cfe9ffe70f.js" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
+        <script defer src="https://kit.fontawesome.com/cfe9ffe70f.js" crossorigin="anonymous"></script>
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
+        <script defer src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script defer src="js/main.js"></script>
     </head>
 
     <body id="main">
@@ -26,24 +28,33 @@
         <section class="main-container">
 
             <!-- PROGRAMMES -->
-            <section class="flex-main statistique">
+            <section class="flex-program programme">
                 <h2>Mes Programmes</h2>
-                <p>Aucune donnée trouvée pour le moment</p>
+                <?php
+                if(isset($programList)){
+                    foreach($programList as $program){?>
+                        <form action="exercise.php" method="post">
+                            <button type="submit"><?=$program['programName']?></button>
+                        </form>
+                <?php }
+                } else { ?>
+                    <p>Aucune donnée trouvée pour le moment</p> <?php
+                } ?>
                 <i class="fas fa-plus" onclick="DisplayPopUp()"></i>
             </section>
         
-            <!-- POP-UP NEW PROGRAM -->
+            <!-- POP-UP NEW ACTIVITY -->
             <section class="pop-up">
                 <i class="fas fa-arrow-left" onclick="ClosePopUp()"></i>
                 <h2>Créer un nouveau programme</h2>
                 <form action="createProgram.php" method="post">
                     <label>Nom: </label>
+                    <input type="text" name="activityId" value="<?=$_POST['activityId']?>">
+                    <input type="text" name="activityName" value="<?=$_POST['activityName']?>">
                     <input type="text" name="program-name" id="program-name">
                     <button type="submit">Créer</button>
                 </form>
             </section>
         </section>
-        
-        <script src="js/main.js"></script>
     </body>
 </html>

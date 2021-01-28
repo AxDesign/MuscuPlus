@@ -7,5 +7,3 @@ function DisplayPopUp(){
 function ClosePopUp(){
     $(".pop-up").removeClass("display_pop-up");
 }
-
-/*-- Suppression d'une activitée --*/
