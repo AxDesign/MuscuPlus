@@ -10,5 +10,4 @@ function CreateProgram(){
         'idActivity' => $activityId,
         'programName' => $programName
     ));
-    header("location:activity.php?activityId=" . $_POST['activityId'] . "&activityName=" . $_POST['activityName']);
 }

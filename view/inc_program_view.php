@@ -27,6 +27,8 @@
         <!-- MAIN -->
         <section class="main-container">
 
+            <a href="main.php">Retour</a>
+
             <!-- PROGRAMMES -->
             <section class="flex-program programme">
                 <h2>Mes Programmes</h2>
@@ -47,7 +49,7 @@
             <section class="pop-up">
                 <i class="fas fa-arrow-left" onclick="ClosePopUp()"></i>
                 <h2>Créer un nouveau programme</h2>
-                <form action="createProgram.php" method="post">
+                <form>
                     <label>Nom: </label>
                     <input type="hidden" name="activityId" value="<?=$activityId?>">
                     <input type="hidden" name="activityName" value="<?=$activityName?>">
@@ -58,3 +60,7 @@
         </section>
     </body>
 </html>
+<script type="text/javascript">
+
+
+</script>
