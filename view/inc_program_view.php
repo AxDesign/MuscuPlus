@@ -32,16 +32,18 @@
             <!-- PROGRAMMES -->
             <section class="flex-program programme">
                 <h2>Mes Programmes</h2>
-                <?php
-                if(isset($programList)){
-                    foreach($programList as $program){?>
-                        <form action="exercise.php" method="post">
-                            <button type="submit"><?=$program['programName']?></button>
-                        </form>
-                <?php }
-                } else { ?>
-                    <p>Aucune donnée trouvée pour le moment</p> <?php
-                } ?>
+                    <div class='program-container'>
+                    <?php
+                    if(isset($programList)){
+                        foreach($programList as $program){?>
+                            <form action="exercise.php" method="post">
+                                <button type="submit"><?=$program['programName']?></button>
+                            </form>
+                    <?php }
+                    } else { ?>
+                        <p>Aucune donnée trouvée pour le moment</p> <?php
+                    } ?>
+                </div>
                 <i class="fas fa-plus" onclick="DisplayPopUp()"></i>
             </section>
         
@@ -49,18 +51,14 @@
             <section class="pop-up">
                 <i class="fas fa-arrow-left" onclick="ClosePopUp()"></i>
                 <h2>Créer un nouveau programme</h2>
-                <form>
+                <form id="createProgramForm">
                     <label>Nom: </label>
                     <input type="hidden" name="activityId" value="<?=$activityId?>">
                     <input type="hidden" name="activityName" value="<?=$activityName?>">
-                    <input type="text" name="program-name" id="program-name">
+                    <input type="text" name="programName" id="programName">
                     <button type="submit">Créer</button>
                 </form>
             </section>
         </section>
     </body>
 </html>
-<script type="text/javascript">
-
-
-</script>

@@ -3,17 +3,12 @@ require_once('bdd/db.php');
 session_start();
 require_once('model/inc_createProgram_model.php');
 
-echo $_POST['activityId'];
-echo $_POST['activityName'];
-
-if(isset($_POST['program-name'])){
+if(isset($_POST['programName'])){
     $activityName = $_POST['activityName'];
     $activityId = $_POST['activityId'];
-    $programName = $_POST['program-name'];
+    $programName = $_POST['programName'];
     CreateProgram();
 }
 
-// Ma vue :
-header("location:activity.php");
-//require_once('view/inc_program_view.php');
+require_once('view/inc_createProgram_view_json.php');
 ?>

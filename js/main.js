@@ -12,7 +12,7 @@ function ClosePopUp(){
 jQuery(document).ready(function() {
 
     // process the form
-    $('form').submit(function(event) {
+    $('#createProgramForm').submit(function(event) {
     
         console.log('Sending form to createProgram.php');
 
@@ -21,7 +21,7 @@ jQuery(document).ready(function() {
         var formData = {
             'activityId'              : $('input[name=activityId]').val(),
             'activityName'             : $('input[name=activityName]').val(),
-            'program-name'    : $('input[name=program-name]').val()
+            'programName'    : $('input[name=programName]').val()
         };
     
         // process the form
@@ -34,11 +34,8 @@ jQuery(document).ready(function() {
         })
             // using the done promise callback
             .done(function(data) {
-    
-                // log data to the console so we can see
-                console.log(data);
-    
-                // here we will handle errors and validation messages
+                $(".program-container").append('<form action="exercise.php" method="post"><button type="submit">' + data.programName + '</button></form>');
+                ClosePopUp();
             });
     
         // stop the form from submitting the normal way and refreshing the page
