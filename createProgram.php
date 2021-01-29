@@ -12,4 +12,8 @@ if(isset($_POST['program-name'])){
     $programName = $_POST['program-name'];
     CreateProgram();
 }
-require_once('view/inc_program_view.php');
+
+// Ma vue :
+header("location:activity.php");
+//require_once('view/inc_program_view.php');
+?>
