@@ -3,6 +3,9 @@ require_once('bdd/db.php');
 session_start();
 require_once('model/inc_createProgram_model.php');
 
+echo $_POST['activityId'];
+echo $_POST['activityName'];
+
 if(isset($_POST['program-name'])){
     $activityName = $_POST['activityName'];
     $activityId = $_POST['activityId'];

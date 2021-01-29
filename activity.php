@@ -3,7 +3,13 @@ require_once('bdd/db.php');
 session_start();
 require_once('model/inc_program_model.php');
 
-$activityId = $_POST['activityId'];
+if(isset($_POST['activityName'])){
+    $activityId = $_POST['activityId'];
+    $activityName = $_POST['activityName'];
+} elseif(isset($_GET['activityName'])){
+    $activityId = $_GET['activityId'];
+    $activityName = $_GET['activityName'];
+}
 
 $programList;
 DisplayProgram();

@@ -49,8 +49,8 @@
                 <h2>Créer un nouveau programme</h2>
                 <form action="createProgram.php" method="post">
                     <label>Nom: </label>
-                    <input type="text" name="activityId" value="<?=$_POST['activityId']?>">
-                    <input type="text" name="activityName" value="<?=$_POST['activityName']?>">
+                    <input type="hidden" name="activityId" value="<?=$activityId?>">
+                    <input type="hidden" name="activityName" value="<?=$activityName?>">
                     <input type="text" name="program-name" id="program-name">
                     <button type="submit">Créer</button>
                 </form>

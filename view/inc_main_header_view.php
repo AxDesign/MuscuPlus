@@ -5,7 +5,7 @@
         if($_SERVER['SCRIPT_NAME'] == '/main.php'){ ?>
             <h1>Bonjour <?=$_SESSION['name']?></h1>
         <?php } elseif($_SERVER['SCRIPT_NAME'] == '/activity.php') { ?>
-            <h1>Vos Programmes de <?=$_POST['activityName']?></h1>
+            <h1>Vos Programmes de <?=$activityName?></h1>
         <?php } ?>
     </nav>
     <nav class="right-column">
