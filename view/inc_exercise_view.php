@@ -40,12 +40,12 @@
             <!-- POP-UP NEW ACTIVITY -->
             <section class="pop-up">
                 <i class="fas fa-arrow-left" onclick="ClosePopUp()"></i>
-                <h2>Créer un nouveau programme</h2>
-                <form id="createProgramForm">
+                <h2>Créer un nouvel exercice</h2>
+                <form id="createExerciseForm">
                     <label>Nom: </label>
-                    <input type="hidden" name="activityId" value="<?=$activityId?>">
-                    <input type="hidden" name="activityName" value="<?=$activityName?>">
-                    <input type="text" name="programName" id="programName">
+                    <input type="hidden" name="programId" value="<?=$programId?>">
+                    <input type="hidden" name="programName" value="<?=$programName?>">
+                    <input type="text" name="exerciseName" id="exerciseName">
                     <button type="submit">Créer</button>
                 </form>
             </section>

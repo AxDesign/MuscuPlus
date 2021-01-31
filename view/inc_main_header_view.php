@@ -1,19 +1,19 @@
 <!-- HEADER -->
 <header>
     <nav class="left-column">
+        <a href="index.php" class="btn-logout"><i class="fas fa-power-off"></i></a>
+    </nav>
+    <nav class="right-column">
         <?php
         if($_SERVER['SCRIPT_NAME'] == '/main.php'){ ?>
-            <h1>Bonjour <?=$_SESSION['name']?></h1>
+            <div class="text-accueil">
+                <h1>Hello</h1>
+                <h1><?=$_SESSION['name']?>,</h1>
+            </div>
         <?php } elseif($_SERVER['SCRIPT_NAME'] == '/activity.php') { ?>
             <h1>Vos Programmes de <?=$activityName?></h1>
         <?php } elseif($_SERVER['SCRIPT_NAME'] == '/exercise.php') {?>
             <h1>Vos Exercices du Programme <?=$programName?></h1>
         <?php } ?>
-    </nav>
-    <nav class="right-column">
-        <a href="index.php" class="btn-logout">Déconnexion</a>
-        <a href="profil.php">
-            <i class="fas fa-cog"></i>
-        </a>
     </nav>
 </header>

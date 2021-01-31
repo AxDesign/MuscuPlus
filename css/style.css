@@ -4,3 +4,66 @@
 .display_pop-up{
     display:block;
 }
+
+/*--- MAIN ---*/
+.main-container h2{
+    text-transform: uppercase;
+}
+.text-accueil{
+    text-align: left;
+    margin-left: 100px;
+    width: 110px;
+    margin-top: 150px;
+}
+.text-accueil :nth-child(1){
+    font-weight: 100;
+    font-size: 30px;
+}
+.text-accueil :nth-child(2){
+    font-size: 125px;
+}
+.flex-main p:last-child{
+    margin-top: 25px;
+}
+
+/*-- ACTIVITY --*/
+.activity{
+    margin-top: 30px;
+}
+.activity h2:first-child, .statistique h2:first-child{
+    font-size: 20px;
+    font-weight: 900;
+    color: #4A4059;
+}
+.activity-tabs{
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+.activity-tab a:nth-child(n+1){
+    margin-left: 10px;
+}
+/*- TAB -*/
+.activity-tab a:first-child{
+    display: block;
+    border-radius: 25px;
+    background-color: #683DE5;
+    width: 200px;
+    height: 225px;
+    color: #fff;
+    font-size: 20px;
+    padding-top: 25px;
+    font-family: basic-sans, sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+.trash-activity{
+    position: relative;
+    top: -25px;
+    left: -80px;
+}
+
+/*-- STATISTIQUES --*/
+.statistique{
+    margin-top: 50px;
+}
