@@ -29,20 +29,10 @@
 
             <a href="main.php">Retour</a>
 
-            <!-- PROGRAMMES -->
+            <!-- EXERCICES -->
             <section class="flex-program programme">
-                <h2>Mes Programmes</h2>
-                    <div class='program-container'>
-                    <?php
-                    if(isset($programList)){
-                        foreach($programList as $program){?>
-                            <a href="exercise.php?programId=<?=$program['programId']?>&programName=<?=$program['programName']?>">
-                                <button><?=$program['programName']?></button><br />
-                            </a>
-                    <?php }
-                    } else { ?>
-                        <p>Aucune donnée trouvée pour le moment</p> <?php
-                    } ?>
+                <h2>Mes Exercices</h2>
+                        <p>Aucune donnée trouvée pour le moment</p>
                 </div>
                 <i class="fas fa-plus" onclick="DisplayPopUp()"></i>
             </section>

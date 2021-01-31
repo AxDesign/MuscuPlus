@@ -45,18 +45,18 @@
                 <?php
                 if(isset($activityList)){
                     foreach($activityList as $activity){?>
-                        <form action="activity.php" method="post">
-                            <input type="hidden" name="activityId" value="<?=$activity['id_activity']?>">
-                            <input type="hidden" name="activityName" value="<?=$activity['name']?>">
-                            <button type="submit"><?=$activity['name']?></button>
-                        </form>
-                        <form action="main.php" method="post">
-                            <input type="hidden" name="activityIdDelete" value="<?=$activity['id_activity']?>">
-                            <input type="hidden" name="activityNameDelete" value="<?=$activity['name']?>">
-                            <button type="submit">
+                        <!-- activity -->
+                        <a href="activity.php?activityId=<?=$activity['id_activity']?>&activityName=<?=$activity['name']?>">
+                            <button><?=$activity['name']?></button>
+                        </a>
+
+                        <!-- Icone Delete activity -->
+                        <a href="main.php?activityIdDelete=<?=$activity['id_activity']?>&activityNameDelete=<?=$activity['name']?>">
+                            <button>
                                 <i class="fas fa-trash"></i>
                             </button>
-                        </form>
+                        </a>
+                        <br />
                 <?php } 
                 } else { ?>
                 <p class="p1">Aucune activitée crée pour le moment</p>

@@ -19,8 +19,8 @@ jQuery(document).ready(function() {
         // get the form data
         // there are many ways to get this data using jQuery (you can use the class or id also)
         var formData = {
-            'activityId'              : $('input[name=activityId]').val(),
-            'activityName'             : $('input[name=activityName]').val(),
+            'activityId'     : $('input[name=activityId]').val(),
+            'activityName'   : $('input[name=activityName]').val(),
             'programName'    : $('input[name=programName]').val()
         };
     
