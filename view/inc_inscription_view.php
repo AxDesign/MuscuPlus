@@ -5,6 +5,7 @@
         <title>S'inscrire</title>
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://use.typekit.net/cmp3lqm.css">
         <script src="https://kit.fontawesome.com/cfe9ffe70f.js" crossorigin="anonymous"></script>
     </head>
     
@@ -79,10 +80,12 @@
             ?>
 
             <!--BUTTON SUBMIT -->
-            <button class="btn-submit" type="submit" name="inscription">S'inscrire</button>
-            <a href="index.php">
-                Vous êtes déja inscrit ?
-            </a>
+            <div class="footer">
+                <button class="btn-submit" type="submit" name="inscription">S'inscrire</button>
+                <a href="index.php">
+                    Vous êtes déja inscrit ?
+                </a>
+            </div>
         </form>
     </body>
 </html>

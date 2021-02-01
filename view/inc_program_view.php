@@ -14,7 +14,12 @@
 
     <body id="main">
         <!-- HEADER -->
-        <?php require_once("view/inc_main_header_view.php"); ?>
+        <header>
+            <a href="main.php">
+                <i class="fas fa-arrow-left btn-back-page"></i>
+            </a>
+            <?php require_once("view/inc_main_header_view.php"); ?>
+        </header>
 
         <!-- BANDEAU SI UTILISATEUR NON COMFIRMÉ -->
         <?php
@@ -27,10 +32,8 @@
         <!-- MAIN -->
         <section class="main-container">
 
-            <a href="main.php">Retour</a>
-
             <!-- PROGRAMMES -->
-            <section class="flex-program programme">
+            <section class="flex-program program">
                 <h2>Mes Programmes</h2>
                     <div class='program-container'>
                     <?php
@@ -44,21 +47,24 @@
                         <p>Aucune donnée trouvée pour le moment</p> <?php
                     } ?>
                 </div>
-                <i class="fas fa-plus" onclick="DisplayPopUp()"></i>
             </section>
-        
+            <i class="fas fa-plus btn-create" onclick="DisplayPopUp()"></i>
+        </section>
             <!-- POP-UP NEW ACTIVITY -->
             <section class="pop-up">
-                <i class="fas fa-arrow-left" onclick="ClosePopUp()"></i>
-                <h2>Créer un nouveau programme</h2>
-                <form id="createProgramForm">
-                    <label>Nom: </label>
-                    <input type="hidden" name="activityId" value="<?=$activityId?>">
-                    <input type="hidden" name="activityName" value="<?=$activityName?>">
-                    <input type="text" name="programName" id="programName">
-                    <button type="submit">Créer</button>
-                </form>
+                <div class="content-pop">
+                    <div class="header-pop">
+                        <i class="fas fa-arrow-left btn-back" onclick="ClosePopUp()"></i>
+                        <h2>Créer un nouveau programme</h2>
+                    </div>
+                    <form id="createProgramForm">
+                        <label>Nom: </label>
+                        <input type="hidden" name="activityId" value="<?=$activityId?>">
+                        <input type="hidden" name="activityName" value="<?=$activityName?>">
+                        <input type="text" name="programName" id="programName">
+                        <button type="submit">Créer</button>
+                    </form>
+                </div>
             </section>
-        </section>
     </body>
 </html>

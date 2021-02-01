@@ -3,7 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <title>Se Connecter</title>
+        <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://use.typekit.net/cmp3lqm.css">
         <script src="https://kit.fontawesome.com/cfe9ffe70f.js" crossorigin="anonymous"></script>
     </head>
 
@@ -37,14 +39,16 @@
             ?>
 
             <!-- SUBMIT BUTTON -->
-            <button class="btn-submit" type="submit" name="connexion">Se Connecter</button>
-
-            <a href="inscription.php">
-                Vous n'êtes pas encore inscrit ?<br />
-            </a>
-            <a href="resetPassword.php">
-                Vous avez perdu votre mot de passe ?
-            </a>
+            <div class="footer">
+                <button class="btn-submit" type="submit" name="connexion">Se Connecter</button>
+                
+                <a href="inscription.php">
+                    Vous n'êtes pas encore inscrit ?<br />
+                </a>
+                <a href="resetPassword.php">
+                    Vous avez perdu votre mot de passe ?
+                </a>
+            </div>
         </form>
     </body>
 </html>
