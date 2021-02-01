@@ -11,4 +11,3 @@ if(isset($_POST['programName'])){
 }
 
 require_once('view/inc_createProgram_view_json.php');
-?>

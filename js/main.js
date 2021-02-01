@@ -12,8 +12,6 @@ function ClosePopUp(){
 jQuery(document).ready(function() {
 
     $('#createProgramForm').submit(function(event) {
-    
-        console.log('Sending form to createProgram.php');
 
         var formData = {
             'activityId'     : $('input[name=activityId]').val(),
@@ -29,34 +27,33 @@ jQuery(document).ready(function() {
             encode      : true
         })
             .done(function(data) {
-                $(".program-container").append('<form action="exercise.php" method="post"><button type="submit">' + data.programName + '</button></form>');
+                $(".program-container").append('<a href="exercise.php?programName=' + data.programName + '&activityId=' + data.activityId + '&activityName=' + data.activityName + '">' + data.programName + '</a>');
                 ClosePopUp();
             });
         event.preventDefault();
     });
 
     $('#createExerciseForm').submit(function(event) {
-    
-        console.log('Sending form to exercise.php');
 
         var formData = {
-            'activityId'     : $('input[name=activityId]').val(),
-            'activityName'   : $('input[name=activityName]').val(),
-            'programName'    : $('input[name=programName]').val()
+            'activityId'    : $('input[name=activityId]').val(),
+            'programId'    : $('input[name=programId]').val(),
+            'exerciseName'    : $('input[name=exerciseName]').val()
         };
+
+        console.log('Click form')
     
         $.ajax({
             type        : 'POST',
-            url         : 'exercise.php',
+            url         : 'createExercise.php',
             data        : formData,
             dataType    : 'json',
             encode      : true
         })
             .done(function(data) {
-                $(".program-container").append('<form action="exercise.php" method="post"><button type="submit">' + data.programName + '</button></form>');
+                $(".exercise-container").append('<p>' + data.exerciseName + '</p>');
                 ClosePopUp();
             });
         event.preventDefault();
     });
-    
 });

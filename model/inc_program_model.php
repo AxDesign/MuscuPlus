@@ -11,7 +11,7 @@ function DisplayProgram(){
     ));
 
     while($donneeProgram = $reqProgram->fetch()){
-        $program['programId'] = $donneeProgram['id_activity'];
+        $program['programId'] = $donneeProgram['id_program'];
         $program['programName'] = $donneeProgram['programName'];
         $programList[] = $program;
     }

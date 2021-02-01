@@ -14,7 +14,12 @@
 
     <body id="main">
         <!-- HEADER -->
-        <?php require_once("view/inc_main_header_view.php"); ?>
+        <header>
+            <a href="activity.php?activityId=<?=$_GET['activityId']?>&activityName=<?=$_GET['activityName']?>">
+                <i class="fas fa-arrow-left btn-back-page"></i>
+            </a>
+            <?php require_once("view/inc_main_header_view.php"); ?>
+        </header>
 
         <!-- BANDEAU SI UTILISATEUR NON COMFIRMÉ -->
         <?php
@@ -27,28 +32,38 @@
         <!-- MAIN -->
         <section class="main-container">
 
-            <a href="main.php">Retour</a>
-
             <!-- EXERCICES -->
-            <section class="flex-program programme">
+            <section class="flex-exercise exercise">
                 <h2>Mes Exercices</h2>
-                        <p>Aucune donnée trouvée pour le moment</p>
+                <div class="exercise-container">
+                    <?php
+                    if(isset($exoList)){
+                        foreach($exoList as $exo){?>
+                            <p><?=$exo['exoName']?></p>
+                    <?php }
+                    } else { ?>
+                        <p>Aucune donnée trouvée pour le moment</p> <?php
+                    } ?>
                 </div>
-                <i class="fas fa-plus" onclick="DisplayPopUp()"></i>
             </section>
+                <i class="fas fa-plus btn-create" onclick="DisplayPopUp()"></i>
+        </section>
         
-            <!-- POP-UP NEW ACTIVITY -->
-            <section class="pop-up">
-                <i class="fas fa-arrow-left" onclick="ClosePopUp()"></i>
-                <h2>Créer un nouvel exercice</h2>
+        <!-- POP-UP NEW ACTIVITY -->
+        <section class="pop-up">
+            <div class="content-pop">
+                <div class="header-pop">
+                    <i class="fas fa-arrow-left btn-back" onclick="ClosePopUp()"></i>
+                    <h2>Créer un nouvel exercice</h2>
+                </div>
                 <form id="createExerciseForm">
                     <label>Nom: </label>
-                    <input type="hidden" name="programId" value="<?=$programId?>">
-                    <input type="hidden" name="programName" value="<?=$programName?>">
+                    <input type="hidden" name="activityId" id="activityId" value="<?=$activityId?>">
+                    <input type="hidden" name="programId" id="programId" value="<?=$programId?>">
                     <input type="text" name="exerciseName" id="exerciseName">
                     <button type="submit">Créer</button>
                 </form>
-            </section>
+            </div>
         </section>
     </body>
 </html>
