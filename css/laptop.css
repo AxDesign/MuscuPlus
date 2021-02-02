@@ -1,0 +1,34 @@
+/*--- LAPTOP ---*/
+@media screen and (min-width: 650px){
+    header{
+        width: 650px;
+    }
+    body{
+        font-size: 150%;
+    }
+    .main-container{
+        width: 650px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /*--- MAIN ---*/
+    .text-title-page :nth-child(1){
+        margin-left: -165px;
+    }
+    /*- TAB -*/
+    .activity-tab a:first-child{
+        font-size: 1em;
+    }
+    .trash-activity{
+        font-size: 1em;
+    }
+    /*--- POP-UP ---*/
+    .content-pop{
+        width: 25%;
+    }
+    .pop-up-main{
+        width:25%;
+    }
+}

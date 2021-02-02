@@ -44,17 +44,18 @@ table {
 /*--- ALL PAGES ---*/
 /*-- HEADER --*/
 header{
-    width: 650px;
-    margin-left: 50%;
-    transform: translate(-50%);
-}
-header nav{
-    display: block;
+    position: relative;
+    top: 0px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 15px;
 }
 .left-column{
-    position: relative;
-    top: 15px;
-    left: -250px;
+    position: absolute;
+    left: 15px;
+}
+.right-column{
+    text-align: center;
 }
 .btn-back-page{
     float: right;
@@ -62,18 +63,14 @@ header nav{
     top: 15px;
 }
 .btn-logout, .btn-back-page{
-    font-size: 30px;
+    font-size: 2.2em;
 }
 
 /*-- MAIN --*/
 body{
     text-align: center;
     background-color: #221533;
-}
-.main-container{
-    width: 650px;
-    margin-left: 50%;
-    transform: translate(-50%);
+    margin: 0 auto;
 }
 
 /*-- TEXT--*/

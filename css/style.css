@@ -34,17 +34,13 @@
 .main-container h2{
     text-transform: uppercase;
 }
-.text-title-page{
-    text-align: left;
-    margin-top: 150px;
-    margin-left: 100px;
-}
 .text-title-page :nth-child(1){
+    margin-left: -115px;
+    font-size: 1.5em;
     font-weight: 100;
-    font-size: 30px;
 }
 .text-title-page :nth-child(2){
-    font-size: 125px;
+    font-size: 5em;
 }
 .flex-main p:last-child{
     margin-top: 25px;
@@ -55,7 +51,7 @@
     margin-top: 30px;
 }
 .activity h2:first-child, .statistique h2:first-child, .program h2:first-child{
-    font-size: 20px;
+    font-size: 1.4em;
     font-weight: 900;
     color: #4A4059;
 }
@@ -63,6 +59,9 @@
     display: flex;
     justify-content: center;
     margin-top: 25px;
+}
+.activity-tab{
+    position: relative;
 }
 .activity-tab a:nth-child(n+1){
     margin-left: 10px;
@@ -75,23 +74,27 @@
     width: 200px;
     height: 225px;
     color: #fff;
-    font-size: 20px;
+    font-size: 1.5em;
     padding-top: 25px;
     font-family: basic-sans, sans-serif;
     font-weight: 300;
     text-transform: uppercase;
 }
 .trash-activity{
-    position: relative;
-    top: -25px;
-    left: -80px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 1.5em;
 }
 
 /*- BUTTON CREATE -*/
 .btn-create{
+    position: fixed;
+    left: 50%;
+    bottom: 0px;
+    transform: translateX(-50%);
     cursor: pointer;
-    margin-top: 50px;
-    font-size: 25px;
+    font-size: 2.5em;
     color: #11E5B3;
     background-color: #352844;
     padding: 15px;
@@ -113,32 +116,41 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
 }
+.header-pop{
+    position: relative;
+}
 .header-pop .btn-back{
-    margin: 10px 0 0 -340px;
-    font-size: 30px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 2em;
     color: #11E5B3;
 }
-.header-pop h2{
-    font-size: 20px;
-    text-transform: uppercase;
-    font-weight: 700;
-}
 .content-pop{
+    margin: 0 auto;
     border-radius: 10px;
     /* background: linear-gradient(100deg, #18D7B6, 40%,#5561D8); */
     background-color: #201433;
-    width: 400px;
-    height: 145px;
-    position: relative;
-    left: 50%;
-    transform: translate(-50%);
+    width: 90%;
+    height: 25%;
 }
-.content-pop form{
+.pop-up-main{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 90%;
+}
+.pop-up-main h2{
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.pop-up-main form{
     margin-top: 20px;
 }
-.content-pop form label{
+.pop-up-main form label{
     font-family: basic-sans, sans-serif;
-    font-size: 15px;
+    font-size: 1em;
     font-weight: 400;
     color: #fff;
 }
