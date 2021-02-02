@@ -58,9 +58,8 @@ header{
     text-align: center;
 }
 .btn-back-page{
-    float: right;
-    position: relative;
-    top: 15px;
+    position: absolute;
+    right: 15px;
 }
 .btn-logout, .btn-back-page{
     font-size: 2.2em;
