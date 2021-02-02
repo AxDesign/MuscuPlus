@@ -40,11 +40,31 @@
                 <div class='program-container'>
                     <?php
                     if(isset($programList)){
+                        $programNumber = 1;
                         foreach($programList as $program){?>
-                            <a href="exercise.php?activityId=<?=$activityId?>&activityName=<?=$activityName?>&programId=<?=$program['programId']?>&programName=<?=$program['programName']?>">
-                                <?=$program['programName']?>
-                            </a>
-                    <?php }
+                            <!-- <a href="exercise.php?activityId=<?=$activityId?>&activityName=<?=$activityName?>&programId=<?=$program['programId']?>&programName=<?=$program['programName']?>">
+                            </a> -->
+                            <div class="program-tab">
+                                <div class="programNumber">
+                                    <p><?=$programNumber?></p>
+                                </div>
+                                <div class="program-tab-main">
+                                    <p>
+                                        <?=$program['programName']?>
+                                    </p>
+                                    <p>5 Exercices</p>
+                                </div>
+                                <div class="program-icone">
+                                    <a href="#">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <a href="#">
+                                        <i class="fas fa-play"></i>
+                                    </a>
+                                </div>
+                            </div>
+                    <?php   $programNumber++;
+                        }
                     } else { ?>
                         <p>Aucune donnée trouvée pour le moment</p> <?php
                     } ?>
