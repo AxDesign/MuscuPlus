@@ -19,7 +19,7 @@
     }
 
     /*--- MAIN ---*/
-    .text-title-page :nth-child(1){
+    .text-title-page-home :nth-child(1){
         margin-left: -165px;
     }
     /*- TAB -*/

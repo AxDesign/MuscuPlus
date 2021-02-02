@@ -5,7 +5,7 @@
 <nav class="right-column">
     <?php
     if($_SERVER['SCRIPT_NAME'] == '/main.php'){ ?>
-        <div class="text-title-page">
+        <div class="text-title-page text-title-page-home">
             <h1>Hello</h1>
             <h1><?=$_SESSION['name']?>,</h1>
         </div>

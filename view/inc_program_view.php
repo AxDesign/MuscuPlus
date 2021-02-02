@@ -52,6 +52,9 @@
             </section>
         </section>
 
+        <?php
+            require_once('view/inc_footer_view.php');
+        ?>
         <i class="fas fa-plus btn-create" onclick="DisplayPopUp()"></i>
         
         <!-- POP-UP NEW ACTIVITY -->

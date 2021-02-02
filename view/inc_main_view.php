@@ -49,7 +49,7 @@
                             </div>
                             <?php } 
                     } else { ?>
-                    <p class="p1">Aucune activitée crée pour le moment</p>
+                    <p>Aucune activitée crée pour le moment</p>
                     <?php } ?>
                 </div>
             </section>
@@ -59,8 +59,10 @@
                 <h2>Mes statistiques</h2>
                 <p>Aucune donnée trouvée pour le moment</p>
             </section>
-
         </section>
+        <?php
+            require_once('view/inc_footer_view.php');
+        ?>
         <i class="fas fa-plus btn-create" onclick="DisplayPopUp()"></i>
         <!-- POP-UP NEW ACTIVITY -->
         <section class="pop-up">

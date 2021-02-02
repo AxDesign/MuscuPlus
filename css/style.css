@@ -34,20 +34,22 @@
 .main-container h2{
     text-transform: uppercase;
 }
-.text-title-page :nth-child(1){
+.text-title-page-home :nth-child(1){
     margin-left: -115px;
+}
+.text-title-page :nth-child(1){
     font-size: 1.5em;
     font-weight: 100;
 }
 .text-title-page :nth-child(2){
     font-size: 5em;
 }
-.flex-main p:last-child{
+.flex-main p:last-child, .flex-program p:last-child{
     margin-top: 25px;
 }
 
 /*-- ACTIVITY --*/
-.activity{
+.activity, .program{
     margin-top: 30px;
 }
 .activity h2:first-child, .statistique h2:first-child, .program h2:first-child{
@@ -153,4 +155,14 @@
     font-size: 1em;
     font-weight: 400;
     color: #fff;
+}
+
+/*--- FOOTER ---*/
+footer{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+footer p{
+    color: rgba(255, 255, 255, 0.3)
 }
