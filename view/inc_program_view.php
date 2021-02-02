@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Index</title>
         <link rel="stylesheet" href="css/reset.css">
-        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/laptop.css">
         <link rel="stylesheet" href="https://use.typekit.net/cmp3lqm.css">
         <script defer src="https://kit.fontawesome.com/cfe9ffe70f.js" crossorigin="anonymous"></script>
         <script defer src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
@@ -49,23 +50,26 @@
                     } ?>
                 </div>
             </section>
-            <i class="fas fa-plus btn-create" onclick="DisplayPopUp()"></i>
         </section>
+
+        <i class="fas fa-plus btn-create" onclick="DisplayPopUp()"></i>
         
         <!-- POP-UP NEW ACTIVITY -->
         <section class="pop-up">
             <div class="content-pop">
                 <div class="header-pop">
                     <i class="fas fa-arrow-left btn-back" onclick="ClosePopUp()"></i>
-                    <h2>Créer un nouveau programme</h2>
                 </div>
-                <form id="createProgramForm">
-                    <label>Nom: </label>
-                    <input type="hidden" name="activityId" value="<?=$activityId?>">
-                    <input type="hidden" name="activityName" value="<?=$activityName?>">
-                    <input type="text" name="programName" id="programName">
-                    <button type="submit">Créer</button>
-                </form>
+                <div class="pop-up-main">
+                    <h2>Créer un nouveau programme</h2>
+                    <form id="createProgramForm">
+                        <label>Nom: </label>
+                        <input type="hidden" name="activityId" value="<?=$activityId?>">
+                        <input type="hidden" name="activityName" value="<?=$activityName?>">
+                        <input type="text" name="programName" id="programName">
+                        <button type="submit">Créer</button>
+                    </form>
+                </div>
             </div>
         </section>
     </body>
