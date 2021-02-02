@@ -127,6 +127,7 @@ p{
     /* background: linear-gradient(100deg, #18D7B6, 40%,#5561D8); */
     background-color: #201433;
     width: 90%;
+    min-height: 100px;
     height: 25%;
 }
 .pop-up-main{

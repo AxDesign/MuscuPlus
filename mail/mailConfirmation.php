@@ -7,7 +7,12 @@ $message='
 <html>
     <body>
         <div align="center">
-            <a href="muscuplus/confirmation.php?name='. urldecode($userName) .'&key='. $key .'">Confirmez votre compte !</a>
+            '
+            if($_SERVER['SERVER_NAME'] == 'muscuplus'){
+                '<a href="muscuplus/confirmation.php?name='. urldecode($userName) .'&key='. $key .'">Confirmez votre compte !</a>'
+            } elseif ($_SERVER['SERVER_NAME'] == 'muscuplus.axdesign.fr'){
+                '<a href="muscuplus.axdesign.fr/confirmation.php?name='. urldecode($userName) .'&key='. $key .'">Confirmez votre compte !</a>'
+            }
         </div>
     </body>
 </html>
