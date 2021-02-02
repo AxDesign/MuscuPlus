@@ -91,10 +91,8 @@
 
 /*- BUTTON CREATE -*/
 .btn-create{
-    position: fixed;
-    left: 50%;
-    bottom: 0px;
-    transform: translateX(-50%);
+    position: relative;
+    top: 25px;
     cursor: pointer;
     font-size: 2.5em;
     color: #11E5B3;

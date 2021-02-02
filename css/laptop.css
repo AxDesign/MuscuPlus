@@ -38,4 +38,12 @@
         min-width: 500px;
         width:25%;
     }
+
+    /*- BUTTON CREATE -*/
+    .btn-create{
+        position: fixed;
+        top: 100vh;
+        left: 50vw;
+        transform: translate(-50%,-100%);
+    }
 }
