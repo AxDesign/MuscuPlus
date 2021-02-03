@@ -1,3 +1,3 @@
 <footer>
-    <p>Version 2.0.4.5</p>
+    <p>Version 2.0.4.6</p>
 </footer>

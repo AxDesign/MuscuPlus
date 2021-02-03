@@ -27,7 +27,26 @@ jQuery(document).ready(function() {
             encode      : true
         })
             .done(function(data) {
-                $(".program-container").append('<a href="exercise.php?programName=' + data.programName + '&activityId=' + data.activityId + '&activityName=' + data.activityName + '">' + data.programName + '</a>');
+                $(".program-container").append('<div class="program-tab">' +
+                                                    '<div class="programNumber">' +
+                                                        '<p>0</p>' +
+                                                    '</div>' +
+                                                    '<div class="program-tab-main">' +
+                                                        '<p>' + data.programName + '</p>' +
+                                                        '<p>0 Exercices</p>' +
+                                                    '</div>' +
+                                                    '<div class="program-icone">' +
+                                                        '<a href="#">' +
+                                                            '<i class="fas fa-edit"></i>' +
+                                                       '</a>' +
+                                                        '<a href="#">' +
+                                                            '<i class="fas fa-play"></i>' +
+                                                        '</a>' +
+                                                        '<a href="#">' +
+                                                            '<i class="fas fa-trash"></i>'+
+                                                        '</a>' +
+                                                    '</div>' +
+                                                '</div>');
                 ClosePopUp();
             });
         event.preventDefault();
@@ -53,7 +72,20 @@ jQuery(document).ready(function() {
             encode      : true
         })
             .done(function(data) {
-                $(".exercise-container").append('<p>' + data.exerciseName + '</p>');
+                $(".exercise-container").append('<div class="exercise-tab">' +
+                                                    '<div class="exerciseNumber">' +
+                                                        '<p>0</p>' +
+                                                    '</div>' +
+                                                    '<div class="exercise-tab-main">' +
+                                                        '<p>' + data.exerciseName + '</p>' +
+                                                        '<p>' + data.exerciseSeries + ' x ' + data.exerciseRepetitions + ' répétitions.</p>' +
+                                                    '</div>' +
+                                                    '<div class="exercise-icone">' +
+                                                        '<a href="#">' +
+                                                            '<i class="fas fa-trash"></i>' +
+                                                        '</a>' +
+                                                    '</div>' +
+                                                '</div>');
                 ClosePopUp();
             });
         event.preventDefault();

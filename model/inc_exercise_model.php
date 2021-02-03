@@ -18,3 +18,14 @@ function DisplayExercise(){
         $exoList[] = $exercise;
     }
 }
+
+function DeleteExercise(){
+    global $bdd,
+            $exerciseIdDelete;
+
+    $reqExerciseDelete = $bdd->prepare('DELETE FROM exercise WHERE id_user = :idUser AND id_exo = :idExo');
+    $reqExerciseDelete->execute(array(
+        'idUser' => $_SESSION['id'],
+        'idExo' => $exerciseIdDelete
+    ));
+}

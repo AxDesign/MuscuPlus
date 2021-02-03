@@ -54,7 +54,7 @@
                                     </p>
                                 </div>
                                 <div class="exercise-icone">
-                                    <a href="#">
+                                    <a href="exercise.php?exerciseIdDelete=<?=$exo['idExo']?>&programId=<?=$programId?>&activityId=<?=$activityId?>&activityName=<?=$activityName?>&programName=<?=$programName?>">
                                         <i class="fas fa-trash"></i>
                                     </a>
                                 </div>
