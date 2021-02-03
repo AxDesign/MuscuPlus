@@ -38,19 +38,39 @@
                 <div class="exercise-container">
                     <?php
                     if(isset($exoList)){
+                        $exerciseNumber = 1;
                         foreach($exoList as $exo){?>
-                            <p>
-                                Nom: <?=$exo['exoName']?><br />
-                                Séries: <?=$exo['exoSeries']?><br />                        
-                                Répétitions: <?=$exo['exoRepetitions']?><br />                        
-                            </p>
-                    <?php }
+
+                            <div class="exercise-tab">
+                                <div class="exerciseNumber">
+                                    <p><?=$exerciseNumber?></p>
+                                </div>
+                                <div class="exercise-tab-main">
+                                    <p>
+                                        <?=$exo['exoName']?>
+                                    </p>
+                                    <p>
+                                        <?=$exo['exoSeries']?> x <?=$exo['exoRepetitions']?> répétitions.
+                                    </p>
+                                </div>
+                                <div class="exercise-icone">
+                                    <a href="#">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
+                                </div>
+                            </div>
+                    <?php $exerciseNumber++;
+                        }
                     } else { ?>
                         <p>Aucune donnée trouvée pour le moment</p> <?php
                     } ?>
                 </div>
             </section>
         </section>
+
+        <?php
+            require_once('view/inc_footer_view.php');
+        ?>
         <i class="fas fa-plus btn-create" onclick="DisplayPopUp()"></i>
         
         <!-- POP-UP NEW ACTIVITY -->

@@ -48,7 +48,7 @@
     }
 
     /*--- PROGRAM ---*/
-    .program-tab{
+    .program-tab, .exercise-tab{
         max-width: 400px;
     }
 }
