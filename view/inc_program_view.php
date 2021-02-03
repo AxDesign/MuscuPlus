@@ -42,8 +42,6 @@
                     if(isset($programList)){
                         $programNumber = 1;
                         foreach($programList as $program){?>
-                            <!-- <a href="exercise.php?activityId=<?=$activityId?>&activityName=<?=$activityName?>&programId=<?=$program['programId']?>&programName=<?=$program['programName']?>">
-                            </a> -->
                             <div class="program-tab">
                                 <div class="programNumber">
                                     <p><?=$programNumber?></p>
@@ -55,7 +53,7 @@
                                     <p>5 Exercices</p>
                                 </div>
                                 <div class="program-icone">
-                                    <a href="#">
+                                    <a href="exercise.php?activityId=<?=$activityId?>&activityName=<?=$activityName?>&programId=<?=$program['programId']?>&programName=<?=$program['programName']?>">
                                         <i class="fas fa-edit"></i>
                                     </a>
                                     <a href="#">

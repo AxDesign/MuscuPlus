@@ -39,30 +39,38 @@
                     <?php
                     if(isset($exoList)){
                         foreach($exoList as $exo){?>
-                            <p><?=$exo['exoName']?></p>
+                            <p>
+                                Nom: <?=$exo['exoName']?><br />
+                                Séries: <?=$exo['exoSeries']?><br />                        
+                                Répétitions: <?=$exo['exoRepetitions']?><br />                        
+                            </p>
                     <?php }
                     } else { ?>
                         <p>Aucune donnée trouvée pour le moment</p> <?php
                     } ?>
                 </div>
             </section>
-                <i class="fas fa-plus btn-create" onclick="DisplayPopUp()"></i>
         </section>
+        <i class="fas fa-plus btn-create" onclick="DisplayPopUp()"></i>
         
         <!-- POP-UP NEW ACTIVITY -->
         <section class="pop-up">
             <div class="content-pop">
                 <div class="header-pop">
                     <i class="fas fa-arrow-left btn-back" onclick="ClosePopUp()"></i>
-                    <h2>Créer un nouvel exercice</h2>
                 </div>
-                <form id="createExerciseForm">
-                    <label>Nom: </label>
-                    <input type="hidden" name="activityId" id="activityId" value="<?=$activityId?>">
-                    <input type="hidden" name="programId" id="programId" value="<?=$programId?>">
-                    <input type="text" name="exerciseName" id="exerciseName">
-                    <button type="submit">Créer</button>
-                </form>
+                <div class="pop-up-main">
+                    <h2>Créer un nouvel exercice</h2>
+                    <form id="createExerciseForm">
+                        <label>Nom: </label>
+                        <input type="hidden" name="activityId" id="activityId" value="<?=$activityId?>">
+                        <input type="hidden" name="programId" id="programId" value="<?=$programId?>">
+                        <input type="text" name="exerciseName" id="exerciseName" placeholder="Nom de l'exercice">
+                        <input type="number" name="exerciseSeries" id="exerciseSeries" placeholder="Nombres de séries">
+                        <input type="number" name="exerciseRepetitions" id="exerciseRepetitions" placeholder="Nombres de Répétitions">
+                        <button type="submit">Créer</button>
+                    </form>
+                </div>
             </div>
         </section>
     </body>

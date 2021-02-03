@@ -13,6 +13,8 @@ function DisplayExercise(){
     while($donneeExercise = $reqExercise->fetch()){
         $exercise['idExo'] = $donneeExercise['id_exo'];
         $exercise['exoName'] = $donneeExercise['name'];
+        $exercise['exoSeries'] = $donneeExercise['series'];
+        $exercise['exoRepetitions'] = $donneeExercise['repetitions'];
         $exoList[] = $exercise;
     }
 }

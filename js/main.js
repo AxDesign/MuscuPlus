@@ -38,10 +38,12 @@ jQuery(document).ready(function() {
         var formData = {
             'activityId'    : $('input[name=activityId]').val(),
             'programId'    : $('input[name=programId]').val(),
-            'exerciseName'    : $('input[name=exerciseName]').val()
+            'exerciseName'    : $('input[name=exerciseName]').val(),
+            'exerciseSeries'    : $('input[name=exerciseSeries]').val(),
+            'exerciseRepetitions'    : $('input[name=exerciseRepetitions]').val()
         };
 
-        console.log('Click form')
+        console.log('Click form');
     
         $.ajax({
             type        : 'POST',
