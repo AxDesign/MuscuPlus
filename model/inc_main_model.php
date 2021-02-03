@@ -32,4 +32,10 @@ function DeleteActivity(){
         'idUser' => $_SESSION['id'],
         'idActivity' => $activityId
     ));
+
+    $reqExerciseDelete = $bdd->prepare('DELETE FROM exercise WHERE id_user = :idUser AND id_activity = :idActivity');
+    $reqExerciseDelete->execute(array(
+        'idUser' => $_SESSION['id'],
+        'idActivity' => $activityId
+    ));
 }
