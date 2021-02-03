@@ -59,6 +59,9 @@
                                     <a href="#">
                                         <i class="fas fa-play"></i>
                                     </a>
+                                    <a href="activity.php?activityId=<?=$activityId?>&activityName=<?=$activityName?>&programIdDelete=<?=$program['programId']?>">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
                                 </div>
                             </div>
                     <?php   $programNumber++;

@@ -137,6 +137,6 @@
     transform: translateY(-50%);
     font-size: 1.3em;
 }
-.program-icone a:last-child, .exercise-icone a:last-child{
-    margin-left: 30px;
+.program-icone a:nth-child(n+1), .exercise-icone a:nth-child(n+1){
+    margin-left: 15px;
 }

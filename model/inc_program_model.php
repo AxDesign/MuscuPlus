@@ -16,3 +16,20 @@ function DisplayProgram(){
         $programList[] = $program;
     }
 }
+
+function DeleteProgram(){
+    global $bdd,
+            $programIdDelete;
+
+    $reqProgramDelete = $bdd->prepare('DELETE FROM program WHERE id_user = :idUser AND id_program = :idProgram');
+    $reqProgramDelete->execute(array(
+        'idUser' => $_SESSION['id'],
+        'idProgram' => $programIdDelete
+    ));
+
+    $reqExerciseDelete = $bdd->prepare('DELETE FROM exercise WHERE id_user = :idUser AND id_program = :idProgram');
+    $reqExerciseDelete->execute(array(
+        'idUser' => $_SESSION['id'],
+        'idProgram' => $programIdDelete
+    ));
+}

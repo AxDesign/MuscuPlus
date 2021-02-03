@@ -6,6 +6,11 @@ require_once('model/inc_program_model.php');
 $activityId = $_GET['activityId'];
 $activityName = $_GET['activityName'];
 
+if(isset($_GET['programIdDelete'])){
+    $programIdDelete = $_GET['programIdDelete'];
+    DeleteProgram();
+}
+
 $programList;
 DisplayProgram();
 
