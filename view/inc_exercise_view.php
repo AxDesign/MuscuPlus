@@ -87,7 +87,9 @@
                         <input type="hidden" name="programId" id="programId" value="<?=$programId?>">
                         <input type="text" name="exerciseName" id="exerciseName" placeholder="Nom de l'exercice">
                         <input type="number" name="exerciseSeries" id="exerciseSeries" placeholder="Nombres de séries">
-                        <input type="number" name="exerciseRepetitions" id="exerciseRepetitions" placeholder="Nombres de Répétitions">
+                        <input class="exerciseTimeDisplay" type="number" name="exerciseRepetitions" id="exerciseRepetitions" placeholder="Nombres de Répétitions">
+                        <input class="exerciseTimeHidden" type="number" name="exerciseTime" id="exerciseTime" placeholder="Durée de l'exercice">
+                        <input type="checkbox" name="isTime" id="isTime" onclick="IsChecked()">
                         <button type="submit">Créer</button>
                     </form>
                 </div>

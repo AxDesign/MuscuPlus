@@ -8,6 +8,19 @@ function ClosePopUp(){
     $(".pop-up").removeClass("display_pop-up");
 }
 
+function IsChecked(){
+    if($('#isTime').is(':checked')){
+        $("input[name=exerciseRepetitions").removeClass("exerciseTimeDisplay");
+        $("input[name=exerciseRepetitions").addClass("exerciseTimeHidden");
+        $("input[name=exerciseTime").removeClass("exerciseTimeHidden");
+        $("input[name=exerciseTime").addClass("exerciseTimeDisplay");
+    } else{
+        $("input[name=exerciseRepetitions").removeClass("exerciseTimeHidden");
+        $("input[name=exerciseRepetitions").addClass("exerciseTimeDisplay");
+        $("input[name=exerciseTime").removeClass("exerciseTimeDisplay");
+        $("input[name=exerciseTime").addClass("exerciseTimeHidden");
+    }
+}
 
 jQuery(document).ready(function() {
 
@@ -90,4 +103,7 @@ jQuery(document).ready(function() {
             });
         event.preventDefault();
     });
+    
+
+
 });

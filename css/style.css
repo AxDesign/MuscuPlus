@@ -7,6 +7,12 @@
     justify-content: center;
     overflow: hidden;
 }
+.exerciseTimeHidden{
+    display: none;
+}
+.exerciseTimeDisplay{
+    display: inline-block;
+}
 
 /*-- INSCRIPTION --*/
 .box-inscription, .box-connexion{
