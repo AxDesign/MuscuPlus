@@ -17,6 +17,18 @@ function DisplayProgram(){
     }
 }
 
+function CountExercises($programId){
+    global $bdd;
+
+    $reqExerciseCount = $bdd->prepare('SELECT COUNT(id_program) FROM exercise WHERE id_user = :idUser AND id_program = :idProgram');
+    $reqExerciseCount->execute(array(
+        'idUser' => $_SESSION['id'],
+        'idProgram' => $programId
+    ));
+
+    return $reqExerciseCount->fetchColumn();
+}
+
 function DeleteProgram(){
     global $bdd,
             $programIdDelete;

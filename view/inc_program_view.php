@@ -50,7 +50,10 @@
                                     <p>
                                         <?=$program['programName']?>
                                     </p>
-                                    <p>5 Exercices</p>
+                                        <?php $numberExercise = CountExercises($program['programId']) ?>
+                                    <p>
+                                        <?= $numberExercise ?> Exercices
+                                    </p>
                                 </div>
                                 <div class="program-icone">
                                     <a href="exercise.php?activityId=<?=$activityId?>&activityName=<?=$activityName?>&programId=<?=$program['programId']?>&programName=<?=$program['programName']?>">
