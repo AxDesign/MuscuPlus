@@ -4,7 +4,7 @@ function DisplayExercise(){
             $exoList,
             $programId;
     
-    $reqExercise = $bdd->prepare('SELECT * FROM exercise WHERE id_user = :idUser AND id_program = :idProgram');
+    $reqExercise = $bdd->prepare('SELECT * FROM exercise WHERE id_user = :idUser AND id_program = :idProgram ORDER BY id_exo ASC');
     $reqExercise->execute(array(
         'idUser' => $_SESSION['id'],
         'idProgram' => $programId

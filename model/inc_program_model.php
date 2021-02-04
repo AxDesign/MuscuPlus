@@ -4,7 +4,7 @@ function DisplayProgram(){
             $programList,
             $activityId;
 
-    $reqProgram = $bdd->prepare('SELECT * FROM program WHERE id_user = :idUser AND id_activity = :idActivity');
+    $reqProgram = $bdd->prepare('SELECT * FROM program WHERE id_user = :idUser AND id_activity = :idActivity ORDER BY id_program ASC' );
     $reqProgram->execute(array(
         'idUser' => $_SESSION['id'],
         'idActivity' => $activityId

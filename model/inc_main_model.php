@@ -3,7 +3,7 @@ function DisplayActivity(){
     global $bdd,
             $activityList;
 
-    $reqActivity = $bdd->prepare('SELECT * FROM activity WHERE id_user = :idUser');
+    $reqActivity = $bdd->prepare('SELECT * FROM activity WHERE id_user = :idUser ORDER BY id_activity ASC');
     $reqActivity->execute(array(
         'idUser' => $_SESSION['id']
     ));
