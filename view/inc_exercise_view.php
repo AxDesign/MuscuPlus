@@ -50,7 +50,12 @@
                                         <?=$exo['exoName']?>
                                     </p>
                                     <p>
-                                        <?=$exo['exoSeries']?> x <?=$exo['exoRepetitions']?> répétitions.
+                                        <?php
+                                        if($exo['exoTime'] == 0){?>
+                                            <?=$exo['exoSeries']?> x <?=$exo['exoRepetitions']?> répétitions.
+                                        <?php } else { ?>
+                                            <?=$exo['exoSeries']?> x <?=$exo['exoTime']?> min.
+                                        <?php } ?>
                                     </p>
                                 </div>
                                 <div class="exercise-icone">

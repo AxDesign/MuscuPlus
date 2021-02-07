@@ -8,8 +8,16 @@ if(isset($_POST['exerciseName'])){
     $idProgram = $_POST['programId'];
     $exerciseName = $_POST['exerciseName'];
     $exerciseSeries = $_POST['exerciseSeries'];
-    $exerciseRepetitions = $_POST['exerciseRepetitions'];
-    CreateProgram();
+    
+    if(empty($_POST['exerciseTime'])){
+        $exerciseTime = 0;
+        $exerciseRepetitions = $_POST['exerciseRepetitions'];
+    } else {
+        $exerciseRepetitions = 0;
+        $exerciseTime = $_POST['exerciseTime'];
+    }
+
+    CreateExercice();
 }
 
 require_once('view/inc_createExercise_view_json.php');

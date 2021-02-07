@@ -7,6 +7,7 @@ if(isset($_POST['programName'])){
     $activityName = $_POST['activityName'];
     $activityId = $_POST['activityId'];
     $programName = $_POST['programName'];
+    $exerciseTime = $_POST['exerciseTime'];
     CreateProgram();
 }
 

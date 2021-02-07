@@ -72,33 +72,57 @@ jQuery(document).ready(function() {
             'programId'    : $('input[name=programId]').val(),
             'exerciseName'    : $('input[name=exerciseName]').val(),
             'exerciseSeries'    : $('input[name=exerciseSeries]').val(),
-            'exerciseRepetitions'    : $('input[name=exerciseRepetitions]').val()
+            'exerciseRepetitions'    : $('input[name=exerciseRepetitions]').val(),
+            'exerciseTime'    : $('input[name=exerciseTime]').val()
         };
 
-        console.log('Click form');
+        console.log(formData);
     
         $.ajax({
             type        : 'POST',
             url         : 'createExercise.php',
             data        : formData,
             dataType    : 'json',
-            encode      : true
+            encode      : true,
+            error       : function (xhr, ajaxOptions, thrownError) {
+                alert("Erreur technique, merci de renouveller votre demande plus tard ou de contacter le support technique");
+                console.log(xhr.status);
+                console.log(thrownError);
+            }
         })
             .done(function(data) {
-                $(".exercise-container").append('<div class="exercise-tab">' +
-                                                    '<div class="exerciseNumber">' +
-                                                        '<p>0</p>' +
-                                                    '</div>' +
-                                                    '<div class="exercise-tab-main">' +
-                                                        '<p>' + data.exerciseName + '</p>' +
-                                                        '<p>' + data.exerciseSeries + ' x ' + data.exerciseRepetitions + ' répétitions.</p>' +
-                                                    '</div>' +
-                                                    '<div class="exercise-icone">' +
-                                                        '<a href="#">' +
-                                                            '<i class="fas fa-trash"></i>' +
-                                                        '</a>' +
-                                                    '</div>' +
-                                                '</div>');
+                if($('#isTime').is(':checked')){
+
+                    $(".exercise-container").append('<div class="exercise-tab">' +
+                                                        '<div class="exerciseNumber">' +
+                                                            '<p>0</p>' +
+                                                        '</div>' +
+                                                        '<div class="exercise-tab-main">' +
+                                                            '<p>' + data.exerciseName + '</p>' +
+                                                            '<p>' + data.exerciseSeries + ' x ' + data.exerciseTime + ' min.</p>' +
+                                                        '</div>' +
+                                                        '<div class="exercise-icone">' +
+                                                            '<a href="#">' +
+                                                                '<i class="fas fa-trash"></i>' +
+                                                            '</a>' +
+                                                        '</div>' +
+                                                    '</div>');
+                } else {
+                    $(".exercise-container").append('<div class="exercise-tab">' +
+                                                        '<div class="exerciseNumber">' +
+                                                            '<p>0</p>' +
+                                                        '</div>' +
+                                                        '<div class="exercise-tab-main">' +
+                                                            '<p>' + data.exerciseName + '</p>' +
+                                                            '<p>' + data.exerciseSeries + ' x ' + data.exerciseRepetitions + ' répétitions.</p>' +
+                                                        '</div>' +
+                                                        '<div class="exercise-icone">' +
+                                                            '<a href="#">' +
+                                                                '<i class="fas fa-trash"></i>' +
+                                                            '</a>' +
+                                                        '</div>' +
+                                                    '</div>');
+                }
                 ClosePopUp();
             });
         event.preventDefault();

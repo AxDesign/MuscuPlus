@@ -15,6 +15,7 @@ function DisplayExercise(){
         $exercise['exoName'] = $donneeExercise['name'];
         $exercise['exoSeries'] = $donneeExercise['series'];
         $exercise['exoRepetitions'] = $donneeExercise['repetitions'];
+        $exercise['exoTime'] = $donneeExercise['time'];
         $exoList[] = $exercise;
     }
 }
