@@ -45,7 +45,7 @@ jQuery(document).ready(function() {
             encode : true
         })
             .done(function(data){
-                console.log('Envoie Réussi de :' + data);
+                $('#createFastExercise').append('Envoie de votre exercice réussi');
             });
             
         event.preventDefault();
