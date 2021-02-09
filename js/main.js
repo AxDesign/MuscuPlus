@@ -24,6 +24,33 @@ function IsChecked(){
 
 jQuery(document).ready(function() {
 
+    console.log('Démarage');
+
+    $('#createFastExercise').submit(function(event){
+        var formData = {
+            'activityList' : $('select[name=activityList]').val(),
+            'programList'  : $('select[name=programList]').val(),
+            'exerciseName'    : $('input[name=exerciseName]').val(),
+            'exerciseSeries'    : $('input[name=exerciseSeries]').val(),
+            'exerciseRepetitions'    : $('input[name=exerciseRepetitions]').val(),
+            'exerciseTime'    : $('input[name=exerciseTime]').val()
+
+        };
+
+        $.ajax({
+            type: "POST",
+            url: "createFastExercise.php",
+            data: formData,
+            dataType: "json",
+            encode : true
+        })
+            .done(function(data){
+                console.log('Envoie Réussi de :' + data);
+            });
+            
+        event.preventDefault();
+    });
+
     $('#createProgramForm').submit(function(event) {
 
         var formData = {

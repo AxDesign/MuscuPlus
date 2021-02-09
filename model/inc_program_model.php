@@ -16,6 +16,22 @@ function DisplayProgram(){
         $programList[] = $program;
     }
 }
+function DisplayAllProgram(){
+    global $bdd,
+            $programList,
+            $activityId;
+
+    $reqProgram = $bdd->prepare('SELECT * FROM program WHERE id_user = :idUser ORDER BY id_program ASC' );
+    $reqProgram->execute(array(
+        'idUser' => $_SESSION['id']
+    ));
+
+    while($donneeProgram = $reqProgram->fetch()){
+        $program['programId'] = $donneeProgram['id_program'];
+        $program['programName'] = $donneeProgram['programName'];
+        $programList[] = $program;
+    }
+}
 
 function CountExercises($programId){
     global $bdd;

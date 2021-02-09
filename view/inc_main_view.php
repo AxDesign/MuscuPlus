@@ -30,6 +30,36 @@
 
         <!-- MAIN -->
         <section class="main-container">
+
+            <section>
+                <form id="createFastExercise">
+                    <!-- activity -->
+                    <select name="activityList" id="activityList">
+                        <?php
+                        if(isset($activityList)){
+                            foreach($activityList as $activity){?>
+                                <option value=<?=$activity['id_activity']?>><?=$activity['name']?></option>
+                        <?php }
+                        }?>
+                    </select>
+
+                    <!-- program -->
+                    <select name="programList" id="programList">
+                        <?php
+                        if(isset($programList)){
+                            foreach($programList as $program){?>
+                                <option value=<?=$program['programId']?>><?=$program['programName']?></option>
+                        <?php }
+                        }?>
+                    </select>
+                    <input type="text" name="exerciseName" id="exerciseName" placeholder="Nom de l'exercice">
+                    <input type="number" name="exerciseSeries" id="exerciseSeries" placeholder="Nombres de séries">
+                    <input class="exerciseTimeDisplay" type="number" name="exerciseRepetitions" id="exerciseRepetitions" placeholder="Nombres de Répétitions">
+                    <input class="exerciseTimeHidden" type="number" name="exerciseTime" id="exerciseTime" placeholder="Durée de l'exercice">
+                    <button type="submit">Créer</button>
+                </form>
+            </section>
+
             <!-- ACTIVITY -->
             <section class="flex-main activity">
                 <h2>Mes activitées</h2>
