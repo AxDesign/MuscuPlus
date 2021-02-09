@@ -1,4 +1,4 @@
-.pop-up{
+.pop-up, .popUpActivity, .popUpProgram{
     display:none;   
 }
 .display_pop-up{

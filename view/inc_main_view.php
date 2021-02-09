@@ -42,6 +42,7 @@
                         <?php }
                         }?>
                     </select>
+                    <button type="button" onclick="DisplayPopUpHomeActivity()">+</button>
 
                     <!-- program -->
                     <select name="programList" id="programList">
@@ -52,6 +53,8 @@
                         <?php }
                         }?>
                     </select>
+                    <button type="button" onclick="DisplayPopUpHomeProgram()">+</button>
+
                     <input type="text" name="exerciseName" id="exerciseName" placeholder="Nom de l'exercice">
                     <input type="number" name="exerciseSeries" id="exerciseSeries" placeholder="Nombres de séries">
                     <input class="exerciseTimeDisplay" type="number" name="exerciseRepetitions" id="exerciseRepetitions" placeholder="Nombres de Répétitions">
@@ -59,6 +62,27 @@
                     <input type="checkbox" name="isTime" id="isTime" onclick="IsChecked()">
                     <button type="submit">Créer</button>
                 </form>
+
+                <section class="popUpActivity">
+                        <p>Créer une nouvelle activitée</p>
+                        <form action="createActivity.php" method="post">
+                            <label>Nom: </label>
+                            <input type="text" name="activity-name" class="activity-name">
+                            <button type="submit">Créer</button>
+                        </form>
+                        <button type="button" onclick="ClosePopUpHomeActivity()">Retour</button>
+                </section>
+
+                <section class="popUpProgram">
+                        <p>Créer un nouveau programme dans <span id="activitySelected"></span></p>
+                        <form id="createFastProgram">
+                            <label>Nom: </label>
+                            <input type="text" name="program-name" class="program-name">
+                            <button type="submit">Créer</button>
+                        </form>
+                        <button type="button" onclick="ClosePopUpHomeProgram()">Retour</button>
+                </section>
+
             </section>
 
             <!-- ACTIVITY -->
@@ -105,7 +129,7 @@
                     <h2>Créer une nouvelle activitée</h2>
                     <form action="createActivity.php" method="post">
                         <label>Nom: </label>
-                        <input type="text" name="activity-name" id="activity-name">
+                        <input type="text" name="activity-name" class="activity-name">
                         <button type="submit">Créer</button>
                     </form>
                 </div>

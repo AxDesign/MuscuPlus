@@ -2,10 +2,22 @@
 function DisplayPopUp(){
     $(".pop-up").addClass("display_pop-up");
 }
+function DisplayPopUpHomeActivity(){
+    $(".popUpActivity").addClass("display_pop-up");
+}
+function DisplayPopUpHomeProgram(){
+    $(".popUpProgram").addClass("display_pop-up");
+}
 
 /*-- Fermé Pop-Up --*/
 function ClosePopUp(){
     $(".pop-up").removeClass("display_pop-up");
+}
+function ClosePopUpHomeActivity(){
+    $(".popUpActivity").removeClass("display_pop-up");
+}
+function ClosePopUpHomeProgram(){
+    $(".popUpProgram").removeClass("display_pop-up");
 }
 
 function IsChecked(){
@@ -23,8 +35,37 @@ function IsChecked(){
 }
 
 jQuery(document).ready(function() {
+        var selectedList;
 
-    console.log('Démarage');
+        if(selectedList === undefined){
+            selectedList = $('#activityList option:first-child').text();
+            $('#activitySelected').text(selectedList);
+        }
+        $('#activityList').click(function(){
+            selectedList = $('#activityList option:selected').text();
+            $('#activitySelected').text(selectedList);
+        });
+
+        $('#createFastProgram').submit(function(event) {
+
+            var formData = {
+                'activityId' : $('select[name=activityList]').val(),
+                'activityName'   : selectedList,
+                'programName'    : $('input[name=program-name]').val()
+            };
+        
+            $.ajax({
+                type        : 'POST',
+                url         : 'createFastProgram.php',
+                data        : formData,
+                dataType    : 'json',
+                encode      : true
+            })
+                .done(function(data) {
+                    console.log(data);    
+                });
+            event.preventDefault();
+        });
 
     $('#createFastExercise').submit(function(event){
         var formData = {

@@ -10,4 +10,4 @@ if(isset($_POST['programName'])){
     CreateProgram();
 }
 
-require_once('view/inc_createProgram_view_json.php');
+require_once('view/inc_createFastProgram_view_json.php');
