@@ -39,14 +39,6 @@
         width:25%;
     }
 
-    /*- BUTTON CREATE -*/
-    .btn-create{
-        position: fixed;
-        top: 100vh;
-        left: 50vw;
-        transform: translate(-50%,-100%);
-    }
-
     /*--- PROGRAM ---*/
     .program-tab, .exercise-tab{
         max-width: 400px;

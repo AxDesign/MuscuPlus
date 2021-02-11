@@ -16,4 +16,7 @@ DisplayActivity();
 $programList;
 DisplayAllProgram();
 
+$semaine = [];
+CalculateTimeOfActivity();
+
 require_once('view/inc_main_view.php');

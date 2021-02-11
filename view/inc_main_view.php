@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="css/laptop.css">
         <link rel="stylesheet" href="https://use.typekit.net/cmp3lqm.css">
         <script defer src="https://kit.fontawesome.com/cfe9ffe70f.js" crossorigin="anonymous"></script>
-        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
         <script defer src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
         <script defer src="js/main.js"></script>
     </head>
@@ -112,7 +112,12 @@
             <!-- STATISTIQUES -->
             <section class="flex-main statistique">
                 <h2>Mes statistiques</h2>
-                <p>Aucune donnée trouvée pour le moment</p>
+                <?php
+                if(isset($activityList)){ ?>
+                    <canvas id="graph1" width="600" height="300"></canvas>
+                <?php } else { ?>
+                <p>Aucune données trouvées pour le moment</p>
+                <?php } ?>
             </section>
         </section>
         <?php
@@ -135,5 +140,7 @@
                 </div>
             </div>
         </section>
+
+        <?php require_once("view/inc_main_statistiques_script_view.php") ?>
     </body>
 </html>
