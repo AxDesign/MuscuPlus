@@ -1,5 +1,5 @@
 <script>
-    var ctx = document.getElementById('graph1').getContext('2d');
+    var ctx = document.getElementById('statTime').getContext('2d');
     var chart = new Chart(ctx, {
         // The type of chart we want to create
         type: 'bar',

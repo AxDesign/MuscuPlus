@@ -111,11 +111,14 @@
             
             <!-- STATISTIQUES -->
             <section class="flex-main statistique">
-                <h2>Mes statistiques</h2>
                 <?php
                 if(isset($activityList)){ ?>
+                    <a href="statistiques.php">
+                        <h2>Mes statistiques</h2>
+                    </a>
                     <canvas id="graph1" width="600" height="300"></canvas>
-                <?php } else { ?>
+                    <?php } else { ?>
+                <h2>Mes statistiques</h2>
                 <p>Aucune données trouvées pour le moment</p>
                 <?php } ?>
             </section>
