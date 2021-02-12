@@ -15,26 +15,41 @@
 }
 
 /*-- INSCRIPTION --*/
-.box-inscription, .box-connexion{
+#inscription h1, #connexion h1{
+    font-size: 3em;
+    font-weight: 800;
+    color: #4A4059;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+.inscription-container, .connexion-container{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%,-50%);
 }
-.box-inscription h1, .box-connexion h1{
-    font-size: 40px;
+.inscription-container a p, .connexion-container a p{
+    color: #11e5b48c;
+    margin-bottom: 5px;
+    font-size: 1em;
+}
+.inscription-container input, .connexion-container input, #createFastExercise input, #createFastExercise select{
+    height: 25px;
+    width: 200px;
 }
 .box-inscription .fas, .box-connexion .fas{
     color: #11E5B3;
-}
-.box-inscription .text-box:nth-child(2){
-    margin-top: 15px;
 }
 .box-inscription .text-box:nth-child(n+3), .box-connexion .text-box:nth-child(n+3){
     margin-top: 10px;
 }
 .box-inscription .footer, .box-connexion .footer{
     margin-top: 15px;
+}
+.footer button{
+    margin-bottom: 10px;
+    height: 30px;
+    width: 125px;
 }
 
 /*--- MAIN ---*/
@@ -49,38 +64,38 @@
     font-weight: 100;
 }
 .text-title-page :nth-child(2){
-    font-size: 5em;
+    font-size: 4em;
 }
 .flex-main p:last-child(1), .flex-program p:last-child(1){
     margin-top: 25px;
 }
 
+/*-- CREATION RAPIDE D'EXERCICES --*/
+.createFastExercise h2:first-child, .exercise h2:first-child{
+    margin-bottom: 10px;
+}
+
 /*-- ACTIVITY --*/
-.activity, .program{
+.activity{
+    margin: 0 25px;
+}
+.createFastExercise, .activity, .program, .exercise{
     margin-top: 30px;
 }
-.activity h2:first-child, .statistique h2:first-child, .program h2:first-child{
+.createFastExercise h2:first-child, .activity h2:first-child, .statistique h2:first-child, .program h2:first-child, .exercise h2:first-child{
     font-size: 1.4em;
     font-weight: 900;
     color: #4A4059;
-}
-.activity-tabs{
-    display: flex;
-    justify-content: center;
-    margin-top: 25px;
+    text-transform: uppercase;
 }
 .activity-tab{
     position: relative;
-}
-.activity-tab a:nth-child(n+1){
-    margin-left: 10px;
 }
 /*- TAB -*/
 .activity-tab a:first-child{
     display: block;
     border-radius: 25px;
     background-color: #683DE5;
-    width: 200px;
     height: 225px;
     color: #fff;
     font-size: 1.5em;
@@ -88,6 +103,7 @@
     font-family: basic-sans, sans-serif;
     font-weight: 300;
     text-transform: uppercase;
+    margin: 20px 0;
 }
 .trash-activity{
     position: absolute;

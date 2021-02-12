@@ -43,4 +43,7 @@
     .program-tab, .exercise-tab{
         max-width: 400px;
     }
+    .text-title-page :nth-child(2){
+        font-size: 4em;
+    }
 }

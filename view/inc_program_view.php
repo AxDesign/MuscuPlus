@@ -90,10 +90,9 @@
                 <div class="pop-up-main">
                     <h2>Créer un nouveau programme</h2>
                     <form id="createProgramForm">
-                        <label>Nom: </label>
                         <input type="hidden" name="activityId" value="<?=$activityId?>">
                         <input type="hidden" name="activityName" value="<?=$activityName?>">
-                        <input type="text" name="programName" id="programName">
+                        <input type="text" name="programName" id="programName" placeholder="Nom du programme">
                         <button type="submit">Créer</button>
                     </form>
                 </div>

@@ -15,6 +15,9 @@
             <h1><?=$activityName?></h1>
         </div>
     <?php } elseif($_SERVER['SCRIPT_NAME'] == '/exercise.php') {?>
-        <h1>Vos Exercices du Programme <?=$programName?></h1>
+        <div class="text-title-page">
+            <h1>Vos Exercices du Programme,</h1>
+            <h1><?=$programName?></h1>
+        </div>
     <?php } ?>
 </nav>
