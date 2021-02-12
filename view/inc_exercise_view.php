@@ -4,10 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Index</title>
+        <link rel="stylesheet" href="https://use.typekit.net/cmp3lqm.css">
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/laptop.css">
-        <link rel="stylesheet" href="https://use.typekit.net/cmp3lqm.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous" />
         <script defer src="https://kit.fontawesome.com/cfe9ffe70f.js" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
@@ -76,11 +76,6 @@
                 </div>
             </section>
         </section>
-
-        <?php
-            require_once('view/inc_footer_view.php');
-        ?>
-        <i class="fas fa-plus btn-create" onclick="DisplayPopUp()"></i>
         
         <!-- POP-UP NEW ACTIVITY -->
         <section class="pop-up">
@@ -103,5 +98,11 @@
                 </div>
             </div>
         </section>
+
+        <?php
+        //NAV BAR
+        require_once('view/inc_nav_bar_view.php');
+        require_once('view/inc_footer_view.php');
+        ?>
     </body>
 </html>

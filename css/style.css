@@ -71,7 +71,7 @@
 }
 
 /*-- CREATION RAPIDE D'EXERCICES --*/
-.createFastExercise h2:first-child, .exercise h2:first-child{
+.activity h2:first-child, .statistique h2:first-child, .createFastExercise h2:first-child, .exercise h2:first-child{
     margin-bottom: 10px;
 }
 

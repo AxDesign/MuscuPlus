@@ -71,7 +71,7 @@
                         <?php }
                         }?>
                     </select>
-                    <button type="button" onclick="DisplayPopUpHomeActivity()">+</button> <br />
+                    <button type="button" onclick="DisplayPopUp()">+</button> <br />
 
                     <!-- program -->
                     <select name="programList" id="programList">
@@ -127,10 +127,7 @@
                 <?php } ?>
             </section>
         </section>
-        <?php
-            require_once('view/inc_footer_view.php');
-        ?>
-        <i class="fas fa-plus btn-create" onclick="DisplayPopUp()"></i>
+        
         <!-- POP-UP NEW ACTIVITY -->
         <section class="pop-up">
             <div class="content-pop">
@@ -146,7 +143,12 @@
                 </div>
             </div>
         </section>
-
-        <?php require_once("view/inc_main_statistiques_script_view.php") ?>
+        
+        <?php
+        require_once("view/inc_main_statistiques_script_view.php");
+        // NAV BAR
+        require_once('view/inc_nav_bar_view.php');
+        require_once('view/inc_footer_view.php');
+        ?>
     </body>
 </html>
