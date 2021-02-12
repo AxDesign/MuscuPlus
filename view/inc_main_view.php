@@ -58,6 +58,7 @@
                 </div>
             </section>
             <!-- CREATION RAPIDE D'EXERCICES -->
+            <?php if(isset($activityList)){ ?>
             <section class="createFastExercise">
                 <h2>Créer un exercice</h2>
                 <form id="createFastExercise">
@@ -110,6 +111,7 @@
                 </section>
 
             </section>
+            <?php } ?>
             
             <!-- STATISTIQUES -->
             <section class="flex-main statistique">
