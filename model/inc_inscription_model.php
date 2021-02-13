@@ -14,7 +14,8 @@ function CheckUserInscription(){
             $errorUserPassword,
             $errorUserCheckPassword,
             $valid,
-            $key;
+            $key,
+            $bdd;
 
     if(empty($userLastName)){
         $valid = false;
@@ -55,6 +56,19 @@ function CheckUserInscription(){
         $valid = false;
         $errorUserEmail = "Le champ d'email est trop long !";
     }
+    try {
+        $reqEmail = $bdd->prepare('SELECT * FROM users WHERE email = ?');
+        $reqEmail->execute(array($userEmail));
+        if($reqEmail->rowCount()>=1) {
+            $errorUserEmail = "Cet email existe déjà. Tentez de récupérer votre mot de passe.";
+            $valid = false;
+        }
+    } catch (Exception $e) {
+        $valid = false;
+        $errorMsg = 'Une erreur innatendue est survenue. Le service technique a été informé. Veuillez retenter plus tard.';
+    }
+    
+
 
     if(empty($userPassword)){
         $valid = false;
@@ -97,17 +111,29 @@ function CanInscription(){
             $userEmail,
             $userPassword,
             $userCheckPassword,
-            $key;
+            $key,
+            $errorMsg,
+            $errorIt;
 
-    $req = $bdd->prepare('INSERT INTO users(lastName, name, age, email, password, confirmkey) VALUES(:lastName, :name, :age, :email, :password, :confirmkey)');
-    $req->execute(array(
-        'lastName' => $userLastName,
-        'name' => $userName,
-        'age' => $userAge,
-        'email' => $userEmail,
-        'password' => $userPassword,
-        'confirmkey' => $key
-    ));
-    require_once("mail/mailConfirmation.php");
-    header("location:index.php");
+    // $passwordHash = password_hash($userPassword, PASSWORD_DEFAULT);
+
+    try{
+        $req = $bdd->prepare('INSERT INTO users(lastName, name, age, email, password, confirmkey) VALUES(:lastName, :name, :age, :email, :password, :confirmkey)');
+        $req->execute(array(
+            'lastName' => $userLastName,
+            'name' => $userName,
+            'age' => $userAge,
+            'email' => $userEmail,
+            'password' => $userPassword,
+            'confirmkey' => $key
+        ));
+
+        require_once("mail/mailConfirmation.php");
+
+    }
+    catch (Exception $e){
+        echo "<!-- Erreur : " . $e->getMessage() . " -->";
+        $errorIt = $e;
+        $errorMsg = 'Une erreur est survenu : ' . $e->getMessage();
+    }    
 }

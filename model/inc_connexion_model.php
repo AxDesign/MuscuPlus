@@ -28,6 +28,8 @@ function VerificationUserConnexion(){
         $errorPasswordUser = "Le champ de mot de passe est trop long !";
     }
     
+    // $passwordHash = password_verify($userPasswordConnexion, PASSWORD_DEFAULT);
+
     //On test la connexion
     $requestConnexion =  $bdd->prepare('SELECT * FROM users WHERE email = ? AND password = ?');
     $requestConnexion->execute(array($userEmailConnexion, $userPasswordConnexion));

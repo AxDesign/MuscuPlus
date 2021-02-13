@@ -117,9 +117,7 @@
             <section class="flex-main statistique">
                 <?php
                 if(isset($activityList)){ ?>
-                    <a href="statistiques.php">
-                        <h2>Mes statistiques</h2>
-                    </a>
+                    <h2>Mes statistiques</h2>
                     <canvas id="statTime" width="600" height="300"></canvas>
                     <?php } else { ?>
                 <h2>Mes statistiques</h2>

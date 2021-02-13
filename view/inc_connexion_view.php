@@ -13,6 +13,9 @@
 
     <body id="connexion">
         <section class="connexion-container">
+            <?php if(isset($errorMsg)){ ?>
+                <p class='errorMsg'><?=$errorMsg?></p>
+            <?php } ?>
             <form class="box-connexion" method="post">
                 <h1>Connexion</h1>
                 

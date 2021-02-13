@@ -15,8 +15,9 @@ if($_SERVER['SERVER_NAME'] == 'muscuplus'){
 
 try{
     $bdd = new PDO("mysql:host=" . $host . ";dbname=" . $dbname, $user, $pass);
+    $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
 catch (Exception $e){
-    echo "Erreur : " . $e->getMessage();
+    $errorMsg = "Erreur, impossible de se connecter à la base de donnée";
 }
 ?>

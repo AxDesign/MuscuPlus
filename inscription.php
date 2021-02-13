@@ -16,11 +16,17 @@ if(isset($_POST['inscription'])){
     $userPassword = htmlspecialchars(trim($_POST['u_password']));
     $userCheckPassword = htmlspecialchars(trim($_POST['u_verifPassword']));
     $key = "";
+    $errorMsg;
+    $errorIt;
     
     //Process d'inscription
     CheckUserInscription();
     if($valid){
         CanInscription();
+
+        if(empty($errorIt)){
+            header("location:index.php"); 
+        }
     }
 }
 

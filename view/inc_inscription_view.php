@@ -13,6 +13,9 @@
     
     <body id="inscription">
         <section class="inscription-container">
+            <?php if(isset($errorMsg)){ ?>
+                <p class='errorMsg'><?=$errorMsg?></p>
+            <?php } ?>
             <form class="box-inscription" method="post">
                 <h1>Inscripton</h1>
     
