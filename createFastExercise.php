@@ -5,7 +5,6 @@ require_once('model/inc_createExercise_model.php');
 
 if(isset($_POST['exerciseName'])){
     $idActivity = $_POST['activityList'];
-    $idProgram = $_POST['programList'];
     $exerciseName = $_POST['exerciseName'];
     $exerciseSeries = $_POST['exerciseSeries'];
     

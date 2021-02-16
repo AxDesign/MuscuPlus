@@ -39,8 +39,7 @@
         width:25%;
     }
 
-    /*--- PROGRAM ---*/
-    .program-tab, .exercise-tab{
+    .exercise-tab{
         max-width: 400px;
     }
     .text-title-page :nth-child(2){

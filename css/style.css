@@ -1,4 +1,4 @@
-.pop-up, .popUpActivity, .popUpProgram{
+.pop-up, .popUpActivity{
     display:none;   
 }
 .display_pop-up{
@@ -66,7 +66,7 @@
 .text-title-page :nth-child(2){
     font-size: 4em;
 }
-.flex-main p:last-child(1), .flex-program p:last-child(1){
+.flex-main p:last-child(1){
     margin-top: 25px;
 }
 
@@ -79,10 +79,10 @@
 .activity{
     margin: 0 25px;
 }
-.createFastExercise, .activity, .program, .exercise{
+.createFastExercise, .activity, .exercise{
     margin-top: 30px;
 }
-.createFastExercise h2:first-child, .activity h2:first-child, .statistique h2:first-child, .program h2:first-child, .exercise h2:first-child{
+.createFastExercise h2:first-child, .activity h2:first-child, .statistique h2:first-child, h2:first-child, .exercise h2:first-child{
     font-size: 1.4em;
     font-weight: 900;
     color: #4A4059;
@@ -118,18 +118,18 @@
 }
 
 
-/*--- PROGRAM ---*/
-.program-container .program-tab:nth-child(n+1), .exercise-container .exercise-tab:nth-child(n+1){
+/*--- EXERCICES ---*/
+.exercise-container .exercise-tab:nth-child(n+1){
     margin-top: 20px;
 }
-.program-tab, .exercise-tab{
+.exercise-tab{
     position: relative;
     margin: 0 auto;
     max-width: 300px;
     height: 50px;
     /* background-color: red; */
 }
-.programNumber, .exerciseNumber{
+.exerciseNumber{
     position: absolute;
     top: 50%;
     left: 5px;
@@ -139,26 +139,26 @@
     width: 40px;
     border-radius: 7px;
 }
-.programNumber p, .exerciseNumber p{
+.exerciseNumber p{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.program-tab-main, .exercise-tab-main{
+.exercise-tab-main{
     text-align: left;
     position: absolute;
     top: 50%;
     left: 75px;
     transform: translateY(-50%);
 }
-.program-icone, .exercise-icone{
+.exercise-icone{
     position: absolute;
     top: 50%;
     right: 10px;
     transform: translateY(-50%);
     font-size: 1.3em;
 }
-.program-icone a:nth-child(n+1), .exercise-icone a:nth-child(n+1){
+.exercise-icone a:nth-child(n+1){
     margin-left: 15px;
 }

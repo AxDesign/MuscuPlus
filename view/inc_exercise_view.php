@@ -19,7 +19,7 @@
     <body id="main">
         <!-- HEADER -->
         <header>
-            <a href="activity.php?activityId=<?=$_GET['activityId']?>&activityName=<?=$_GET['activityName']?>">
+            <a href="main.php">
                 <i class="fas fa-arrow-left btn-back-page"></i>
             </a>
             <?php require_once("view/inc_main_header_view.php"); ?>
@@ -63,7 +63,7 @@
                                     </p>
                                 </div>
                                 <div class="exercise-icone">
-                                    <a href="exercise.php?exerciseIdDelete=<?=$exo['idExo']?>&programId=<?=$programId?>&activityId=<?=$activityId?>&activityName=<?=$activityName?>&programName=<?=$programName?>">
+                                    <a href="exercise.php?exerciseIdDelete=<?=$exo['idExo']?>&activityId=<?=$activityId?>&activityName=<?=$activityName?>">
                                         <i class="fas fa-trash"></i>
                                     </a>
                                 </div>
@@ -87,7 +87,6 @@
                     <h2>Créer un nouvel exercice</h2>
                     <form id="createExerciseForm">
                         <input type="hidden" name="activityId" id="activityId" value="<?=$activityId?>">
-                        <input type="hidden" name="programId" id="programId" value="<?=$programId?>">
                         <input type="text" name="exerciseName" id="exerciseName" placeholder="Nom de l'exercice">
                         <input type="number" name="exerciseSeries" id="exerciseSeries" placeholder="Nombres de séries">
                         <input class="exerciseTimeDisplay" type="number" name="exerciseRepetitions" id="exerciseRepetitions" placeholder="Nombres de Répétitions">

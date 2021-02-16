@@ -5,9 +5,6 @@ function DisplayPopUp(){
 function DisplayPopUpHomeActivity(){
     $(".popUpActivity").addClass("display_pop-up");
 }
-function DisplayPopUpHomeProgram(){
-    $(".popUpProgram").addClass("display_pop-up");
-}
 
 /*-- Fermé Pop-Up --*/
 function ClosePopUp(){
@@ -16,10 +13,6 @@ function ClosePopUp(){
 function ClosePopUpHomeActivity(){
     $(".popUpActivity").removeClass("display_pop-up");
 }
-function ClosePopUpHomeProgram(){
-    $(".popUpProgram").removeClass("display_pop-up");
-}
-
 function IsChecked(){
     if($('#isTime').is(':checked')){
         $("input[name=exerciseRepetitions").removeClass("exerciseTimeDisplay");
@@ -46,31 +39,9 @@ jQuery(document).ready(function() {
             $('#activitySelected').text(selectedList);
         });
 
-        $('#createFastProgram').submit(function(event) {
-
-            var formData = {
-                'activityId' : $('select[name=activityList]').val(),
-                'activityName'   : selectedList,
-                'programName'    : $('input[name=program-name]').val()
-            };
-        
-            $.ajax({
-                type        : 'POST',
-                url         : 'createFastProgram.php',
-                data        : formData,
-                dataType    : 'json',
-                encode      : true
-            })
-                .done(function(data) {
-                    console.log(data);    
-                });
-            event.preventDefault();
-        });
-
     $('#createFastExercise').submit(function(event){
         var formData = {
             'activityList' : $('select[name=activityList]').val(),
-            'programList'  : $('select[name=programList]').val(),
             'exerciseName'    : $('input[name=exerciseName]').val(),
             'exerciseSeries'    : $('input[name=exerciseSeries]').val(),
             'exerciseRepetitions'    : $('input[name=exerciseRepetitions]').val(),
@@ -92,52 +63,10 @@ jQuery(document).ready(function() {
         event.preventDefault();
     });
 
-    $('#createProgramForm').submit(function(event) {
-
-        var formData = {
-            'activityId'     : $('input[name=activityId]').val(),
-            'activityName'   : $('input[name=activityName]').val(),
-            'programName'    : $('input[name=programName]').val()
-        };
-    
-        $.ajax({
-            type        : 'POST',
-            url         : 'createProgram.php',
-            data        : formData,
-            dataType    : 'json',
-            encode      : true
-        })
-            .done(function(data) {
-                $(".program-container").append('<div class="program-tab">' +
-                                                    '<div class="programNumber">' +
-                                                        '<p>0</p>' +
-                                                    '</div>' +
-                                                    '<div class="program-tab-main">' +
-                                                        '<p>' + data.programName + '</p>' +
-                                                        '<p>0 Exercices</p>' +
-                                                    '</div>' +
-                                                    '<div class="program-icone">' +
-                                                        '<a href="#">' +
-                                                            '<i class="fas fa-edit"></i>' +
-                                                       '</a>' +
-                                                        '<a href="#">' +
-                                                            '<i class="fas fa-play"></i>' +
-                                                        '</a>' +
-                                                        '<a href="#">' +
-                                                            '<i class="fas fa-trash"></i>'+
-                                                        '</a>' +
-                                                    '</div>' +
-                                                '</div>');
-                ClosePopUp();
-            });
-        event.preventDefault();
-    });
-
     $('#createExerciseForm').submit(function(event) {
 
         var formData = {
             'activityId'    : $('input[name=activityId]').val(),
-            'programId'    : $('input[name=programId]').val(),
             'exerciseName'    : $('input[name=exerciseName]').val(),
             'exerciseSeries'    : $('input[name=exerciseSeries]').val(),
             'exerciseRepetitions'    : $('input[name=exerciseRepetitions]').val(),

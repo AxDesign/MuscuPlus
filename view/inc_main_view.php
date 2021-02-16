@@ -43,7 +43,7 @@
                         foreach($activityList as $activity){?>
                             <!-- activity -->
                             <div class='activity-tab'>
-                                <a href="activity.php?activityId=<?=$activity['id_activity']?>&activityName=<?=$activity['name']?>">
+                                <a href="exercise.php?activityId=<?=$activity['id_activity']?>&activityName=<?=$activity['name']?>">
                                     <?=$activity['name']?>
                                 </a>
                                 <!-- Icone Delete activity -->
@@ -73,17 +73,6 @@
                     </select>
                     <button type="button" onclick="DisplayPopUp()">+</button> <br />
 
-                    <!-- program -->
-                    <select name="programList" id="programList">
-                        <?php
-                        if(isset($programList)){
-                            foreach($programList as $program){?>
-                                <option value=<?=$program['programId']?>><?=$program['programName']?></option>
-                        <?php }
-                        }?>
-                    </select>
-                    <button type="button" onclick="DisplayPopUpHomeProgram()">+</button>
-
                     <input type="text" name="exerciseName" id="exerciseName" placeholder="Nom de l'exercice">
                     <input type="number" name="exerciseSeries" id="exerciseSeries" placeholder="Nombres de séries">
                     <input class="exerciseTimeDisplay" type="number" name="exerciseRepetitions" id="exerciseRepetitions" placeholder="Nombres de Répétitions">
@@ -99,15 +88,6 @@
                             <button type="submit">Créer</button>
                         </form>
                         <button type="button" onclick="ClosePopUpHomeActivity()">Retour</button>
-                </section>
-
-                <section class="popUpProgram">
-                        <p>Créer un nouveau programme dans <span id="activitySelected"></span></p>
-                        <form id="createFastProgram">
-                            <input type="text" name="program-name" class="program-name">
-                            <button type="submit">Créer</button>
-                        </form>
-                        <button type="button" onclick="ClosePopUpHomeProgram()">Retour</button>
                 </section>
 
             </section>

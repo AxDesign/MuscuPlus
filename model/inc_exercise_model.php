@@ -2,12 +2,12 @@
 function DisplayExercise(){
     global $bdd,
             $exoList,
-            $programId;
+            $activityId;
     
-    $reqExercise = $bdd->prepare('SELECT * FROM exercise WHERE id_user = :idUser AND id_program = :idProgram ORDER BY id_exo ASC');
+    $reqExercise = $bdd->prepare('SELECT * FROM exercise WHERE id_user = :idUser AND id_activity = :activityId ORDER BY id_exo ASC');
     $reqExercise->execute(array(
         'idUser' => $_SESSION['id'],
-        'idProgram' => $programId
+        'activityId' => $activityId
     ));
 
     while($donneeExercise = $reqExercise->fetch()){

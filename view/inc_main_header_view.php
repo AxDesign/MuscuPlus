@@ -9,15 +9,10 @@
             <h1>Hello</h1>
             <h1><?=$_SESSION['name']?>,</h1>
         </div>
-    <?php } elseif($_SERVER['SCRIPT_NAME'] == '/activity.php') { ?>
-        <div class="text-title-page">
-            <h1>Programmes</h1>
-            <h1><?=$activityName?></h1>
-        </div>
     <?php } elseif($_SERVER['SCRIPT_NAME'] == '/exercise.php') {?>
         <div class="text-title-page">
-            <h1>Vos Exercices du Programme,</h1>
-            <h1><?=$programName?></h1>
+            <h1></h1>
+            <h1><?=$activityName?></h1>
         </div>
     <?php } ?>
 </nav>
