@@ -7,5 +7,6 @@ $response["exerciseName"] = $exerciseName;
 $response["exerciseSeries"] = $exerciseSeries;
 $response["exerciseRepetitions"] = $exerciseRepetitions;
 $response["exerciseTime"] = $exerciseTime;
+$response["exerciseDistance"] = $exerciseDistance;
 
 echo json_encode($response);

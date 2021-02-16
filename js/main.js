@@ -17,10 +17,12 @@ function ClosePopUpHomeActivity(){
 function TimeIsChecked(){
     if($('#isTime').is(':checked')){
         $('#isDistanceAndTime').prop("checked", false);
+        $("input[name=exerciseSeries").addClass("exerciseHidden");
         $("input[name=exerciseRepetitions").addClass("exerciseHidden");
         $("input[name=exerciseTime").removeClass("exerciseHidden");
         $("input[name=exerciseDistance").addClass("exerciseHidden");
     } else {
+        $("input[name=exerciseSeries").removeClass("exerciseHidden");
         $("input[name=exerciseRepetitions").removeClass("exerciseHidden");
         $("input[name=exerciseTime").addClass("exerciseHidden");
         $("input[name=exerciseDistance").addClass("exerciseHidden");
@@ -30,10 +32,12 @@ function TimeIsChecked(){
 function TimeAndDistanceIsChecked(){
     if($('#isDistanceAndTime').is(':checked')){
         $('#isTime').prop("checked", false);
+        $("input[name=exerciseSeries").addClass("exerciseHidden");
         $("input[name=exerciseRepetitions").addClass("exerciseHidden");
         $("input[name=exerciseTime").removeClass("exerciseHidden");
         $("input[name=exerciseDistance").removeClass("exerciseHidden");
     } else{
+        $("input[name=exerciseSeries").removeClass("exerciseHidden");
         $("input[name=exerciseRepetitions").removeClass("exerciseHidden");
         $("input[name=exerciseTime").addClass("exerciseHidden");
         $("input[name=exerciseDistance").addClass("exerciseHidden");}
@@ -71,7 +75,8 @@ jQuery(document).ready(function() {
             'exerciseName'    : $('input[name=exerciseName]').val(),
             'exerciseSeries'    : $('input[name=exerciseSeries]').val(),
             'exerciseRepetitions'    : $('input[name=exerciseRepetitions]').val(),
-            'exerciseTime'    : $('input[name=exerciseTime]').val()
+            'exerciseTime'    : $('input[name=exerciseTime]').val(),
+            'exerciseDistance'    : $('input[name=exerciseDistance]').val()
 
         };
 
@@ -83,73 +88,73 @@ jQuery(document).ready(function() {
             encode : true
         })
             .done(function(data){
-                $('#createFastExercise').append('Envoie de votre exercice réussi');
+                $('#createFastExercise').append('<p>Envoie de votre exercice réussi</p>');
             });
             
         event.preventDefault();
     });
 
-    $('#createExerciseForm').submit(function(event) {
+    // $('#createExerciseForm').submit(function(event) {
 
-        var formData = {
-            'activityId'    : $('input[name=activityId]').val(),
-            'exerciseName'    : $('input[name=exerciseName]').val(),
-            'exerciseSeries'    : $('input[name=exerciseSeries]').val(),
-            'exerciseRepetitions'    : $('input[name=exerciseRepetitions]').val(),
-            'exerciseTime'    : $('input[name=exerciseTime]').val()
-        };
+    //     var formData = {
+    //         'activityId'    : $('input[name=activityId]').val(),
+    //         'exerciseName'    : $('input[name=exerciseName]').val(),
+    //         'exerciseSeries'    : $('input[name=exerciseSeries]').val(),
+    //         'exerciseRepetitions'    : $('input[name=exerciseRepetitions]').val(),
+    //         'exerciseTime'    : $('input[name=exerciseTime]').val()
+    //     };
 
-        console.log(formData);
+    //     console.log(formData);
     
-        $.ajax({
-            type        : 'POST',
-            url         : 'createExercise.php',
-            data        : formData,
-            dataType    : 'json',
-            encode      : true,
-            error       : function (xhr, ajaxOptions, thrownError) {
-                alert("Erreur technique, merci de renouveller votre demande plus tard ou de contacter le support technique");
-                console.log(xhr.status);
-                console.log(thrownError);
-            }
-        })
-            .done(function(data) {
-                if($('#isTime').is(':checked')){
+    //     $.ajax({
+    //         type        : 'POST',
+    //         url         : 'createExercise.php',
+    //         data        : formData,
+    //         dataType    : 'json',
+    //         encode      : true,
+    //         error       : function (xhr, ajaxOptions, thrownError) {
+    //             alert("Erreur technique, merci de renouveller votre demande plus tard ou de contacter le support technique");
+    //             console.log(xhr.status);
+    //             console.log(thrownError);
+    //         }
+    //     })
+    //         .done(function(data) {
+    //             if($('#isTime').is(':checked')){
 
-                    $(".exercise-container").append('<div class="exercise-tab">' +
-                                                        '<div class="exerciseNumber">' +
-                                                            '<p>0</p>' +
-                                                        '</div>' +
-                                                        '<div class="exercise-tab-main">' +
-                                                            '<p>' + data.exerciseName + '</p>' +
-                                                            '<p>' + data.exerciseSeries + ' x ' + data.exerciseTime + ' min.</p>' +
-                                                        '</div>' +
-                                                        '<div class="exercise-icone">' +
-                                                            '<a href="#">' +
-                                                                '<i class="fas fa-trash"></i>' +
-                                                            '</a>' +
-                                                        '</div>' +
-                                                    '</div>');
-                } else {
-                    $(".exercise-container").append('<div class="exercise-tab">' +
-                                                        '<div class="exerciseNumber">' +
-                                                            '<p>0</p>' +
-                                                        '</div>' +
-                                                        '<div class="exercise-tab-main">' +
-                                                            '<p>' + data.exerciseName + '</p>' +
-                                                            '<p>' + data.exerciseSeries + ' x ' + data.exerciseRepetitions + ' répétitions.</p>' +
-                                                        '</div>' +
-                                                        '<div class="exercise-icone">' +
-                                                            '<a href="#">' +
-                                                                '<i class="fas fa-trash"></i>' +
-                                                            '</a>' +
-                                                        '</div>' +
-                                                    '</div>');
-                }
-                ClosePopUp();
-            });
-        event.preventDefault();
-    });
+    //                 $(".exercise-container").append('<div class="exercise-tab">' +
+    //                                                     '<div class="exerciseNumber">' +
+    //                                                         '<p>0</p>' +
+    //                                                     '</div>' +
+    //                                                     '<div class="exercise-tab-main">' +
+    //                                                         '<p>' + data.exerciseName + '</p>' +
+    //                                                         '<p>' + data.exerciseSeries + ' x ' + data.exerciseTime + ' min.</p>' +
+    //                                                     '</div>' +
+    //                                                     '<div class="exercise-icone">' +
+    //                                                         '<a href="#">' +
+    //                                                             '<i class="fas fa-trash"></i>' +
+    //                                                         '</a>' +
+    //                                                     '</div>' +
+    //                                                 '</div>');
+    //             } else {
+    //                 $(".exercise-container").append('<div class="exercise-tab">' +
+    //                                                     '<div class="exerciseNumber">' +
+    //                                                         '<p>0</p>' +
+    //                                                     '</div>' +
+    //                                                     '<div class="exercise-tab-main">' +
+    //                                                         '<p>' + data.exerciseName + '</p>' +
+    //                                                         '<p>' + data.exerciseSeries + ' x ' + data.exerciseRepetitions + ' répétitions.</p>' +
+    //                                                     '</div>' +
+    //                                                     '<div class="exercise-icone">' +
+    //                                                         '<a href="#">' +
+    //                                                             '<i class="fas fa-trash"></i>' +
+    //                                                         '</a>' +
+    //                                                     '</div>' +
+    //                                                 '</div>');
+    //             }
+    //             ClosePopUp();
+    //         });
+    //     event.preventDefault();
+    // });
     /*--- CAROUSEL ---*/
     $(".activity-tabs").owlCarousel({
         margin: 10,

@@ -6,16 +6,26 @@ require_once('model/inc_createExercise_model.php');
 if(isset($_POST['exerciseName'])){
     $idActivity = $_POST['activityList'];
     $exerciseName = $_POST['exerciseName'];
-    $exerciseSeries = $_POST['exerciseSeries'];
-    
+    if(empty($_POST['exerciseDistance'])){
+        $exerciseDistance = 0;
+    } else{
+        $exerciseDistance = $_POST['exerciseDistance'];
+    }
+    if(empty($_POST['exerciseSeries'])){
+        $exerciseSeries = 0;
+    } else {
+        $exerciseSeries = $_POST['exerciseSeries'];
+    }
     if(empty($_POST['exerciseTime'])){
         $exerciseTime = 0;
-        $exerciseRepetitions = $_POST['exerciseRepetitions'];
     } else {
-        $exerciseRepetitions = 0;
         $exerciseTime = $_POST['exerciseTime'];
     }
-
+    if(empty($_POST['exerciseRepetitions'])){
+        $exerciseRepetitions = 0;
+    }else {
+        $exerciseRepetitions = $_POST['exerciseRepetitions'];
+    }
     CreateExercice();
 }
 

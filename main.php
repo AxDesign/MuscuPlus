@@ -14,5 +14,7 @@ DisplayActivity();
 
 $time = [];
 CalculateTimeOfActivity();
+$repetitions = [];
+CalculateRepetitionsOfActivity();
 
 require_once('view/inc_main_view.php');
