@@ -12,7 +12,7 @@ if(isset($_GET['activityIdDelete']) && isset($_GET['activityNameDelete'])){
 $activityList;
 DisplayActivity();
 
-$semaine = [];
+$time = [];
 CalculateTimeOfActivity();
 
 require_once('view/inc_main_view.php');

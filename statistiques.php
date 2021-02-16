@@ -5,7 +5,11 @@ require_once('model/inc_main_model.php');
 $activityList;
 DisplayActivity();
 
-$semaine = [];
+
+$time = [];
 CalculateTimeOfActivity();
+
+$repetitions = [];
+CalculateRepetitionsOfActivity();
 
 require_once('view/inc_statistiques_view.php');
