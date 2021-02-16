@@ -81,14 +81,14 @@ h1, h2{
     font-family: basic-sans, sans-serif;
     font-weight: 500;
 }
-h1,h2,p{
+h1,h2,p, label{
     color: #fff;
 }
 a{
     color: #11E5B3;
     text-decoration: none;
 }
-p{
+p, label{
     font-family: basic-sans, sans-serif;
     font-weight: 200;
 }
@@ -190,3 +190,5 @@ footer p{
     padding: 10px;
     border-radius: 100px;
 }
+
+/*--- Form ---*/

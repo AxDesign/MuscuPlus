@@ -7,11 +7,8 @@
     justify-content: center;
     overflow: hidden;
 }
-.exerciseTimeHidden{
+.exerciseHidden{
     display: none;
-}
-.exerciseTimeDisplay{
-    display: inline-block;
 }
 
 /*-- INSCRIPTION --*/
@@ -33,7 +30,7 @@
     margin-bottom: 5px;
     font-size: 1em;
 }
-.inscription-container input, .connexion-container input, #createFastExercise input, #createFastExercise select{
+.inscription-container input, .connexion-container input, #createFastExercise .inputFastExo, #createFastExercise select{
     height: 25px;
     width: 200px;
 }

@@ -13,7 +13,33 @@ function ClosePopUp(){
 function ClosePopUpHomeActivity(){
     $(".popUpActivity").removeClass("display_pop-up");
 }
-function IsChecked(){
+
+function TimeIsChecked(){
+    if($('#isTime').is(':checked')){
+        $('#isDistanceAndTime').prop("checked", false);
+        $("input[name=exerciseRepetitions").addClass("exerciseHidden");
+        $("input[name=exerciseTime").removeClass("exerciseHidden");
+        $("input[name=exerciseDistance").addClass("exerciseHidden");
+    } else {
+        $("input[name=exerciseRepetitions").removeClass("exerciseHidden");
+        $("input[name=exerciseTime").addClass("exerciseHidden");
+        $("input[name=exerciseDistance").addClass("exerciseHidden");
+    }
+}
+
+function TimeAndDistanceIsChecked(){
+    if($('#isDistanceAndTime').is(':checked')){
+        $('#isTime').prop("checked", false);
+        $("input[name=exerciseRepetitions").addClass("exerciseHidden");
+        $("input[name=exerciseTime").removeClass("exerciseHidden");
+        $("input[name=exerciseDistance").removeClass("exerciseHidden");
+    } else{
+        $("input[name=exerciseRepetitions").removeClass("exerciseHidden");
+        $("input[name=exerciseTime").addClass("exerciseHidden");
+        $("input[name=exerciseDistance").addClass("exerciseHidden");}
+}
+
+/*function IsChecked(){
     if($('#isTime').is(':checked')){
         $("input[name=exerciseRepetitions").removeClass("exerciseTimeDisplay");
         $("input[name=exerciseRepetitions").addClass("exerciseTimeHidden");
@@ -25,7 +51,7 @@ function IsChecked(){
         $("input[name=exerciseTime").removeClass("exerciseTimeDisplay");
         $("input[name=exerciseTime").addClass("exerciseTimeHidden");
     }
-}
+}*/
 
 jQuery(document).ready(function() {
         var selectedList;
