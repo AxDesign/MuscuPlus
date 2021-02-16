@@ -54,11 +54,12 @@
                                         <?=$exo['exoName']?>
                                     </p>
                                     <p>
-                                        <?php
-                                        if($exo['exoTime'] == 0){?>
+                                        <?php if($exo['exoTime'] == 0 && $exo['exoDistance'] == 0){?>
                                             <?=$exo['exoSeries']?> x <?=$exo['exoRepetitions']?> répétitions.
-                                        <?php } else { ?>
-                                            <?=$exo['exoSeries']?> x <?=$exo['exoTime']?> min.
+                                        <?php } if($exo['exoTime'] >= 1 && $exo['exoDistance'] == 0) { ?>
+                                            <?=$exo['exoTime']?> min.
+                                        <?php } if($exo['exoTime'] >= 1 && $exo['exoDistance'] >= 1) { ?>
+                                            <?=$exo['exoDistance']?> km en <?=$exo['exoTime']?> min.
                                         <?php } ?>
                                     </p>
                                 </div>

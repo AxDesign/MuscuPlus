@@ -38,9 +38,11 @@
             <section class="flex-main statistique">
                 <?php
                 if(isset($activityList)){ ?>
-                    <h2>Mes statistiques de temps</h2>
+                    <h2>Temps</h2>
                     <canvas id="statTime" width="600" height="300"></canvas>
-                    <h2>Mes statistiques de répétitions</h2>
+                    <h2>Temps et Distances</h2>
+                    <canvas id="statTimeDist" width="600" height="300"></canvas>
+                    <h2>Séries et Répétitions</h2>
                     <canvas id="statRep" width="600" height="300"></canvas>
                     <?php } else { ?>
                 <p>Aucune données trouvées pour le moment</p>

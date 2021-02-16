@@ -53,7 +53,7 @@ function CalculateTimeOfActivity(){
             }
 
     $reqDate = $bdd->prepare('SELECT activity.name, UNIX_TIMESTAMP(date_creation) as "date_crea", time FROM `exercise` join activity on (exercise.id_activity = activity.id_activity) WHERE date_creation > ?');
-    $reqDate->execute(array('2021-02-11'));
+    $reqDate->execute(array('2021-02-15'));
 
     while($donneeActivity = $reqDate->fetch()){
         $temp = getdate($donneeActivity['date_crea']);
