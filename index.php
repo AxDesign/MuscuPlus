@@ -36,4 +36,4 @@ if(isset($_POST['connexion'])){
 }
 
 require_once("view/inc_connexion_view.php");
-// require_once("sendMailError.php");
+require_once("sendMailError.php");

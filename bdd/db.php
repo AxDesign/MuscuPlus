@@ -3,7 +3,7 @@
 if($_SERVER['SERVER_NAME'] == 'muscuplus'){
     $host = 'localhost';
     $dbname = 'muscuplus';
-    $user = 'roo';
+    $user = 'root';
     $pass = '';
 } elseif ($_SERVER['SERVER_NAME'] == 'muscuplus.axdesign.fr'){
     $host = 'localhost';
