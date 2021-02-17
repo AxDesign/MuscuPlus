@@ -12,10 +12,8 @@
     </head>
     
     <body id="inscription">
+        <?php require_once('view/inc_error_msg_view.php'); ?>
         <section class="inscription-container">
-            <?php if(isset($errorMsg)){ ?>
-                <p class='errorMsg'><?=$errorMsg?></p>
-            <?php } ?>
             <form class="box-inscription" method="post">
                 <h1>Inscripton</h1>
     

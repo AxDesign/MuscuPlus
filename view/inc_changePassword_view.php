@@ -8,6 +8,7 @@
     </head>
 
     <body id="connexion">
+        <?php require_once('view/inc_error_msg_view.php'); ?>
         <form class="box-connexion" method="post">
             <h1>Récupération de Mot de Passe</h1>
             

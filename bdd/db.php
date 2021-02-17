@@ -3,7 +3,7 @@
 if($_SERVER['SERVER_NAME'] == 'muscuplus'){
     $host = 'localhost';
     $dbname = 'muscuplus';
-    $user = 'root';
+    $user = 'roo';
     $pass = '';
 } elseif ($_SERVER['SERVER_NAME'] == 'muscuplus.axdesign.fr'){
     $host = 'localhost';
@@ -18,6 +18,7 @@ try{
     $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
 catch (Exception $e){
+    $errorIt = $e;
     $errorMsg = "Erreur, impossible de se connecter à la base de donnée";
 }
 ?>

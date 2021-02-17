@@ -1,4 +1,6 @@
 <?php
+$errorIt;
+$errorMsg;
 /* CONNEXION */
 require_once('bdd/db.php');
 session_start();
@@ -33,8 +35,5 @@ if(isset($_POST['connexion'])){
     $_SESSION['confirmAccount'] = $userData['valid'];
 }
 
-if(isset($_GET['errorMsg'])){
-    $errorMsg = $_GET['errorMsg'];
-}
-
 require_once("view/inc_connexion_view.php");
+// require_once("sendMailError.php");

@@ -10,6 +10,7 @@
     </head>
 
     <body id="confirmation">
+        <?php require_once('view/inc_error_msg_view.php'); ?>
         <?php
             if(isset($validAccount)){?>
                 <p class='validAccount'><?=$validAccount?></p>

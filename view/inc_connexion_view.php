@@ -12,10 +12,8 @@
     </head>
 
     <body id="connexion">
+        <?php require_once('view/inc_error_msg_view.php'); ?>
         <section class="connexion-container">
-            <?php if(isset($errorMsg)){ ?>
-                <p class='errorMsg'><?=$errorMsg?></p>
-            <?php } ?>
             <form class="box-connexion" method="post">
                 <h1>Connexion</h1>
                 

@@ -14,7 +14,12 @@ if($verifPassword != $newPassword){
 }
 
 if($valid){
-    $insertNewPassword = $bdd->prepare("UPDATE users SET password=? WHERE email=?");
-    $insertNewPassword->execute(array($newPassword, $email));
-    header("location:index.php");
+    try{
+        $insertNewPassword = $bdd->prepare("UPDATE users SET password=? WHERE email=?");
+        $insertNewPassword->execute(array($newPassword, $email));
+        header("location:index.php");
+    } catch (Exception $e) {
+        $errorIt = $e;
+        $errorMsg = 'Une erreur innatendue est survenue. Le service technique a été informé. Veuillez vous reconnectez plus tard.';
+    }
 }

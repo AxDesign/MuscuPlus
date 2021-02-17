@@ -30,22 +30,28 @@ function VerificationUserConnexion(){
     
     $passwordHash = password_hash($userPasswordConnexion, PASSWORD_DEFAULT);
     //On test la connexion
-    $requestConnexion =  $bdd->prepare('SELECT * FROM users WHERE email = ?');
-    $requestConnexion->execute(array($userEmailConnexion));
-    if($requestConnexion->rowCount() == 1){
-        while($donneeConnexion = $requestConnexion->fetch()){
-            switch (password_verify($userPasswordConnexion, $donneeConnexion['password'])){
-                case "":
-                    $valid = false;
-                    $errorConnexionUser = "Le mail ou le mot de passe est incorrecte";
-                    break;
-                case 1:
-                    $valid = true;
+    try{
+        $requestConnexion =  $bdd->prepare('SELECT * FROM users WHERE email = ?');
+        $requestConnexion->execute(array($userEmailConnexion));
+        
+        if($requestConnexion->rowCount() == 1){
+            while($donneeConnexion = $requestConnexion->fetch()){
+                switch (password_verify($userPasswordConnexion, $donneeConnexion['password'])){
+                    case "":
+                        $valid = false;
+                        $errorConnexionUser = "Le mail ou le mot de passe est incorrecte";
+                        break;
+                    case 1:
+                        $valid = true;
+                }
             }
+        } else {
+            $valid = false;
+            $errorConnexionUser = "Le mail ou le mot de passe est incorrecte";
         }
-    } else {
-        $valid = false;
-        $errorConnexionUser = "Le mail ou le mot de passe est incorrecte";
+    }catch (Exception $e) {
+        $errorIt = $e;
+        $errorMsg = 'Une erreur innatendue est survenue lors de la connexion à la base de donnée. Le service technique a été informé. Veuillez retenter plus tard.';
     }
 
 

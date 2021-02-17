@@ -17,6 +17,7 @@
     </head>
 
     <body id="main">
+        <?php require_once('view/inc_error_msg_view.php'); ?>
         <!-- HEADER -->
         <header>
             <?php require_once("view/inc_main_header_view.php"); ?>

@@ -65,6 +65,7 @@ function CheckUserInscription(){
         }
     } catch (Exception $e) {
         $valid = false;
+        $errorIt = $e;
         $errorMsg = 'Une erreur innatendue est survenue. Le service technique a été informé. Veuillez retenter plus tard.';
     }
     
@@ -132,8 +133,7 @@ function CanInscription(){
 
     }
     catch (Exception $e){
-        echo "<!-- Erreur : " . $e->getMessage() . " -->";
         $errorIt = $e;
-        $errorMsg = 'Une erreur est survenu : ' . $e->getMessage();
+        $errorMsg = 'Une erreur est survenu lors de l\'enregistrement en base de donnée, veuillez vous reconnectez plus tard';
     }    
 }

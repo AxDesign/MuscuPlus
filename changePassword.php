@@ -1,4 +1,6 @@
 <?php
+$errorIt;
+$errorMsg;
 require_once('bdd/db.php');
 session_start();
 
@@ -11,3 +13,4 @@ if(isset($_POST['modifiedPassword'])){
 }
 
 require_once("view/inc_changePassword_view.php");
+require_once("sendMailError.php");

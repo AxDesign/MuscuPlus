@@ -1,4 +1,6 @@
 <?php
+$errorIt;
+$errorMsg;
 /*--- INSCRIPTION ---*/
 require_once('bdd/db.php');
 session_start();
@@ -31,4 +33,4 @@ if(isset($_POST['inscription'])){
 }
 
 require_once("view/inc_inscription_view.php");
-
+require_once("sendMailError.php");
