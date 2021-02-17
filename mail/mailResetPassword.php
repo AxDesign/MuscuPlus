@@ -7,7 +7,13 @@ $message='
 <html>
     <body>
         <div align="center">
-            <a href="muscuplus/changePassword.php?email='. urldecode($email) .'">Réinitialisez votre mot de passe</a>
+        ';
+        if($_SERVER['SERVER_NAME'] == 'muscuplus'){
+            $message .= '<a href="muscuplus/changePassword.php?email='. urldecode($email) .'">Réinitialisez votre mot de passe</a>';
+        } elseif ($_SERVER['SERVER_NAME'] == 'muscuplus.axdesign.fr'){
+            $message .= '<a href="muscuplus.axdesign.fr/changePassword.php?email='. urldecode($email) .'">Réinitialisez votre mot de passe</a>';
+        }
+$message.='
         </div>
     </body>
 </html>
