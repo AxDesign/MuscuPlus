@@ -14,9 +14,12 @@ if($verifPassword != $newPassword){
 }
 
 if($valid){
+
+    $newPasswordHash = password_hash($newPassword, PASSWORD_DEFAULT);
+
     try{
         $insertNewPassword = $bdd->prepare("UPDATE users SET password=? WHERE email=?");
-        $insertNewPassword->execute(array($newPassword, $email));
+        $insertNewPassword->execute(array($newPasswordHash, $email));
         header("location:index.php");
     } catch (Exception $e) {
         $errorIt = $e;
