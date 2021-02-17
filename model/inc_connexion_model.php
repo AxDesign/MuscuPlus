@@ -28,14 +28,25 @@ function VerificationUserConnexion(){
         $errorPasswordUser = "Le champ de mot de passe est trop long !";
     }
     
-    // $passwordHash = password_verify($userPasswordConnexion, PASSWORD_DEFAULT);
-
+    $passwordHash = password_hash($userPasswordConnexion, PASSWORD_DEFAULT);
     //On test la connexion
-    $requestConnexion =  $bdd->prepare('SELECT * FROM users WHERE email = ? AND password = ?');
-    $requestConnexion->execute(array($userEmailConnexion, $userPasswordConnexion));
-    $requestConnexion = $requestConnexion->fetch();
-    if($requestConnexion['id'] == ""){
+    $requestConnexion =  $bdd->prepare('SELECT * FROM users WHERE email = ?');
+    $requestConnexion->execute(array($userEmailConnexion));
+    if($requestConnexion->rowCount() == 1){
+        while($donneeConnexion = $requestConnexion->fetch()){
+            switch (password_verify($userPasswordConnexion, $donneeConnexion['password'])){
+                case "":
+                    $valid = false;
+                    $errorConnexionUser = "Le mail ou le mot de passe est incorrecte";
+                    break;
+                case 1:
+                    $valid = true;
+            }
+        }
+    } else {
         $valid = false;
         $errorConnexionUser = "Le mail ou le mot de passe est incorrecte";
     }
+
+
 }

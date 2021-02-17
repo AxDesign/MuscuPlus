@@ -115,7 +115,7 @@ function CanInscription(){
             $errorMsg,
             $errorIt;
 
-    // $passwordHash = password_hash($userPassword, PASSWORD_DEFAULT);
+    $passwordHash = password_hash($userPassword, PASSWORD_DEFAULT);
 
     try{
         $req = $bdd->prepare('INSERT INTO users(lastName, name, age, email, password, confirmkey) VALUES(:lastName, :name, :age, :email, :password, :confirmkey)');
@@ -124,7 +124,7 @@ function CanInscription(){
             'name' => $userName,
             'age' => $userAge,
             'email' => $userEmail,
-            'password' => $userPassword,
+            'password' => $passwordHash,
             'confirmkey' => $key
         ));
 
