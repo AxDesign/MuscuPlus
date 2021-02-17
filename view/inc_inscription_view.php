@@ -17,16 +17,6 @@
             <form class="box-inscription" method="post">
                 <h1>Inscripton</h1>
     
-                <!-- LAST NAME -->
-                <div class="text-box">
-                    <i class="fas fa-user"></i>
-                    <input type="text" placeholder="Nom" name="u_lastName">
-                </div>
-                <?php 
-                    if(isset($errorUserLastName)){
-                        echo "<div>" . $errorUserLastName . "</div>";
-                    }
-                ?>
     
                 <!-- NAME -->
                 <div class="text-box">
@@ -36,6 +26,17 @@
                 <?php 
                     if(isset($errorUserName)){
                         echo "<div>" . $errorUserName . "</div>";
+                    }
+                    ?>
+                
+                <!-- LAST NAME -->
+                <div class="text-box">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Nom" name="u_lastName">
+                </div>
+                <?php 
+                    if(isset($errorUserLastName)){
+                        echo "<div>" . $errorUserLastName . "</div>";
                     }
                 ?>
     

@@ -4,6 +4,7 @@ $errorMsg;
 require_once('bdd/db.php');
 session_start();
 require_once('model/inc_main_model.php');
+require_once('activationCompte.php');
 
 if(isset($_GET['activityIdDelete']) && isset($_GET['activityNameDelete'])){
     $activityId = $_GET['activityIdDelete'];

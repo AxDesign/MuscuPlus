@@ -12,11 +12,10 @@ function DisplayActivity(){
             $activity['id_activity'] = $donneeActivity['id_activity'];
             $activity['name'] = $donneeActivity['name'];
             $activityList[] = $activity;
+        }
     } catch (Exception $e) {
         $errorIt = $e;
         $errorMsg = 'Une erreur innatendue est survenue. Le service technique a été informé. Veuillez vous reconnectez plus tard.';
-    }
-
     }
 }
 

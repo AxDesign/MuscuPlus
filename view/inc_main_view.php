@@ -19,17 +19,12 @@
     <body id="main">
         <?php require_once('view/inc_error_msg_view.php'); ?>
         <!-- HEADER -->
+        <!-- BANDEAU SI UTILISATEUR NON COMFIRMÉ -->
+        <?php require_once('view/inc_activation_compte_view.php'); ?>
         <header>
             <?php require_once("view/inc_main_header_view.php"); ?>
         </header>
 
-        <!-- BANDEAU SI UTILISATEUR NON COMFIRMÉ -->
-        <?php
-        if($_SESSION['confirmAccount'] == 0){ ?>
-            <section class="no-confirm-account">
-                <p>Veillez activé votre compte !</p>
-            </section>
-        <?php } ?>
 
         <!-- MAIN -->
         <section class="main-container">
