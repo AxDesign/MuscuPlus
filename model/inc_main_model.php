@@ -11,6 +11,9 @@ function DisplayActivity(){
         while($donneeActivity = $reqActivity->fetch()){
             $activity['id_activity'] = $donneeActivity['id_activity'];
             $activity['name'] = $donneeActivity['name'];
+            $activity['colorRed'] = $donneeActivity['red'];
+            $activity['colorGreen'] = $donneeActivity['green'];
+            $activity['colorBlue'] = $donneeActivity['blue'];
             $activityList[] = $activity;
         }
     } catch (Exception $e) {

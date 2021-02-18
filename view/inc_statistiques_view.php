@@ -49,6 +49,11 @@
             require_once('view/inc_footer_view.php');
         ?>
 
-        <?php require_once("view/inc_main_statistiques_script_view.php") ?>
+        <?php
+        require_once("view/inc_main_statistiques_script_view.php");
+        // NAV BAR
+        require_once('view/inc_nav_bar_view.php');
+        require_once('view/inc_footer_view.php');
+        ?>
     </body>
 </html>

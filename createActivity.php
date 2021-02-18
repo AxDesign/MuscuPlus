@@ -7,6 +7,9 @@ require_once('model/inc_createActivity_model.php');
 
 if(isset($_POST['activity-name'])){
     $activityName = $_POST['activity-name'];
+    $red = random_int(0,255);
+    $green = random_int(0,255);
+    $blue = random_int(0,255);
     CreateActivity();
 }
 

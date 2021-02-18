@@ -14,10 +14,22 @@
                 ?>
                 {
                     label: '<?=$bar['name']?>',
-                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                    borderColor: 'rgba(255, 99, 132, 1)',
-                    borderWidth: 1,
                     data: [<?=$time[$bar['name']][1]?>, <?=$time[$bar['name']][2]?>, <?=$time[$bar['name']][3]?>, <?=$time[$bar['name']][4]?>, <?=$time[$bar['name']][5]?>, <?=$time[$bar['name']][6]?>, <?=$time[$bar['name']][0]?>],
+                    backgroundColor: [
+                        <?php
+                        for($i=0;$i<=7;$i++){
+                        ?>
+                        'rgba(<?=$bar['colorRed']?>,<?=$bar['colorGreen']?>,<?=$bar['colorBlue']?>, 0.2)',
+                        <?php } ?>
+                    ],
+                    borderColor: [
+                        <?php
+                        for($i=0;$i<=7;$i++){
+                        ?>
+                        'rgba(<?=$bar['colorRed']?>,<?=$bar['colorGreen']?>,<?=$bar['colorBlue']?>, 1)',
+                        <?php } ?>
+                    ],
+                    borderWidth: 1
                 },
                 <?php } ?>
             ]
@@ -42,20 +54,39 @@
                 ?>
                 {
                     label: '<?=$bar['name']?>',
-                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                    borderColor: 'rgba(255, 99, 132, 1)',
-                    borderWidth: 1,
                     data: [<?=$distance[$bar['name']][1]?>, <?=$distance[$bar['name']][2]?>, <?=$distance[$bar['name']][3]?>, <?=$distance[$bar['name']][4]?>, <?=$distance[$bar['name']][5]?>, <?=$distance[$bar['name']][6]?>, <?=$distance[$bar['name']][0]?>],
+                    backgroundColor: [
+                        <?php
+                        for($i=0;$i<=7;$i++){
+                        ?>
+                        'rgba(<?=$bar['colorRed']?>,<?=$bar['colorGreen']?>,<?=$bar['colorBlue']?>, 0.2)',
+                        <?php } ?>
+                    ],
+                    borderColor: [
+                        <?php
+                        for($i=0;$i<=7;$i++){
+                        ?>
+                        'rgba(<?=$bar['colorRed']?>,<?=$bar['colorGreen']?>,<?=$bar['colorBlue']?>, 1)',
+                        <?php } ?>
+                    ],
+                    borderWidth: 1
                 },
                 <?php } ?>
                 <?php
                 foreach($activityList as $bar){
                 ?>
                 {
+                    type : 'line',
                     label: '<?=$bar['name']?>',
-                    borderColor: 'rgb(255, 99, 132)',
                     data: [<?=$time[$bar['name']][1]?>, <?=$time[$bar['name']][2]?>, <?=$time[$bar['name']][3]?>, <?=$time[$bar['name']][4]?>, <?=$time[$bar['name']][5]?>, <?=$time[$bar['name']][6]?>, <?=$time[$bar['name']][0]?>],
-                    type : 'line'
+                    borderColor: [
+                        <?php
+                        for($i=0;$i<=7;$i++){
+                        ?>
+                        'rgba(<?=$bar['colorRed']?>,<?=$bar['colorGreen']?>,<?=$bar['colorBlue']?>, 1)',
+                        <?php } ?>
+                    ],
+                    borderWidth : 2
                 },
                 <?php } ?>
             ]
@@ -80,10 +111,22 @@
                 ?>
                 {
                     label: '<?=$bar['name']?>',
-                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                    borderColor: 'rgba(255, 99, 132, 1)',
-                    borderWidth: 1,
                     data: [<?=$repetitions[$bar['name']][1]?>, <?=$repetitions[$bar['name']][2]?>, <?=$repetitions[$bar['name']][3]?>, <?=$repetitions[$bar['name']][4]?>, <?=$repetitions[$bar['name']][5]?>, <?=$repetitions[$bar['name']][6]?>, <?=$repetitions[$bar['name']][0]?>],
+                    backgroundColor: [
+                        <?php
+                        for($i=0;$i<=7;$i++){
+                        ?>
+                        'rgba(<?=$bar['colorRed']?>,<?=$bar['colorGreen']?>,<?=$bar['colorBlue']?>, 0.2)',
+                        <?php } ?>
+                    ],
+                    borderColor: [
+                        <?php
+                        for($i=0;$i<=7;$i++){
+                        ?>
+                        'rgba(<?=$bar['colorRed']?>,<?=$bar['colorGreen']?>,<?=$bar['colorBlue']?>, 1)',
+                        <?php } ?>
+                    ],
+                    borderWidth: 1
                 },
                 <?php } ?>
             ]
