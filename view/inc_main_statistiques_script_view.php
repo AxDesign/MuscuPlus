@@ -14,8 +14,9 @@
                 ?>
                 {
                     label: '<?=$bar['name']?>',
-                    backgroundColor: 'rgb(255, 99, 132)',
-                    borderColor: 'rgb(255, 99, 132)',
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1,
                     data: [<?=$time[$bar['name']][1]?>, <?=$time[$bar['name']][2]?>, <?=$time[$bar['name']][3]?>, <?=$time[$bar['name']][4]?>, <?=$time[$bar['name']][5]?>, <?=$time[$bar['name']][6]?>, <?=$time[$bar['name']][0]?>],
                 },
                 <?php } ?>
@@ -41,9 +42,20 @@
                 ?>
                 {
                     label: '<?=$bar['name']?>',
-                    backgroundColor: 'rgb(255, 99, 132)',
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1,
+                    data: [<?=$distance[$bar['name']][1]?>, <?=$distance[$bar['name']][2]?>, <?=$distance[$bar['name']][3]?>, <?=$distance[$bar['name']][4]?>, <?=$distance[$bar['name']][5]?>, <?=$distance[$bar['name']][6]?>, <?=$distance[$bar['name']][0]?>],
+                },
+                <?php } ?>
+                <?php
+                foreach($activityList as $bar){
+                ?>
+                {
+                    label: '<?=$bar['name']?>',
                     borderColor: 'rgb(255, 99, 132)',
-                    data: [<?=$repetitions[$bar['name']][1]?>, <?=$repetitions[$bar['name']][2]?>, <?=$repetitions[$bar['name']][3]?>, <?=$repetitions[$bar['name']][4]?>, <?=$repetitions[$bar['name']][5]?>, <?=$repetitions[$bar['name']][6]?>, <?=$repetitions[$bar['name']][0]?>],
+                    data: [<?=$time[$bar['name']][1]?>, <?=$time[$bar['name']][2]?>, <?=$time[$bar['name']][3]?>, <?=$time[$bar['name']][4]?>, <?=$time[$bar['name']][5]?>, <?=$time[$bar['name']][6]?>, <?=$time[$bar['name']][0]?>],
+                    type : 'line'
                 },
                 <?php } ?>
             ]
@@ -68,8 +80,9 @@
                 ?>
                 {
                     label: '<?=$bar['name']?>',
-                    backgroundColor: 'rgb(255, 99, 132)',
-                    borderColor: 'rgb(255, 99, 132)',
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1,
                     data: [<?=$repetitions[$bar['name']][1]?>, <?=$repetitions[$bar['name']][2]?>, <?=$repetitions[$bar['name']][3]?>, <?=$repetitions[$bar['name']][4]?>, <?=$repetitions[$bar['name']][5]?>, <?=$repetitions[$bar['name']][6]?>, <?=$repetitions[$bar['name']][0]?>],
                 },
                 <?php } ?>

@@ -19,6 +19,8 @@ $time = [];
 CalculateTimeOfActivity();
 $repetitions = [];
 CalculateRepetitionsOfActivity();
+$distance = [];
+CalculateDistanceOfActivity();
 
 require_once('view/inc_main_view.php');
 require_once("sendMailError.php");

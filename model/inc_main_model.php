@@ -109,3 +109,35 @@ function CalculateRepetitionsOfActivity(){
     }
 
 }
+
+function CalculateDistanceOfActivity(){
+    global $bdd,
+            $activityList,
+            $distance;
+
+    if(isset($activityList)){
+        foreach($activityList as $activity){
+            $distance[$activity['name']] = [];
+            $distance[$activity['name']][0] = 0;
+            $distance[$activity['name']][1] = 0;
+            $distance[$activity['name']][2] = 0;
+            $distance[$activity['name']][3] = 0;
+            $distance[$activity['name']][4] = 0;
+            $distance[$activity['name']][5] = 0;
+            $distance[$activity['name']][6] = 0;
+        }
+    }
+
+    try{
+        $reqDate = $bdd->prepare('SELECT activity.name, UNIX_TIMESTAMP(date_creation) as "date_crea", distance FROM `exercise` join activity on (exercise.id_activity = activity.id_activity) WHERE date_creation > ?');
+        $reqDate->execute(array('2021-02-15'));
+        
+        while($donneeActivity = $reqDate->fetch()){
+            $temp = getdate($donneeActivity['date_crea']);
+            $distance[$donneeActivity['name']][$temp['wday']] += $donneeActivity['distance'];
+        }
+    } catch (Exception $e) {
+        $errorIt = $e;
+        $errorMsg = 'Une erreur innatendue est survenue. Le service technique a été informé. Veuillez vous reconnectez plus tard.';
+    }
+}

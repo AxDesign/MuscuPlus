@@ -81,16 +81,22 @@
                     <i class="fas fa-arrow-left btn-back" onclick="ClosePopUp()"></i>
                 </div>
                 <div class="pop-up-main">
-                    <h2>Créer un nouvel exercice</h2>
-                    <form id="createExerciseForm">
-                        <input type="hidden" name="activityId" id="activityId" value="<?=$activityId?>">
-                        <input type="text" name="exerciseName" id="exerciseName" placeholder="Nom de l'exercice">
-                        <input type="number" name="exerciseSeries" id="exerciseSeries" placeholder="Nombres de séries">
-                        <input class="exerciseTimeDisplay" type="number" name="exerciseRepetitions" id="exerciseRepetitions" placeholder="Nombres de Répétitions">
-                        <input class="exerciseTimeHidden" type="number" name="exerciseTime" id="exerciseTime" placeholder="Durée de l'exercice"><br />
-                        <input type="checkbox" name="isTime" id="isTime" onclick="IsChecked()"><br />
-                        <button type="submit">Créer</button>
-                    </form>
+                <h2>Créer un exercice</h2>
+                <form id="createExerciseForm">
+                    <!-- activity -->
+                    <label>Temps : </label>
+                    <input type="checkbox" name="isTime" id="isTime" onclick="TimeIsChecked()"><br />
+                    <label>Temps et Distances : </label>
+                    <input type="checkbox" name="isDistanceAndTime" id="isDistanceAndTime" onclick="TimeAndDistanceIsChecked()"><br />
+
+                    <input type="hidden" name="activityId" value=<?=$activityId?>>
+                    <input class="inputFastExo" type="text" name="exerciseName" id="exerciseName" placeholder="Nom de l'exercice">
+                    <input class="inputFastExo" type="number" name="exerciseSeries" id="exerciseSeries" placeholder="Nombres de séries">
+                    <input class="inputFastExo" type="number" name="exerciseRepetitions" id="exerciseRepetitions" placeholder="Nombres de Répétitions">
+                    <input class="exerciseHidden inputFastExo" type="number" name="exerciseTime" id="exerciseTime" placeholder="Durée de l'exercice">
+                    <input class="exerciseHidden inputFastExo" type="number" name="exerciseDistance" id="exerciseDistance" placeholder="Distance"><br />
+                    <button type="submit">Créer</button>
+                </form>
                 </div>
             </div>
         </section>
