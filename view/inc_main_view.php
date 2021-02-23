@@ -4,19 +4,23 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Index</title>
-        <link rel="stylesheet" href="https://use.typekit.net/cmp3lqm.css">
-        <link rel="stylesheet" href="css/reset.css">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/laptop.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous" />
-        <script defer src="https://kit.fontawesome.com/cfe9ffe70f.js" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js" integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA==" crossorigin="anonymous"></script>
-        <script defer src="js/main.js"></script>
+        
+        <!-- Font Adobe -->     <link rel="stylesheet" href="https://use.typekit.net/cmp3lqm.css">
+
+        <!-- CSS -->
+        <!--- Carousel --->     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous" />
+        <!--- Mes Styles --->   <link rel="stylesheet" href="css/general.css">
+
+        <!-- JS -->
+        <!--- Icones --->       <script defer src="https://kit.fontawesome.com/cfe9ffe70f.js" crossorigin="anonymous"></script>
+        <!--- Statistiques ---> <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
+        <!--- Jquery --->       <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+        <!--- Vue.js --->       <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <!--- Carousel --->     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js" integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA==" crossorigin="anonymous"></script>
+        <!--- Mes Scripts --->  <script defer src="js/main.js"></script>
     </head>
 
-    <body id="main">
+    <body>
         <?php require_once('view/inc_error_msg_view.php'); ?>
         <!-- HEADER -->
         <!-- BANDEAU SI UTILISATEUR NON COMFIRMÉ -->
@@ -27,24 +31,25 @@
 
 
         <!-- MAIN -->
-        <section class="main-container">
+        <section class="home">
 
             
             <!-- ACTIVITY -->
-            <section class="flex-main activity">
+            <section class="home__section-activity">
                 <h2>Mes activitées</h2>
-                <div class='activity-tabs owl-carousel'>
+                <!-- owl-carousel -->
+                <div class='home__section-activity__carousel owl-carousel'>
                     <?php
                     if(isset($activityList)){
                         foreach($activityList as $activity){?>
                             <!-- activity -->
-                            <div class='activity-tab'>
+                            <div class='home__section-activity__carousel__tab'>
                                 <a href="exercise.php?activityId=<?=$activity['id_activity']?>&activityName=<?=$activity['name']?>">
                                     <?=$activity['name']?>
                                 </a>
                                 <!-- Icone Delete activity -->
-                                <a class="trash-activity" href="main.php?activityIdDelete=<?=$activity['id_activity']?>&activityNameDelete=<?=$activity['name']?>">
-                                <i class="fas fa-trash"></i>
+                                <a class="home__section-activity__carousel__tab__trash" href="main.php?activityIdDelete=<?=$activity['id_activity']?>&activityNameDelete=<?=$activity['name']?>">
+                                    <i class="fas fa-trash"></i>
                                 </a>
                             </div>
                             <?php } 
@@ -55,14 +60,20 @@
             </section>
             <!-- CREATION RAPIDE D'EXERCICES -->
             <?php if(isset($activityList)){ ?>
-            <section class="createFastExercise">
+            <section class="home__section-exercise">
                 <h2>Créer un exercice</h2>
-                <form id="createFastExercise">
+                <form class="home__section-exercise__form" id="home__section-exercise__form">
                     <!-- activity -->
-                    <label>Temps : </label>
-                    <input type="checkbox" name="isTime" id="isTime" onclick="TimeIsChecked()"><br />
-                    <label>Temps et Distances : </label>
-                    <input type="checkbox" name="isDistanceAndTime" id="isDistanceAndTime" onclick="TimeAndDistanceIsChecked()"><br />
+                    <div class="home__section-exercise__form__checkbox">
+                        <div class="home__section-exercise__form__checkbox__time">
+                            <label for="isTime">Temps : </label>
+                            <input type="checkbox" name="isTime" id="isTime" onclick="TimeIsChecked()">
+                        </div>
+                        <div class="home__section-exercise__form__checkbox__distance">
+                            <label>Temps et Distances : </label>
+                            <input type="checkbox" name="isDistanceAndTime" id="isDistanceAndTime" onclick="TimeAndDistanceIsChecked()">
+                        </div>
+                    </div>
                     <select name="activityList" id="activityList">
                         <?php
                         if(isset($activityList)){
@@ -71,11 +82,13 @@
                         <?php }
                         }?>
                     </select>
-                    <input class="inputFastExo" type="text" name="exerciseName" id="exerciseName" placeholder="Nom de l'exercice">
-                    <input class="inputFastExo" type="number" name="exerciseSeries" id="exerciseSeries" placeholder="Nombres de séries">
-                    <input class="inputFastExo" type="number" name="exerciseRepetitions" id="exerciseRepetitions" placeholder="Nombres de Répétitions">
-                    <input class="exerciseHidden inputFastExo" type="number" name="exerciseTime" id="exerciseTime" placeholder="Durée de l'exercice">
-                    <input class="exerciseHidden inputFastExo" type="number" name="exerciseDistance" id="exerciseDistance" placeholder="Distance"><br />
+                    <div class="home__section-exercise__form__input">
+                        <input class="inputFastExo" type="text" name="exerciseName" id="exerciseName" placeholder="Nom de l'exercice">
+                        <input class="inputFastExo" type="number" name="exerciseSeries" id="exerciseSeries" placeholder="Nombres de séries">
+                        <input class="inputFastExo" type="number" name="exerciseRepetitions" id="exerciseRepetitions" placeholder="Nombres de Répétitions">
+                        <input class="exerciseHidden inputFastExo" type="number" name="exerciseTime" id="exerciseTime" placeholder="Durée de l'exercice">
+                        <input class="exerciseHidden inputFastExo" type="number" name="exerciseDistance" id="exerciseDistance" placeholder="Distance">
+                    </div>
                     <button type="submit">Créer</button>
                 </form>
 
@@ -83,14 +96,13 @@
             <?php } ?>
             
             <!-- STATISTIQUES -->
-            <section class="flex-main statistique">
+            <section class="home__section-statistiques">
                 <?php
                 if(isset($activityList)){ ?>
                     <h2>Mes statistiques</h2>
-                    <canvas id="statTime" width="600" height="300"></canvas>
+                    <canvas class="home__section-statistiques__time" id="statTime" width="16" height="9"></canvas>
                     <?php } else { ?>
-                <h2>Mes statistiques</h2>
-                <p>Aucune données trouvées pour le moment</p>
+                    <p>Aucune données trouvées pour le moment</p>
                 <?php } ?>
             </section>
         </section>

@@ -3,8 +3,14 @@
     <head>
         <meta charset="UTF-8">
         <title>Récupération de Mot de Passe</title>
-        <link rel="stylesheet" href="css/style.css">
-        <script src="https://kit.fontawesome.com/cfe9ffe70f.js" crossorigin="anonymous"></script>
+        
+        <!-- Font Adobe -->     <link rel="stylesheet" href="https://use.typekit.net/cmp3lqm.css">
+
+        <!-- CSS -->
+        <!--- Mes Styles --->   <link rel="stylesheet" href="css/general.css">
+
+        <!-- JS -->
+        <!--- Icones --->       <script defer src="https://kit.fontawesome.com/cfe9ffe70f.js" crossorigin="anonymous"></script>
     </head>
 
     <body id="connexion">

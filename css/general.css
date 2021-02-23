@@ -1,0 +1,450 @@
+/*--- RESET CSS ---*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*--- VARIABLES ---*/
+/* Color */
+/* Position */
+/* Margin - Padding */
+/* Height - Width */
+/* Font */
+/*--- MIXIN ---*/
+/* Position */
+/* Font */
+/* Title */
+/* Section */
+/* Form */
+body {
+  font-family: basic-sans, sans-serif;
+  text-align: center;
+  background-color: #221533;
+  margin: 0 auto;
+  padding-bottom: 75px;
+}
+
+p, label {
+  font-family: basic-sans, sans-serif;
+}
+
+h1 {
+  color: #fff;
+}
+
+p, label {
+  font-weight: 200;
+}
+
+.fas {
+  color: #11E5B3;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  height: 30px;
+  width: 125px;
+}
+
+.error {
+  font-family: basic-sans, sans-serif;
+  font-size: 0.7em;
+  color: #90e2cf;
+}
+
+header {
+  display: block;
+  position: relative;
+  top: 0px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 15px;
+  max-width: 650px;
+}
+
+header .left-header {
+  z-index: 1000;
+  position: relative;
+  font-size: 2.2em;
+}
+
+header .left-header__btn-logout {
+  position: absolute;
+  left: 15px;
+}
+
+header .left-header a:last-child {
+  position: absolute;
+  right: 15px;
+}
+
+header .center-header__welcome {
+  margin-top: 50px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: left;
+}
+
+header .center-header__welcome h1:first-child {
+  font-size: 1.5em;
+  font-weight: 100;
+}
+
+header .center-header__welcome h1:last-child {
+  font-size: 4em;
+}
+
+header .center-header__title {
+  margin-top: 50px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: left;
+}
+
+header .center-header__title h1:first-child {
+  font-size: 4em;
+  font-weight: 500;
+}
+
+.nav-bar {
+  z-index: 1000;
+  position: fixed;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 50px;
+  width: 100%;
+  background-color: #24193B;
+  border-radius: 15px 15px 0 0;
+  box-shadow: 0px 25px 40px #000;
+}
+
+.nav-bar__icone {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  font-size: 1.5em;
+}
+
+.nav-bar__icone a:nth-of-type(n+2) {
+  margin-left: 130px;
+}
+
+.nav-bar__btn-create {
+  margin-top: -25px;
+  cursor: pointer;
+  font-size: 2.5em;
+  color: #11E5B3;
+  background-color: #382b47;
+  padding: 10px;
+  border-radius: 100px;
+}
+
+footer {
+  z-index: 10000;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+
+footer p {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.75em;
+  font-weight: 200;
+}
+
+#recuperation-btn-back {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 2.2em;
+}
+
+.inscription, .connexion, .recuperation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.inscription h1, .connexion h1, .recuperation h1 {
+  font-size: 3em;
+  font-weight: 800;
+  color: #4a4059;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+
+.inscription h2, .connexion h2, .recuperation h2 {
+  font-size: 2em;
+  font-weight: 800;
+  color: #4a4059;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+
+.inscription__form .text-box input, .connexion__form .text-box input, .recuperation__form .text-box input {
+  height: 25px;
+  width: 200px;
+}
+
+.inscription__form .text-box:nth-last-of-type(n+3), .connexion__form .text-box:nth-last-of-type(n+3), .recuperation__form .text-box:nth-last-of-type(n+3) {
+  margin-bottom: 10px;
+}
+
+.inscription__form .error, .connexion__form .error, .recuperation__form .error {
+  position: relative;
+  left: 10px;
+  margin: 0 auto;
+  text-align: left;
+  width: 200px;
+}
+
+.inscription .footer button, .connexion .footer button, .recuperation .footer button {
+  margin: 15px 0 10px;
+}
+
+.inscription .footer a, .connexion .footer a, .recuperation .footer a {
+  color: #11e5b48c;
+}
+
+.home {
+  margin: 0 auto;
+  max-width: 650px;
+  position: relative;
+  padding-top: 130px;
+}
+
+.home > section {
+  padding-top: 50px;
+}
+
+.home > section > h2 {
+  margin-bottom: 15px;
+}
+
+.home__section-activity {
+  font-size: 1.4em;
+  font-weight: 900;
+  color: #4a4059;
+  text-transform: uppercase;
+  margin: 0 25px;
+}
+
+.home__section-activity__carousel__tab {
+  position: relative;
+}
+
+.home__section-activity__carousel__tab a:first-child {
+  display: block;
+  border-radius: 25px;
+  background-color: #683DE5;
+  height: 225px;
+  color: #fff;
+  font-size: 1.2em;
+  padding-top: 25px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.home__section-activity__carousel__tab__trash {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-size: 1.2em;
+}
+
+.home__section-statistiques {
+  margin: 0 25px;
+}
+
+.home__section-statistiques h2 {
+  font-size: 1.4em;
+  font-weight: 900;
+  color: #4a4059;
+  text-transform: uppercase;
+}
+
+.home__section-exercise h2 {
+  font-size: 1.4em;
+  font-weight: 900;
+  color: #4a4059;
+  text-transform: uppercase;
+}
+
+.home__section-exercise__form {
+  position: relative;
+}
+
+.home__section-exercise__form div[class*="home__section-exercise__form__checkbox"] {
+  color: #fff;
+  height: 25px;
+}
+
+.home__section-exercise__form input[type="checkbox"] {
+  height: 25px;
+  width: 25px;
+}
+
+.home__section-exercise__form__checkbox {
+  position: relative;
+  width: 100%;
+}
+
+.home__section-exercise__form__checkbox > div {
+  display: inline-block;
+}
+
+.home__section-exercise__form__checkbox > div > label {
+  position: relative;
+  top: -7px;
+}
+
+.home__section-exercise__form input:not([type="checkbox"]) {
+  height: 25px;
+  width: 200px;
+}
+
+.home__section-exercise__form select:first-of-type {
+  display: block;
+  margin: 10px auto 0;
+  height: 25px;
+  width: 200px;
+}
+
+.home__section-exercise__form__input {
+  width: 300px;
+  margin: 10px auto 0;
+}
+
+.home__section-exercise__form__input input:nth-last-child(n+2) {
+  margin-bottom: 10px;
+}
+
+.home__section-exercise__form button {
+  margin: 15px 0 0px;
+}
+
+.exercise {
+  margin: 0 auto;
+  max-width: 650px;
+  position: relative;
+  padding-top: 130px;
+}
+
+.exercise > section {
+  padding-top: 50px;
+}
+
+.exercise > section > h2 {
+  margin-bottom: 15px;
+}
+
+.exercise__section {
+  margin: 0 25px;
+}
+
+.exercise__section h2 {
+  font-size: 1.4em;
+  font-weight: 900;
+  color: #4a4059;
+  text-transform: uppercase;
+}
+
+.exercise__section__container {
+  width: 100%;
+}
+
+.exercise__section__container__tab {
+  position: relative;
+  max-width: 300px;
+  height: 50px;
+  margin: 10px auto 0;
+  color: #fff;
+}
+
+.exercise__section__container__tab__number {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 5px;
+  background-color: #382b47;
+  height: 40px;
+  width: 40px;
+  border-radius: 7px;
+}
+
+.exercise__section__container__tab__number p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.exercise__section__container__tab__main {
+  text-align: left;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 75px;
+}
+
+.exercise__section__container__tab__icones {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  font-size: 1.3em;
+}

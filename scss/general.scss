@@ -1,0 +1,435 @@
+/*--- RESET CSS ---*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*--- VARIABLES ---*/
+/* Color */
+$primary-color: #221533;
+$icone-color: #11E5B3;
+$link-color: #11e5b48c;
+$error-color: #90e2cf;
+$title-color: #fff;
+$paragraphe-label-color: #fff;
+$title-section-color: #4a4059;
+$activity-card-color: #683DE5;
+$nav-bar-color: #24193B;
+$clear-color: #382b47;
+
+/* Position */
+$position-header-icone: 15px;
+
+/* Margin - Padding */
+$margin-form: 10px;
+$margin-section-side: 0 25px;
+
+/* Height - Width */
+$height-item-form: 25px;
+$width-text-box: 200px;
+$width-screen-mobile: 650px;
+
+/* Font */
+$title-section-size: 1.4em;
+$card-font-size: 1.2em;
+$title-section-weight: 900;
+$title-page-size: 4em;
+$size-header-icone: 2.2em;
+
+/*--- MIXIN ---*/
+/* Position */
+@mixin center-page{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+@mixin centerX-page{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+@mixin centerY-page{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Font */
+@mixin font{
+    font-family: basic-sans, sans-serif;
+}
+@mixin font-weight-normal{
+    font-weight: 200;
+}
+@mixin font-weight-card{
+    font-weight: 300;
+}
+@mixin font-weight-bold{
+    font-weight: 500;
+}
+
+/* Title */
+@mixin title-section{
+    font-size: $title-section-size;
+    font-weight: $title-section-weight;
+    color: $title-section-color;
+    text-transform: uppercase;
+}
+@mixin title-inscription($titleFontSize: 3em){
+    font-size: $titleFontSize;
+    font-weight: 800;
+    color: $title-section-color;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+/* Section */
+@mixin primary-section{
+    margin: 0 auto;
+    max-width: $width-screen-mobile;
+    position: relative;
+    padding-top: 130px;
+    >section{
+        padding-top: 50px;
+        >h2{
+            margin-bottom: 15px;
+        }
+    }
+}
+@mixin title-page($titleFontSize: 1.5em){
+    margin-top: 50px;
+    @include centerX-page;
+    text-align: left;
+    h1:first-child{
+        font-size: $titleFontSize;
+        @if($titleFontSize == 1.5em){
+            font-weight: 100;
+        } @else {
+            @include font-weight-bold;
+        }
+    }
+}
+
+/* Form */
+@mixin input-form-size{
+    height: $height-item-form;
+    width: $width-text-box;
+}
+@mixin checkbox-size{
+    height: $height-item-form;
+    width: $height-item-form;
+}
+@mixin btn-form-margin($top: 15px, $bottom: 10px) {
+    margin:$top 0 $bottom;
+}
+
+body{
+    @include font;
+    text-align: center;
+    background-color: $primary-color;
+    margin: 0 auto;
+    padding-bottom: 75px;
+}
+p,label{
+    @include font;
+}
+h1{
+    color: $title-color;
+}
+p,label {
+    @include font-weight-normal;
+}
+.fas{
+    color: $icone-color;
+}
+a{
+    text-decoration: none;
+}
+button{
+    height: 30px;
+    width: 125px;
+}
+
+.error{
+    @include font;
+    font-size: 0.7em;
+    color: $error-color;
+}
+
+header{
+    display: block;
+    position: relative;
+    top: 0px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 15px;
+    max-width: $width-screen-mobile;
+    .left-header{
+        z-index: 1000;
+        position: relative;
+        font-size: $size-header-icone;
+        &__btn-logout{
+            position: absolute;
+            left: $position-header-icone;
+        }
+        a:last-child{
+            position: absolute;
+            right: $position-header-icone;
+        }
+    }
+    .center-header{
+        &__welcome{
+            @include title-page;
+            h1:last-child{
+                font-size: $title-page-size;
+            }
+        }
+        &__title{
+            @include title-page($titleFontSize: $title-page-size);
+        }
+    }
+}
+
+.nav-bar{
+    z-index: 1000;
+    position: fixed;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 50px;
+    width: 100%;
+    background-color: $nav-bar-color;
+    border-radius: 15px 15px 0 0;
+    box-shadow: 0px 25px 40px #000;
+    &__icone{
+        @include center-page;
+        width: 100%;
+        font-size: 1.5em;
+        a:nth-of-type(n+2){
+            margin-left: 130px;
+        }
+    }
+    &__btn-create{
+        margin-top: -25px;
+        cursor: pointer;
+        font-size: 2.5em;
+        color: $icone-color;
+        background-color: $clear-color;
+        padding: 10px;
+        border-radius: 100px;
+    }
+}
+
+footer{
+    z-index: 10000;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    p{
+        color: rgba(255, 255, 255, 0.3);
+        font-size: 0.75em;
+        font-weight: 200;
+    }
+}
+
+#recuperation-btn-back{
+    position: absolute;
+    top: $position-header-icone;
+    right: $position-header-icone;
+    font-size: $size-header-icone;
+}
+.inscription, .connexion, .recuperation{
+    @include center-page;
+    h1{
+        @include title-inscription;
+    }
+    h2{
+        @include title-inscription($titleFontSize: 2em);
+    }
+    &__form{
+        .text-box{
+            input{
+                @include input-form-size();
+            }
+        }
+        .text-box:nth-last-of-type(n+3){
+            margin-bottom: $margin-form;
+        }
+        .error{
+            position: relative;
+            left: 10px;
+            margin: 0 auto;
+            text-align: left;
+            width: $width-text-box;
+        }
+    }
+    .footer{
+        button{
+            @include btn-form-margin;
+        }
+        a{
+            color: $link-color;
+        }
+    }
+}
+
+.home{
+    @include primary-section;
+    &__section-activity{
+        @include title-section;
+        margin: $margin-section-side;
+        &__carousel{
+            &__tab{
+                position: relative;
+                a:first-child{
+                    display: block;
+                    border-radius: 25px;
+                    background-color: $activity-card-color;
+                    height: 225px;
+                    color: $title-color;
+                    font-size: $card-font-size;
+                    padding-top: 25px;
+                    @include font-weight-card;
+                    text-transform: uppercase;
+                }
+                &__trash{
+                    position: absolute;
+                    bottom: 10px;
+                    left: 10px;
+                    font-size: $card-font-size;
+                }
+            }
+        }
+    }
+    &__section-statistiques{
+        margin: $margin-section-side;
+        h2{
+            @include title-section;
+        }
+    }
+    &__section-exercise{
+        h2{
+            @include title-section();
+        }
+        &__form{
+            position: relative;
+            div[class*="home__section-exercise__form__checkbox"]{
+                color: $paragraphe-label-color;
+                height: $height-item-form;
+            }
+            input[type="checkbox"]{
+                @include checkbox-size;
+            }
+            &__checkbox{
+                position: relative;
+                width: 100%;
+                >div{
+                    display: inline-block;
+                    >label{
+                        position: relative;
+                        top:-7px;
+                    }
+                }
+            }
+            input:not([type="checkbox"]){
+                @include input-form-size;
+            }
+            select:first-of-type{
+                display: block;
+                margin: $margin-form auto 0;
+                @include input-form-size;
+            }
+            &__input{
+                width: 300px;
+                margin: $margin-form auto 0;
+                input:nth-last-child(n+2){
+                    margin-bottom: $margin-form;
+                }
+            }
+            button{
+                @include btn-form-margin($bottom: 0px);
+            }
+        }
+    }
+}
+
+.exercise{
+    @include primary-section;
+    &__section{
+        margin: $margin-section-side;
+        h2{
+            @include title-section();
+        }
+        &__container{
+            width: 100%;
+            &__tab{
+                position: relative;
+                max-width:300px;
+                height: 50px;
+                margin:10px auto 0;
+                color: $paragraphe-label-color;
+                &__number{
+                    @include centerY-page;
+                    left: 5px;
+                    background-color: $clear-color;
+                    height: 40px;
+                    width: 40px;
+                    border-radius: 7px;
+                    p{
+                        @include center-page;
+                    }
+                }
+                &__main{
+                    text-align: left;
+                    @include centerY-page();
+                    left: 75px;
+                }
+                &__icones{
+                    @include centerY-page();
+                    right: 10px;
+                    font-size: 1.3em;
+                }
+            }
+        }
+    }
+}

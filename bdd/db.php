@@ -1,15 +1,8 @@
 <?php
-
 if($_SERVER['SERVER_NAME'] == 'muscuplus'){
-    $host = 'localhost';
-    $dbname = 'muscuplus';
-    $user = 'root';
-    $pass = '';
+    require_once('config/config_db_local.php');
 } elseif ($_SERVER['SERVER_NAME'] == 'muscuplus.axdesign.fr'){
-    $host = 'localhost';
-    $dbname = 'roph7540_muscuplus';
-    $user = 'roph7540_muscuplus';
-    $pass = '9j294^Nc@B*GCpsS';
+    require_once('config/config_db_online.php');
 }
 
 

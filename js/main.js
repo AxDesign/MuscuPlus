@@ -69,7 +69,7 @@ jQuery(document).ready(function() {
             $('#activitySelected').text(selectedList);
         });
 
-    $('#createFastExercise').submit(function(event){
+    $('#home__section-exercise__form').submit(function(event){
         var formData = {
             'activityList' : $('select[name=activityList]').val(),
             'exerciseName'    : $('input[name=exerciseName]').val(),
@@ -88,7 +88,7 @@ jQuery(document).ready(function() {
             encode : true
         })
             .done(function(data){
-                $('#createFastExercise').append('<p>Envoie de votre exercice réussi</p>');
+                $('#home__section-exercise__form').append('<p>Envoie de votre exercice réussi</p>');
             });
             
         event.preventDefault();
@@ -121,7 +121,7 @@ jQuery(document).ready(function() {
         event.preventDefault();
     });
     /*--- CAROUSEL ---*/
-    $(".activity-tabs").owlCarousel({
+    $(".home__section-activity__carousel").owlCarousel({
         margin: 10,
         loop: false,
         autoplay: true,
