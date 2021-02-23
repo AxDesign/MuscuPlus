@@ -85,7 +85,7 @@
                     <form class="pop-up__content__main__form" id="createExerciseForm">
                         <div class="pop-up__content__main__form__checkbox">
                             <div class="pop-up__content__main__form__checkbox__time">
-                                <label>Temps : </label>
+                                <label for="isTime">Temps : </label>
                                 <input type="checkbox" name="isTime" id="isTime" onclick="TimeIsChecked()"><br />
                             </div>
                             <div class="pop-up__content__main__form__checkbox__distance">
@@ -95,11 +95,11 @@
                         </div>
 
                         <input type="hidden" name="activityId" value=<?=$activityId?>>
-                        <input class="inputFastExo" type="text" name="exerciseName" id="exerciseName" placeholder="Nom de l'exercice">
+                        <input class="inputFastExo" type="text" name="exerciseName" id="exerciseName" placeholder="Nom de l'exercice" autocomplete="off">
                         <input class="inputFastExo" type="number" name="exerciseSeries" id="exerciseSeries" placeholder="Nombres de séries">
                         <input class="inputFastExo" type="number" name="exerciseRepetitions" id="exerciseRepetitions" placeholder="Nombres de Répétitions">
-                        <input class="exerciseHidden inputFastExo" type="number" name="exerciseTime" id="exerciseTime" placeholder="Durée de l'exercice">
-                        <input class="exerciseHidden inputFastExo" type="number" name="exerciseDistance" id="exerciseDistance" placeholder="Distance"><br />
+                        <input class="hidden inputFastExo" type="number" name="exerciseTime" id="exerciseTime" placeholder="Durée de l'exercice">
+                        <input class="hidden inputFastExo" type="number" name="exerciseDistance" id="exerciseDistance" placeholder="Distance"><br />
                         <button type="submit">Créer</button>
                     </form>
                 </div>

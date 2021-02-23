@@ -47,6 +47,7 @@ table {
 /* Color */
 $primary-color: #221533;
 $icone-color: #11E5B3;
+$msg-color: #11E5B3;
 $link-color: #11e5b48c;
 $error-color: #90e2cf;
 $title-color: #fff;
@@ -217,6 +218,27 @@ $size-header-icone: 2.2em;
     }
 }
 
+/* Message */
+@mixin msg($color-general: $msg-color){
+    position: relative;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    background-color: rgba($color-general, 0.25);
+    border-radius: 10px;
+    border: 2px solid rgba($color-general, 0.75);
+    p {
+        @include centerX-page;
+        width: 75%;
+        color: #fff;
+    }
+    button{
+        margin-top: 20px;
+        width: 150px;
+    }
+}
+
 body{
     @include font;
     text-align: center;
@@ -252,28 +274,9 @@ button{
 .none-data{
     color: $paragraphe-label-color;
 }
-.hidden{
-    display: none;
-}
 
 .errorMsg{
-    position: relative;
-    top: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 300px;
-    height: 50px;
-    background-color: rgba(255, 0, 0, 0.25);
-    border-radius: 10px;
-    border: 2px solid rgba(255, 0, 0, 0.75);
-}
-.errorMsg p {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 75%;
-    color: #fff;
+    @include msg(red);
 }
 
 .pop-up{
@@ -313,7 +316,29 @@ button{
         }
     }
 }
-.display_pop-up{
+.send-exercise-succes__content{
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: $nav-bar-color;
+    width: 75%;
+    min-height: 50px;
+    border-radius: 10px;
+    padding-bottom: 25px;
+    i{
+        margin-top: 5px;
+        font-size: $size-header-icone;
+    }
+    p{
+        @include center-page;
+        margin-top: 15px;
+        width: 90%;
+        color: $paragraphe-label-color;
+    }
+}
+.display_pop-up, .send-exercise-succes{
     z-index: 900;
     display: block;
     background-color: rgba($color: #000, $alpha: 0.5);
@@ -323,6 +348,14 @@ button{
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+}
+
+input.hidden, .hidden{
+    display: none;
+}
+
+.no-confirm-account{
+    @include msg;
 }
 
 header{
@@ -456,7 +489,7 @@ footer{
                     display: block;
                     border-radius: 25px;
                     background-color: $activity-card-color;
-                    height: 225px;
+                    height: 175px;
                     color: $title-color;
                     font-size: $card-font-size;
                     padding-top: 25px;

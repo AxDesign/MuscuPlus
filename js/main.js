@@ -5,6 +5,9 @@ function DisplayPopUp(){
 function DisplayPopUpHomeActivity(){
     $(".popUpActivity").addClass("display_pop-up");
 }
+function DisplayPopUpExercice(){
+    $(".send-exercise-succes").removeClass("hidden");
+}
 
 /*-- Fermé Pop-Up --*/
 function ClosePopUp(){
@@ -12,6 +15,9 @@ function ClosePopUp(){
 }
 function ClosePopUpHomeActivity(){
     $(".popUpActivity").removeClass("display_pop-up");
+}
+function ClosePopUpExercice(){
+    $(".send-exercise-succes").addClass("hidden");
 }
 
 function TimeIsChecked(){
@@ -65,7 +71,6 @@ jQuery(document).ready(function() {
         if(winHeight <= 400){
             $(".nav-bar").addClass("hidden");
             $("footer").addClass("hidden");
-            console.log('Moins de 500 !');
         } else {
             $(".nav-bar").removeClass("hidden");
             $("footer").removeClass("hidden");
@@ -102,7 +107,12 @@ jQuery(document).ready(function() {
             encode : true
         })
             .done(function(data){
-                $('#home__section-exercise__form').append('<p>Envoie de votre exercice réussi</p>');
+                DisplayPopUpExercice();
+                $('#home__section-exercise__form')[0].reset();
+                $("input[name=exerciseTime").addClass("hidden");
+                $("input[name=exerciseDistance").addClass("hidden");
+                $("input[name=exerciseSeries").removeClass("hidden");
+                $("input[name=exerciseRepetitions").removeClass("hidden");
             });
             
         event.preventDefault();
@@ -147,7 +157,7 @@ jQuery(document).ready(function() {
                 items: 1,
                 nav: false,
             },
-            400:{
+            350:{
                 items: 2,
                 nav: false,
             },

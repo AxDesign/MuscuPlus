@@ -83,13 +83,19 @@
                         }?>
                     </select>
                     <div class="home__section-exercise__form__input">
-                        <input class="inputFastExo" type="text" name="exerciseName" id="exerciseName" placeholder="Nom de l'exercice">
+                        <input class="inputFastExo" type="text" name="exerciseName" id="exerciseName" placeholder="Nom de l'exercice" autocomplete="off">
                         <input class="inputFastExo" type="number" name="exerciseSeries" id="exerciseSeries" placeholder="Nombres de séries">
                         <input class="inputFastExo" type="number" name="exerciseRepetitions" id="exerciseRepetitions" placeholder="Nombres de Répétitions">
-                        <input class="exerciseHidden inputFastExo" type="number" name="exerciseTime" id="exerciseTime" placeholder="Durée de l'exercice">
-                        <input class="exerciseHidden inputFastExo" type="number" name="exerciseDistance" id="exerciseDistance" placeholder="Distance">
+                        <input class="hidden inputFastExo" type="number" name="exerciseTime" id="exerciseTime" placeholder="Durée de l'exercice">
+                        <input class="hidden inputFastExo" type="number" name="exerciseDistance" id="exerciseDistance" placeholder="Distance">
                     </div>
                     <button type="submit">Créer</button>
+                    <div class="send-exercise-succes hidden">
+                        <div class="send-exercise-succes__content">
+                            <i class="fas fa-arrow-left btn-back-page" onclick="ClosePopUpExercice()"></i>
+                            <p>Votre exercice à bien était enregistré</p>
+                        </div>
+                    </div>
                 </form>
 
             </section>
@@ -116,7 +122,7 @@
                 <div class="pop-up__content__main">
                     <h2>Créer une nouvelle activitée</h2>
                     <form action="createActivity.php" method="post">
-                        <input type="text" name="activity-name" class="activity-name" placeholder="Nom de l'activité">
+                        <input type="text" name="activity-name" class="activity-name" placeholder="Nom de l'activité" autocomplete="off">
                         <button type="submit">Créer</button>
                     </form>
                 </div>
