@@ -17,13 +17,13 @@
     <body>
         <?php require_once('view/inc_error_msg_view.php'); ?>
         <section class="inscription">
-            <h1>Inscripton</h1>
+            <h1>Inscription</h1>
             <form class="inscription__form" method="post">
     
                 <!-- NAME -->
                 <div class="text-box">
                     <i class="fas fa-user"></i>
-                    <input type="text" placeholder="Prénom" name="u_name">
+                    <input type="text" placeholder="Prénom" name="u_name" <?=isset($errorMsg) ? 'disabled' : '' ?>>
                     <?php 
                         if(isset($errorUserName)){
                             echo "<div class='error'>" . $errorUserName . "</div>";
@@ -34,7 +34,7 @@
                 <!-- LAST NAME -->
                 <div class="text-box">
                     <i class="fas fa-user"></i>
-                    <input type="text" placeholder="Nom" name="u_lastName">
+                    <input type="text" placeholder="Nom" name="u_lastName" <?=isset($errorMsg) ? 'disabled' : '' ?>>
                     <?php 
                         if(isset($errorUserLastName)){
                             echo "<div class='error'>" . $errorUserLastName . "</div>";
@@ -45,7 +45,7 @@
                 <!-- AGE -->
                 <div class="text-box">
                     <i class="fas fa-sort-numeric-up-alt"></i>
-                    <input type="number" placeholder="Age" name="u_age">
+                    <input type="number" placeholder="Age" name="u_age" <?=isset($errorMsg) ? 'disabled' : '' ?>>
                     <?php 
                         if(isset($errorUserAge)){
                             echo "<div class='error'>" . $errorUserAge . "</div>";
@@ -56,7 +56,7 @@
                 <!-- EMAIL -->
                 <div class="text-box">
                     <i class="fas fa-envelope"></i>
-                    <input type="email" placeholder="Email" name="u_email">
+                    <input type="email" placeholder="Email" name="u_email" <?=isset($errorMsg) ? 'disabled' : '' ?>>
                     <?php 
                         if(isset($errorUserEmail)){
                             echo "<div class='error'>" . $errorUserEmail . "</div>";
@@ -67,7 +67,7 @@
                 <!-- PASSWORD -->
                 <div class="text-box">
                     <i class="fas fa-lock"></i>
-                    <input type="password" placeholder="Mot de passe" name="u_password">
+                    <input type="password" placeholder="Mot de passe" name="u_password" <?=isset($errorMsg) ? 'disabled' : '' ?>>
                     <?php 
                         if(isset($errorUserPassword)){
                             echo "<div class='error'>" . $errorUserPassword . "</div>";
@@ -78,7 +78,7 @@
                 <!-- PASSWORD CHECK -->
                 <div class="text-box">
                     <i class="fas fa-lock"></i>
-                    <input type="password" placeholder="Vérification mot de passe" name="u_verifPassword">
+                    <input type="password" placeholder="Vérification mot de passe" name="u_verifPassword" <?=isset($errorMsg) ? 'disabled' : '' ?>>
                     <?php 
                         if(isset($errorUserCheckPassword)){
                             echo "<div class='error'>" . $errorUserCheckPassword . "</div>";
@@ -87,7 +87,7 @@
                 </div>
                 <!--BUTTON SUBMIT -->
                 <div class="footer">
-                    <button class="btn-submit" type="submit" name="inscription">S'inscrire</button>
+                    <button class="btn-submit" type="submit" name="inscription" <?=isset($errorMsg) ? 'disabled' : '' ?>>S'inscrire</button>
                     <a href="index.php">
                         <p>Vous êtes déja inscrit ?</p>
                     </a>

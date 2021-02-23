@@ -28,7 +28,7 @@
                 <!-- EMAIL -->
                 <div class="text-box">
                     <i class="fas fa-user"></i>
-                    <input type="email" placeholder="Email" name="user_email_connexion">
+                    <input type="email" placeholder="Email" name="user_email_connexion" <?=isset($errorMsg) ? 'disabled' : '' ?>>
                     <?php 
                         if(isset($errorEmailUser)){
                             echo "<div class='error'>" . $errorEmailUser . "</div>";
@@ -39,7 +39,7 @@
                 <!-- PASSWORD -->
                 <div class="text-box">
                     <i class="fas fa-lock"></i>
-                    <input type="password" placeholder="Mot de Passe" name="user_password_connexion">
+                    <input type="password" placeholder="Mot de Passe" name="user_password_connexion" <?=isset($errorMsg) ? 'disabled' : '' ?>>
                     <?php 
                         if(isset($errorPasswordUser)){
                             echo "<div class='error'>" . $errorPasswordUser . "</div>";
@@ -49,7 +49,7 @@
     
                 <!-- SUBMIT BUTTON -->
                 <div class="footer">
-                    <button class="btn-submit" type="submit" name="connexion">Se Connecter</button>
+                    <button class="btn-submit" type="submit" name="connexion" <?=isset($errorMsg) ? 'disabled' : '' ?>>Se Connecter</button>
                     
                     <a href="inscription.php">
                         <p>Vous n'êtes pas encore inscrit ?</p>

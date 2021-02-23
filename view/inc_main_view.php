@@ -15,7 +15,6 @@
         <!--- Icones --->       <script defer src="https://kit.fontawesome.com/cfe9ffe70f.js" crossorigin="anonymous"></script>
         <!--- Statistiques ---> <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
         <!--- Jquery --->       <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-        <!--- Vue.js --->       <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
         <!--- Carousel --->     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js" integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA==" crossorigin="anonymous"></script>
         <!--- Mes Scripts --->  <script defer src="js/main.js"></script>
     </head>
@@ -53,10 +52,11 @@
                                 </a>
                             </div>
                             <?php } 
-                    } else { ?>
-                    <p>Aucune activitée crée pour le moment</p>
-                    <?php } ?>
+                    } ?>
                 </div>
+                <?php if(!isset($activityList)){ ?>
+                    <p class="none-data">Aucune activitée crée pour le moment</p>
+                <?php } ?>
             </section>
             <!-- CREATION RAPIDE D'EXERCICES -->
             <?php if(isset($activityList)){ ?>
@@ -97,23 +97,23 @@
             
             <!-- STATISTIQUES -->
             <section class="home__section-statistiques">
+                <h2>Mes statistiques</h2>
                 <?php
                 if(isset($activityList)){ ?>
-                    <h2>Mes statistiques</h2>
                     <canvas class="home__section-statistiques__time" id="statTime" width="16" height="9"></canvas>
                     <?php } else { ?>
-                    <p>Aucune données trouvées pour le moment</p>
+                    <p class="none-data">Aucune données trouvées pour le moment</p>
                 <?php } ?>
             </section>
         </section>
         
         <!-- POP-UP NEW ACTIVITY -->
         <section class="pop-up">
-            <div class="content-pop">
-                <div class="header-pop">
+            <div class="pop-up__content">
+                <div class="pop-up__content__header">
                     <i class="fas fa-arrow-left btn-back" onclick="ClosePopUp()"></i>
                 </div>
-                <div class="pop-up-main">
+                <div class="pop-up__content__main">
                     <h2>Créer une nouvelle activitée</h2>
                     <form action="createActivity.php" method="post">
                         <input type="text" name="activity-name" class="activity-name" placeholder="Nom de l'activité">

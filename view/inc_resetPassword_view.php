@@ -24,7 +24,7 @@
             <form class="recuperation__form" method="post">
                 <div class="text-box">
                     <i class="fas fa-user"></i>
-                    <input type="email" placeholder="Email" name="user_email_resetPassword">
+                    <input type="email" placeholder="Email" name="user_email_resetPassword" <?=isset($errorMsg) ? 'disabled' : '' ?>>
                 </div>
                 <?php 
                 if(isset($errorEmailUser)){
@@ -33,7 +33,7 @@
                 ?>
 
                 <div class="footer">
-                    <button class="btn-submit" type="submit" name="resetPassword">Réinitialisé</button>
+                    <button class="btn-submit" type="submit" name="resetPassword" <?=isset($errorMsg) ? 'disabled' : '' ?>>Réinitialisé</button>
                 </div>
             </form>
         </section>

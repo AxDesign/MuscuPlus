@@ -22,5 +22,11 @@
         <div class="center-header__title">
             <h1><?=$activityName?></h1>
         </div>
+    <?php } elseif($_SERVER['SCRIPT_NAME'] == '/statistiques.php') {?>
+        <div class="center-header__title">
+            <h1>Statistiques</h1>
+        </div>
     <?php } ?>
+
+    
 </nav>

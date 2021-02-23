@@ -55,6 +55,7 @@ $title-section-color: #4a4059;
 $activity-card-color: #683DE5;
 $nav-bar-color: #24193B;
 $clear-color: #382b47;
+$viewport-height: 100vh;
 
 /* Position */
 $position-header-icone: 15px;
@@ -149,6 +150,16 @@ $size-header-icone: 2.2em;
         }
     }
 }
+@mixin msg-valid-account{
+    p:first-child{
+        @include title-section();
+    }
+    p:last-child {
+        font-size: 1.25em;
+        font-weight: 300;
+        color: $title-color;
+    }
+}
 
 /* Form */
 @mixin input-form-size{
@@ -161,6 +172,49 @@ $size-header-icone: 2.2em;
 }
 @mixin btn-form-margin($top: 15px, $bottom: 10px) {
     margin:$top 0 $bottom;
+}
+@mixin checkbox-form{
+    &__form{
+        position: relative;
+        div[class*="__form__checkbox"]{
+            color: $paragraphe-label-color;
+            height: $height-item-form;
+        }
+        input[type="checkbox"]{
+            @include checkbox-size;
+            display: inline-block;
+        }
+        &__checkbox{
+            position: relative;
+            width: 100%;
+            >div{
+                display: inline-block;
+                >label{
+                    display: inline-block;
+                    position: relative;
+                    top:-7px;
+                }
+            }
+        }
+        input:not([type="checkbox"]){
+            @include input-form-size;
+        }
+        select:first-of-type{
+            display: block;
+            margin: $margin-form auto 0;
+            @include input-form-size;
+        }
+        &__input{
+            width: 300px;
+            margin: $margin-form auto 0;
+            input:nth-last-child(n+2){
+                margin-bottom: $margin-form;
+            }
+        }
+        button{
+            @include btn-form-margin($bottom: 0px);
+        }
+    }
 }
 
 body{
@@ -195,6 +249,81 @@ button{
     font-size: 0.7em;
     color: $error-color;
 }
+.none-data{
+    color: $paragraphe-label-color;
+}
+.exerciseHidden{
+    display: none;
+}
+
+.errorMsg{
+    position: relative;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 50px;
+    background-color: rgba(255, 0, 0, 0.25);
+    border-radius: 10px;
+    border: 2px solid rgba(255, 0, 0, 0.75);
+}
+.errorMsg p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    color: #fff;
+}
+
+.pop-up{
+    display: none;
+    &__content{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background-color: $nav-bar-color;
+        width: 90%;
+        min-height: 100px;
+        border-radius: 10px;
+        padding-bottom: 25px;
+        &__header{
+            font-size: $size-header-icone;
+            text-align: left;
+            margin: 10px 0 0 10px;
+        }
+        h2{
+            @include title-section;
+            margin: 0 auto;
+            width: 90%;
+        }
+        input{
+            @include input-form-size;
+            margin: $margin-form auto;
+            display: block;
+        }
+        &__main{
+            @include checkbox-form;
+            &__form{
+                >[type="text"]{
+                    margin-top: $margin-form+10;
+                }
+            }
+        }
+    }
+}
+.display_pop-up{
+    z-index: 900;
+    display: block;
+    background-color: rgba($color: #000, $alpha: 0.5);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
 
 header{
     display: block;
@@ -205,7 +334,7 @@ header{
     margin-top: 15px;
     max-width: $width-screen-mobile;
     .left-header{
-        z-index: 1000;
+        z-index: 800;
         position: relative;
         font-size: $size-header-icone;
         &__btn-logout{
@@ -316,8 +445,10 @@ footer{
 .home{
     @include primary-section;
     &__section-activity{
-        @include title-section;
         margin: $margin-section-side;
+        h2{
+            @include title-section;
+        }
         &__carousel{
             &__tab{
                 position: relative;
@@ -351,45 +482,7 @@ footer{
         h2{
             @include title-section();
         }
-        &__form{
-            position: relative;
-            div[class*="home__section-exercise__form__checkbox"]{
-                color: $paragraphe-label-color;
-                height: $height-item-form;
-            }
-            input[type="checkbox"]{
-                @include checkbox-size;
-            }
-            &__checkbox{
-                position: relative;
-                width: 100%;
-                >div{
-                    display: inline-block;
-                    >label{
-                        position: relative;
-                        top:-7px;
-                    }
-                }
-            }
-            input:not([type="checkbox"]){
-                @include input-form-size;
-            }
-            select:first-of-type{
-                display: block;
-                margin: $margin-form auto 0;
-                @include input-form-size;
-            }
-            &__input{
-                width: 300px;
-                margin: $margin-form auto 0;
-                input:nth-last-child(n+2){
-                    margin-bottom: $margin-form;
-                }
-            }
-            button{
-                @include btn-form-margin($bottom: 0px);
-            }
-        }
+        @include checkbox-form;
     }
 }
 
@@ -431,5 +524,32 @@ footer{
                 }
             }
         }
+    }
+}
+
+.statistiques{
+    &__section{
+        @include primary-section;
+        margin: $margin-section-side;
+        h2{
+            @include title-section();
+        }
+    }
+}
+
+.confirmation{
+    @include center-page;
+    width: 100%;
+    &__validAccount{
+        @include msg-valid-account;
+    }
+    &__reValidAccount{
+        @include msg-valid-account;
+    }
+    &__notValidAccount{
+        @include msg-valid-account;
+    }
+    a{
+        color: $link-color;
     }
 }

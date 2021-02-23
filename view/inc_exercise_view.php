@@ -15,7 +15,6 @@
         <!--- Icones --->       <script defer src="https://kit.fontawesome.com/cfe9ffe70f.js" crossorigin="anonymous"></script>
         <!--- Statistiques ---> <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
         <!--- Jquery --->       <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-        <!--- Vue.js --->       <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
         <!--- Carousel --->     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js" integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA==" crossorigin="anonymous"></script>
         <!--- Mes Scripts --->  <script defer src="js/main.js"></script>
     </head>
@@ -69,38 +68,43 @@
                     <?php $exerciseNumber++;
                         }
                     } else { ?>
-                        <p>Aucune donnée trouvée pour le moment</p> <?php
+                        <p class="none-data">Aucune donnée trouvée pour le moment</p> <?php
                     } ?>
                 </div>
             </section>
         </section>
         
         <!-- POP-UP NEW ACTIVITY -->
-        <!-- <section class="pop-up">
-            <div class="content-pop">
-                <div class="header-pop">
+        <section class="pop-up">
+            <div class="pop-up__content">
+                <div class="pop-up__content__header">
                     <i class="fas fa-arrow-left btn-back" onclick="ClosePopUp()"></i>
                 </div>
-                <div class="pop-up-main">
-                <h2>Créer un exercice</h2>
-                <form id="createExerciseForm">
-                    
-                    <label>Temps : </label>
-                    <input type="checkbox" name="isTime" id="isTime" onclick="TimeIsChecked()"><br />
-                    <label>Temps et Distances : </label>
-                    <input type="checkbox" name="isDistanceAndTime" id="isDistanceAndTime" onclick="TimeAndDistanceIsChecked()"><br />
+                <div class="pop-up__content__main">
+                    <h2>Créer un exercice</h2>
+                    <form class="pop-up__content__main__form" id="createExerciseForm">
+                        <div class="pop-up__content__main__form__checkbox">
+                            <div class="pop-up__content__main__form__checkbox__time">
+                                <label>Temps : </label>
+                                <input type="checkbox" name="isTime" id="isTime" onclick="TimeIsChecked()"><br />
+                            </div>
+                            <div class="pop-up__content__main__form__checkbox__distance">
+                                <label>Temps et Distances : </label>
+                                <input type="checkbox" name="isDistanceAndTime" id="isDistanceAndTime" onclick="TimeAndDistanceIsChecked()"><br />
+                            </div>
+                        </div>
 
-                    <input type="hidden" name="activityId" value=<?=$activityId?>>
-                    <input class="inputFastExo" type="text" name="exerciseName" id="exerciseName" placeholder="Nom de l'exercice">
-                    <input class="inputFastExo" type="number" name="exerciseSeries" id="exerciseSeries" placeholder="Nombres de séries">
-                    <input class="inputFastExo" type="number" name="exerciseRepetitions" id="exerciseRepetitions" placeholder="Nombres de Répétitions">
-                    <input class="exerciseHidden inputFastExo" type="number" name="exerciseTime" id="exerciseTime" placeholder="Durée de l'exercice">
-                    <input class="exerciseHidden inputFastExo" type="number" name="exerciseDistance" id="exerciseDistance" placeholder="Distance"><br />
-                    <button type="submit">Créer</button>
-                </form>
+                        <input type="hidden" name="activityId" value=<?=$activityId?>>
+                        <input class="inputFastExo" type="text" name="exerciseName" id="exerciseName" placeholder="Nom de l'exercice">
+                        <input class="inputFastExo" type="number" name="exerciseSeries" id="exerciseSeries" placeholder="Nombres de séries">
+                        <input class="inputFastExo" type="number" name="exerciseRepetitions" id="exerciseRepetitions" placeholder="Nombres de Répétitions">
+                        <input class="exerciseHidden inputFastExo" type="number" name="exerciseTime" id="exerciseTime" placeholder="Durée de l'exercice">
+                        <input class="exerciseHidden inputFastExo" type="number" name="exerciseDistance" id="exerciseDistance" placeholder="Distance"><br />
+                        <button type="submit">Créer</button>
+                    </form>
                 </div>
             </div>
-        </section> -->
+        </section>
 
         <?php
         //NAV BAR

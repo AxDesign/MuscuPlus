@@ -15,7 +15,6 @@
         <!--- Icones --->       <script defer src="https://kit.fontawesome.com/cfe9ffe70f.js" crossorigin="anonymous"></script>
         <!--- Statistiques ---> <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
         <!--- Jquery --->       <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-        <!--- Vue.js --->       <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
         <!--- Mes Scripts --->  <script defer src="js/main.js"></script>
     </head>
 
@@ -25,29 +24,39 @@
         <!-- BANDEAU SI UTILISATEUR NON COMFIRMÉ -->
         <?php require_once('view/inc_activation_compte_view.php'); ?>
         <header>
-            <a href="main.php">
-                <i class="fas fa-arrow-left btn-back-page"></i>
-            </a>
             <?php require_once("view/inc_main_header_view.php"); ?>
         </header>
 
 
         <!-- MAIN -->
-        <section class="main-container">
+        <section class="statistiques">
             
             <!-- STATISTIQUES -->
-            <section class="flex-main statistique">
-                <?php
-                if(isset($activityList)){ ?>
+            <section class="statistiques__section">
+                <section class="statistiques__section__time">
                     <h2>Temps</h2>
-                    <canvas id="statTime" width="600" height="300"></canvas>
-                    <h2>Temps et Distances</h2>
-                    <canvas id="statTimeDist" width="600" height="300"></canvas>
-                    <h2>Séries et Répétitions</h2>
-                    <canvas id="statRep" width="600" height="300"></canvas>
+                    <?php if(isset($activityList)){ ?>
+                        <canvas id="statTime" width="16" height="9"></canvas>
                     <?php } else { ?>
-                <p>Aucune données trouvées pour le moment</p>
-                <?php } ?>
+                        <p class="none-data">Aucune donnée disponible</p>
+                    <?php } ?>
+                </section>
+                <section class="statistiques__section__distance">
+                    <h2>Temps et Distances</h2>
+                    <?php if(isset($activityList)){ ?>
+                        <canvas id="statTimeDist" width="16" height="9"></canvas>
+                    <?php } else { ?>
+                        <p class="none-data">Aucune donnée disponible</p>
+                    <?php } ?>
+                </section>
+                <section class="statistiques__section__repetition">
+                    <h2>Séries et Répétitions</h2>
+                    <?php if(isset($activityList)){ ?>
+                        <canvas id="statRep" width="16" height="9"></canvas>
+                    <?php } else { ?>
+                        <p class="none-data">Aucune donnée disponible</p>
+                    <?php } ?>
+                </section>
             </section>
         </section>
         <?php

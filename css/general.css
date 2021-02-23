@@ -100,6 +100,144 @@ button {
   color: #90e2cf;
 }
 
+.none-data {
+  color: #fff;
+}
+
+.exerciseHidden {
+  display: none;
+}
+
+.errorMsg {
+  position: relative;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 50px;
+  background-color: rgba(255, 0, 0, 0.25);
+  border-radius: 10px;
+  border: 2px solid rgba(255, 0, 0, 0.75);
+}
+
+.errorMsg p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%;
+  color: #fff;
+}
+
+.pop-up {
+  display: none;
+}
+
+.pop-up__content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #24193B;
+  width: 90%;
+  min-height: 100px;
+  border-radius: 10px;
+  padding-bottom: 25px;
+}
+
+.pop-up__content__header {
+  font-size: 2.2em;
+  text-align: left;
+  margin: 10px 0 0 10px;
+}
+
+.pop-up__content h2 {
+  font-size: 1.4em;
+  font-weight: 900;
+  color: #4a4059;
+  text-transform: uppercase;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.pop-up__content input {
+  height: 25px;
+  width: 200px;
+  margin: 10px auto;
+  display: block;
+}
+
+.pop-up__content__main__form {
+  position: relative;
+}
+
+.pop-up__content__main__form div[class*="__form__checkbox"] {
+  color: #fff;
+  height: 25px;
+}
+
+.pop-up__content__main__form input[type="checkbox"] {
+  height: 25px;
+  width: 25px;
+  display: inline-block;
+}
+
+.pop-up__content__main__form__checkbox {
+  position: relative;
+  width: 100%;
+}
+
+.pop-up__content__main__form__checkbox > div {
+  display: inline-block;
+}
+
+.pop-up__content__main__form__checkbox > div > label {
+  display: inline-block;
+  position: relative;
+  top: -7px;
+}
+
+.pop-up__content__main__form input:not([type="checkbox"]) {
+  height: 25px;
+  width: 200px;
+}
+
+.pop-up__content__main__form select:first-of-type {
+  display: block;
+  margin: 10px auto 0;
+  height: 25px;
+  width: 200px;
+}
+
+.pop-up__content__main__form__input {
+  width: 300px;
+  margin: 10px auto 0;
+}
+
+.pop-up__content__main__form__input input:nth-last-child(n+2) {
+  margin-bottom: 10px;
+}
+
+.pop-up__content__main__form button {
+  margin: 15px 0 0px;
+}
+
+.pop-up__content__main__form > [type="text"] {
+  margin-top: 20px;
+}
+
+.display_pop-up {
+  z-index: 900;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 header {
   display: block;
   position: relative;
@@ -111,7 +249,7 @@ header {
 }
 
 header .left-header {
-  z-index: 1000;
+  z-index: 800;
   position: relative;
   font-size: 2.2em;
 }
@@ -276,11 +414,14 @@ footer p {
 }
 
 .home__section-activity {
+  margin: 0 25px;
+}
+
+.home__section-activity h2 {
   font-size: 1.4em;
   font-weight: 900;
   color: #4a4059;
   text-transform: uppercase;
-  margin: 0 25px;
 }
 
 .home__section-activity__carousel__tab {
@@ -328,7 +469,7 @@ footer p {
   position: relative;
 }
 
-.home__section-exercise__form div[class*="home__section-exercise__form__checkbox"] {
+.home__section-exercise__form div[class*="__form__checkbox"] {
   color: #fff;
   height: 25px;
 }
@@ -336,6 +477,7 @@ footer p {
 .home__section-exercise__form input[type="checkbox"] {
   height: 25px;
   width: 25px;
+  display: inline-block;
 }
 
 .home__section-exercise__form__checkbox {
@@ -348,6 +490,7 @@ footer p {
 }
 
 .home__section-exercise__form__checkbox > div > label {
+  display: inline-block;
   position: relative;
   top: -7px;
 }
@@ -447,4 +590,78 @@ footer p {
   transform: translateY(-50%);
   right: 10px;
   font-size: 1.3em;
+}
+
+.statistiques__section {
+  margin: 0 auto;
+  max-width: 650px;
+  position: relative;
+  padding-top: 130px;
+  margin: 0 25px;
+}
+
+.statistiques__section > section {
+  padding-top: 50px;
+}
+
+.statistiques__section > section > h2 {
+  margin-bottom: 15px;
+}
+
+.statistiques__section h2 {
+  font-size: 1.4em;
+  font-weight: 900;
+  color: #4a4059;
+  text-transform: uppercase;
+}
+
+.confirmation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.confirmation__validAccount p:first-child {
+  font-size: 1.4em;
+  font-weight: 900;
+  color: #4a4059;
+  text-transform: uppercase;
+}
+
+.confirmation__validAccount p:last-child {
+  font-size: 1.25em;
+  font-weight: 300;
+  color: #fff;
+}
+
+.confirmation__reValidAccount p:first-child {
+  font-size: 1.4em;
+  font-weight: 900;
+  color: #4a4059;
+  text-transform: uppercase;
+}
+
+.confirmation__reValidAccount p:last-child {
+  font-size: 1.25em;
+  font-weight: 300;
+  color: #fff;
+}
+
+.confirmation__notValidAccount p:first-child {
+  font-size: 1.4em;
+  font-weight: 900;
+  color: #4a4059;
+  text-transform: uppercase;
+}
+
+.confirmation__notValidAccount p:last-child {
+  font-size: 1.25em;
+  font-weight: 300;
+  color: #fff;
+}
+
+.confirmation a {
+  color: #11e5b48c;
 }
