@@ -20,6 +20,17 @@ function ClosePopUpExercice(){
     $(".send-exercise-succes").addClass("hidden");
 }
 
+/*-- Formulaire --*/
+function RecallChecked(){
+    if($('#recall').is(':checked')){
+        $("input[name=recallDate").removeClass("hidden");
+        $("input[name=recallTime").removeClass("hidden");
+    } else {
+        $("input[name=recallDate").addClass("hidden");
+        $("input[name=recallTime").addClass("hidden");
+    }
+}
+
 function TimeIsChecked(){
     if($('#isTime').is(':checked')){
         $('#isDistanceAndTime').prop("checked", false);
@@ -50,25 +61,13 @@ function TimeAndDistanceIsChecked(){
     }
 }
 
-/*function IsChecked(){
-    if($('#isTime').is(':checked')){
-        $("input[name=exerciseRepetitions").removeClass("exerciseTimeDisplay");
-        $("input[name=exerciseRepetitions").addClass("exerciseTimeHidden");
-        $("input[name=exerciseTime").removeClass("exerciseTimeHidden");
-        $("input[name=exerciseTime").addClass("exerciseTimeDisplay");
-    } else{
-        $("input[name=exerciseRepetitions").removeClass("exerciseTimeHidden");
-        $("input[name=exerciseRepetitions").addClass("exerciseTimeDisplay");
-        $("input[name=exerciseTime").removeClass("exerciseTimeDisplay");
-        $("input[name=exerciseTime").addClass("exerciseTimeHidden");
-    }
-}*/
 
 jQuery(document).ready(function() {
     
+    /*-- Cacher bar de navigation --*/
     $(window).resize(function(){
         var winHeight = $(window).height();
-        if(winHeight <= 400){
+        if(winHeight <= 550){
             $(".nav-bar").addClass("hidden");
             $("footer").addClass("hidden");
         } else {
@@ -77,6 +76,7 @@ jQuery(document).ready(function() {
         }
     });
 
+    /*-- Activité sélectionné dans la liste --*/
     var selectedList;
 
     if(selectedList === undefined){
@@ -88,17 +88,20 @@ jQuery(document).ready(function() {
         $('#activitySelected').text(selectedList);
     });
 
+
+    /*-- Formulaire Home --*/
     $('#home__section-exercise__form').submit(function(event){
+        
         var formData = {
-            'activityList' : $('select[name=activityList]').val(),
-            'exerciseName'    : $('input[name=exerciseName]').val(),
-            'exerciseSeries'    : $('input[name=exerciseSeries]').val(),
-            'exerciseRepetitions'    : $('input[name=exerciseRepetitions]').val(),
-            'exerciseTime'    : $('input[name=exerciseTime]').val(),
-            'exerciseDistance'    : $('input[name=exerciseDistance]').val()
+            'activityList'          : $('select[name=activityList]').val(),
+            'exerciseName'          : $('input[name=exerciseName]').val(),
+            'exerciseSeries'        : $('input[name=exerciseSeries]').val(),
+            'exerciseRepetitions'   : $('input[name=exerciseRepetitions]').val(),
+            'exerciseTime'          : $('input[name=exerciseTime]').val(),
+            'exerciseDistance'      : $('input[name=exerciseDistance]').val(),
+            'recallDate'            : $('input[name=recallDate]').val() + ' ' + $('input[name=recallTime]').val() //<------ Chaîne de caractère
 
         };
-
         $.ajax({
             type: "POST",
             url: "createExercise.php",
@@ -107,12 +110,16 @@ jQuery(document).ready(function() {
             encode : true
         })
             .done(function(data){
+                console.log(data.recallDate);
+                console.log(data.recallTime);
                 DisplayPopUpExercice();
                 $('#home__section-exercise__form')[0].reset();
                 $("input[name=exerciseTime").addClass("hidden");
                 $("input[name=exerciseDistance").addClass("hidden");
                 $("input[name=exerciseSeries").removeClass("hidden");
                 $("input[name=exerciseRepetitions").removeClass("hidden");
+                $("input[name=recallDate").removeClass("hidden");
+                $("input[name=recallTime").removeClass("hidden");
             });
             
         event.preventDefault();

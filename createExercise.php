@@ -5,9 +5,20 @@ require_once('bdd/db.php');
 session_start();
 require_once('model/inc_createExercise_model.php');
 
+
 if(isset($_POST['exerciseName'])){
     $idActivity = $_POST['activityList'];
     $exerciseName = $_POST['exerciseName'];
+    if(empty($_POST['recallDate'])){
+        $recallDate = 0;
+    } else {
+        $recallDate = $_POST['recallDate'];
+    }
+    if(empty($_POST['recallTime'])){
+        $recallTime = 0;
+    } else {
+        $recallTime = $_POST['recallTime'];
+    }
     if(empty($_POST['exerciseDistance'])){
         $exerciseDistance = 0;
     } else{
@@ -28,7 +39,11 @@ if(isset($_POST['exerciseName'])){
     }else {
         $exerciseRepetitions = $_POST['exerciseRepetitions'];
     }
-    CreateExercice();
+    if(empty($_POST['recallDate'])){
+        CreateExercice();
+    } else {
+        CreateRecallExercice();
+    }
 }
 
 require_once('view/inc_createExercise_view_json.php');

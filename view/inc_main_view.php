@@ -65,6 +65,10 @@
                 <form class="home__section-exercise__form" id="home__section-exercise__form">
                     <!-- activity -->
                     <div class="home__section-exercise__form__checkbox">
+                        <div class="home__section-exercise__form__checkbox__recall">
+                            <label for="">Créer un rappel : </label>
+                            <input type="checkbox" name="recall" id="recall" onclick="RecallChecked()">
+                        </div>
                         <div class="home__section-exercise__form__checkbox__time">
                             <label for="isTime">Temps : </label>
                             <input type="checkbox" name="isTime" id="isTime" onclick="TimeIsChecked()">
@@ -86,8 +90,10 @@
                         <input class="inputFastExo" type="text" name="exerciseName" id="exerciseName" placeholder="Nom de l'exercice" autocomplete="off">
                         <input class="inputFastExo" type="number" name="exerciseSeries" id="exerciseSeries" placeholder="Nombres de séries">
                         <input class="inputFastExo" type="number" name="exerciseRepetitions" id="exerciseRepetitions" placeholder="Nombres de Répétitions">
-                        <input class="hidden inputFastExo" type="number" name="exerciseTime" id="exerciseTime" placeholder="Durée de l'exercice">
-                        <input class="hidden inputFastExo" type="number" name="exerciseDistance" id="exerciseDistance" placeholder="Distance">
+                        <input class="inputFastExo hidden" type="number" name="exerciseTime" id="exerciseTime" placeholder="Durée de l'exercice">
+                        <input class="inputFastExo hidden" type="number" name="exerciseDistance" id="exerciseDistance" placeholder="Distance">
+                        <input class="inputFastExo hidden" type="date" name="recallDate" id="recallDate">
+                        <input class="inputFastExo hidden" type="time" name="recallTime" id="recallTime">
                     </div>
                     <button type="submit">Créer</button>
                     <div class="send-exercise-succes hidden">
@@ -106,7 +112,7 @@
                 <h2>Mes statistiques</h2>
                 <?php
                 if(isset($activityList)){ ?>
-                    <canvas class="home__section-statistiques__time" id="statTime" width="16" height="9"></canvas>
+                    <canvas class="home__section-statistiques__time" id="statTime" width="16" height="11"></canvas>
                     <?php } else { ?>
                     <p class="none-data">Aucune données trouvées pour le moment</p>
                 <?php } ?>

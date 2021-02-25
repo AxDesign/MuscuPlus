@@ -189,11 +189,13 @@ $size-header-icone: 2.2em;
             position: relative;
             width: 100%;
             >div{
-                display: inline-block;
                 >label{
                     display: inline-block;
                     position: relative;
                     top:-7px;
+                }
+                &:nth-of-type(n+2){
+                    display: inline-block;
                 }
             }
         }
@@ -202,7 +204,7 @@ $size-header-icone: 2.2em;
         }
         select:first-of-type{
             display: block;
-            margin: $margin-form auto 0;
+            margin: $margin-form+25 auto 0;
             @include input-form-size;
         }
         &__input{

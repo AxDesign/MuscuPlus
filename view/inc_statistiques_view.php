@@ -36,7 +36,7 @@
                 <section class="statistiques__section__time">
                     <h2>Temps</h2>
                     <?php if(isset($activityList)){ ?>
-                        <canvas id="statTime" width="16" height="9"></canvas>
+                        <canvas id="statTime" width="16" height="11"></canvas>
                     <?php } else { ?>
                         <p class="none-data">Aucune donnée disponible</p>
                     <?php } ?>
@@ -44,7 +44,7 @@
                 <section class="statistiques__section__distance">
                     <h2>Temps et Distances</h2>
                     <?php if(isset($activityList)){ ?>
-                        <canvas id="statTimeDist" width="16" height="9"></canvas>
+                        <canvas id="statTimeDist" width="16" height="11"></canvas>
                     <?php } else { ?>
                         <p class="none-data">Aucune donnée disponible</p>
                     <?php } ?>
@@ -52,7 +52,7 @@
                 <section class="statistiques__section__repetition">
                     <h2>Séries et Répétitions</h2>
                     <?php if(isset($activityList)){ ?>
-                        <canvas id="statRep" width="16" height="9"></canvas>
+                        <canvas id="statRep" width="16" height="11"></canvas>
                     <?php } else { ?>
                         <p class="none-data">Aucune donnée disponible</p>
                     <?php } ?>
