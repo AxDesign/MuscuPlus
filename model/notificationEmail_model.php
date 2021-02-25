@@ -30,7 +30,7 @@ function RecoverDate(){
             $userEmailArray = $reqUser->fetch();
             $userEmail = $userEmailArray['email'];
             echo $userEmail;
-            include_once('../mail/mailNotification.php');
+            include_once('mail/mailNotification.php');
         } else {
             echo 'Date: ' . $actualDate . '</br>';
             echo 'Mauvaise date !!!<br />';
