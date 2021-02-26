@@ -12,6 +12,12 @@
 
         <!-- JS -->
         <!--- Icones --->       <script defer src="https://kit.fontawesome.com/cfe9ffe70f.js" crossorigin="anonymous"></script>
+
+        <!-- PWA --->           <link rel="manifest" href="js/manifest.json">
+                                <link rel="apple-touch-icon" href="js/icons/axlogo.ico">
+                                <meta name="apple-mobile-web-app-status-bar" content="white">
+                                <meta http-equiv="X-UA-Compatible" content="ie=edge">
+                                <meta name="theme-color" content="white">
     </head>
 
     <body>

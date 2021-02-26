@@ -31,9 +31,23 @@ function RecoverDate(){
             $userEmail = $userEmailArray['email'];
             echo $userEmail;
             include_once('mail/mailNotification.php');
+            DeleteOldExercices();
         } else {
             echo 'Date: ' . $actualDate . '</br>';
             echo 'Mauvaise date !!!<br />';
+            DeleteOldExercices();
         }
+    }
+}
+
+function DeleteOldExercices(){
+    global $bdd,
+            $actualDate;
+    try{
+        $req = $bdd->prepare('DELETE FROM recall_exercise WHERE recall_date < ?');
+        $req->execute(array($actualDate));
+    } catch (Exception $e) {
+        $errorIt = $e;
+        $errorMsg = 'Une erreur innatendue est survenue. Le service technique a été informé. Veuillez vous reconnectez plus tard.';
     }
 }

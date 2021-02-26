@@ -92,8 +92,8 @@
                         <input class="inputFastExo" type="number" name="exerciseRepetitions" id="exerciseRepetitions" placeholder="Nombres de Répétitions">
                         <input class="inputFastExo hidden" type="number" name="exerciseTime" id="exerciseTime" placeholder="Durée de l'exercice">
                         <input class="inputFastExo hidden" type="number" name="exerciseDistance" id="exerciseDistance" placeholder="Distance">
-                        <input class="inputFastExo hidden" type="date" name="recallDate" id="recallDate">
-                        <input class="inputFastExo hidden" type="time" name="recallTime" id="recallTime">
+                        <input class="inputFastExo hidden" type="date" name="recallDate" id="recallDate" value="<?=date('Y-m-d')?>">
+                        <input class="inputFastExo hidden" type="time" name="recallTime" id="recallTime" value="12:00">
                     </div>
                     <button type="submit">Créer</button>
                     <div class="send-exercise-succes hidden">
