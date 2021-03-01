@@ -1,7 +1,7 @@
 <?php
-if($_SERVER['SERVER_NAME'] == 'muscuplus'){
+if($_SERVER['SERVER_NAME'] == 'speedrun'){
     require_once('config/config_db_local.php');
-} elseif ($_SERVER['SERVER_NAME'] == 'muscuplus.axdesign.fr'){
+} elseif ($_SERVER['SERVER_NAME'] == 'speedrun.axdesign.fr'){
     require_once('config/config_db_online.php');
 }
 
