@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Se Connecter</title>
+        
+        <!-- Font Adobe -->     <link rel="stylesheet" href="https://use.typekit.net/cmp3lqm.css">
+
+        <!-- CSS -->
+        <!--- Mes Styles --->   <link rel="stylesheet" href="css/general.css">
+
+        <!-- JS -->
+        <!-- JQuery -->         <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+        <!--- Icones --->       <script defer src="https://kit.fontawesome.com/cfe9ffe70f.js" crossorigin="anonymous"></script>
+        <!-- Base de donnée --> <script defer src="bdd.js"></script>
+    </head>
+
+    <body>
+        <section class="connexion">
+            <h1>Connexion</h1>
+            <div class="connexion__form" method="post">
+                
+                <!-- EMAIL -->
+                <div class="text-box">
+                    <i class="fas fa-user"></i>
+                    <input type="email" placeholder="Email" name="userEmail">
+                </div>
+    
+                <!-- PASSWORD -->
+                <div class="text-box">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Mot de Passe" name="userPassword">
+                </div>
+    
+                <!-- SUBMIT BUTTON -->
+                <div class="footer">
+                    <button name="connexion" onclick="SendConnexion()">Se Connecter</button>
+                    
+                    <a href="inscription.html">
+                        <p>Vous n'êtes pas encore inscrit ?</p>
+                    </a>
+                    <a href="resetPassword.php">
+                        <p>Vous avez perdu votre mot de passe ?</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
